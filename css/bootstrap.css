@@ -5010,6 +5010,18 @@ a.badge:focus {
        -o-transition: border .2s ease-in-out;
           transition: border .2s ease-in-out;
 }
+.thumbnail-short-bottom {
+  display: block;
+  padding: 4px;
+  margin-bottom: 1px;
+  line-height: 1.42857143;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  -webkit-transition: border .2s ease-in-out;
+       -o-transition: border .2s ease-in-out;
+          transition: border .2s ease-in-out;
+}
 .thumbnail > img,
 .thumbnail a > img {
   margin-right: auto;
