@@ -11,6 +11,8 @@
 		function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- meta tags -->
 <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+
+
 <!-- stylesheet -->
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -37,33 +39,6 @@
 		<div class="banner1-image">
             <div class="banner">
                 <div class="container">
-                    <!--div class="top-nav">
-                        <nav class="navbar navbar-default">
-                                <div class="navbar-header">
-                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                                        <span class="sr-only">Toggle navigation</span>
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                    </button>
-                                    <h1><a class="navbar-brand" href="index.html">Boxing club</a></h1>
-                                </div>
-                                <!-- Collect the nav links, forms, and other content for toggling -->
-                                <!--div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                                    <ul class="nav navbar-nav navbar-center cl-effect-11">
-                                        <li><a href="index.html" class="active" data-hover="Home">Home</a></li>
-                                        <li><a href="#about" data-hover="About" class="scroll" >About</a></li>					
-                                        <li><a href="#gallery" data-hover="Gallery" class="scroll">Gallery</a></li>
-                                        <li><a href="#trainers" data-hover="Trainers" class="scroll" >Trainers</a></li>
-                                        <li><a href="#updates" data-hover="News" class="scroll" >News</a></li>
-                                        <li><a href="#contact" class="scroll" data-hover="Contact">Contact</a></li>
-                                    </ul>	
-                                    <div class="clearfix"> </div>
-                                </div>
-                            <div class="clearfix"> </div>
-                        </nav-->
-
-
                 <ul class="nav nav-tabs">
                     <li class="active"><a href="#home" data-toggle="tab">首页</a></li>
                     <li><a href="#charge" data-toggle="tab">充值</a></li>
@@ -76,17 +51,6 @@
                 <div class="tab-content">
                 	<!--主页内容开始-->
                     <div class="tab-pane fade in active" id="home">
-                        <div class="w3_banner_info">
-                            <div class="w3_banner_info_grid">
-                                <h3 class="test">木兰战纪--释放生命中最荣耀的瞬间成为世界的王者</h3>
-                                <h2 class="h2-title">Champion</h2>
-                                <p>雄兔脚扑朔，雌兔眼迷离；<br>双兔傍地走，安能辨我是雄雌。</p>
-                                <ul>
-                                    <li><a href="#" class="scroll w3ls_more hvr-shutter-in-vertical" data-toggle="modal" data-target="#myModal">Vision</a></li>
-                                    <li><a href="#contact" class="w3ls_more scroll hvr-shutter-in-vertical">Contact Us</a></li>
-                                </ul>
-                            </div>
-                        </div>
                     </div>
                 	<!--主页内容结束-->
                     
@@ -134,14 +98,20 @@
                         <p>请在此页面查看系统<font color="#00FF00">消息</font>。</p>
                     </div>
                 	<!--消息页面结束-->
-                </div>   
+                    
 
-             
+                	<!--消息页面开始-->
+                    <div class="tab-pane fade" id="test">
+                        <p>请在此页面test<font color="#00FF00">消息</font>。</p>
+                    </div>
+                	<!--消息页面结束-->                    
                 </div><!--container-end-->
-
             </div><!--banner-end-->
         </div><!--banner1-image-end-->
 	</div><!--banner1-end-->
+    </div>
+
+
 
 
    
@@ -155,21 +125,6 @@
 	<!-- Custom Scripts -->
 	<script type="text/javascript" src="js/custom.js"></script>    
     
-    
-
-	<!-- text-effect -->
-			<script type="text/javascript" src="js/jquery.textFx.js"></script> 
-			<script type="text/javascript">
-				$(document).ready(function() {
-						$('.test').textFx({
-							type: 'fadeIn',
-							iChar: 100,
-							iAnim: 1000
-						});
-				});
-			</script>
-			<script type="text/javascript" src="js/jquery.transit.js"></script> 
-	<!-- //text-effect -->
 	<!-- FlexSlider -->
 	  <script defer src="js/jquery.flexslider.js"></script>
 		<script type="text/javascript">
@@ -244,8 +199,7 @@
 		});
 	</script>
 	<!-- //smooth-scrolling-of-move-up --> 
- 
-			
+
 <script type="text/javascript" src="js/bootstrap.js"></script>
 
 </body>
