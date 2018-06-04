@@ -35,6 +35,122 @@
 </head>
 <body>
 
+
+    <script language="javascript">  
+		function createDiv() {
+			for (var k = 0; k <3 ; k++){
+				document.write("截止时间：05/26 15:00");//截止时间赋值
+				var div = document.createElement('div');  
+				div.id="table"+k;  
+				div.style.cssText = 'border: 0px solid black';  
+				document.body.appendChild(div);
+			}
+		}
+		
+		
+		function createTable() {
+			
+			var player=new Array();
+				for(var i=0;i<6;i++){
+					player[i]=new Array(); 
+					for(var j=0;j<3;j++){
+						player[i][j]=1;
+					}
+				}
+
+//赋值
+			player[0][0] = 'images/kof-1.ico';
+			player[0][1] = 'play1';
+			player[0][2] = 'images/CN@3x.png';
+
+			player[1][0] = 'images/kof-2.ico';
+			player[1][1] = 'play2';
+			player[1][2] = 'images/DE@3x.png';
+		
+			player[2][0] = 'images/kof-3.ico';
+			player[2][1] = 'play3';
+			player[2][2] = 'images/JP@3x.png';
+
+			player[3][0] = 'images/kof-4.ico';
+			player[3][1] = 'play4';
+			player[3][2] = 'images/FR@3x.png';
+
+			player[4][0] = 'images/kof-5.ico';
+			player[4][1] = 'play5';
+			player[4][2] = 'images/GB@3x.png';
+		
+			player[5][0] = 'images/kof-6.ico';
+			player[5][1] = 'play6';
+			player[5][2] = 'images/ES@3x.png';	
+
+			//两两分组匹配战斗，每组首元素定义红方，次元素定义蓝方
+			var group=new Array();
+			group[0]=[player[0],player[3]];
+			//alert(group[0][0]);alert(group[0][1]);
+			
+			group[1]=[player[1],player[4]];
+			//alert(group[1][0]);alert(group[1][1]);
+
+			group[2]=[player[2],player[5]];
+			//alert(group[2][0]);alert(group[2][1]);
+					
+			for (var k = 0; k <3 ; k++){
+								
+				var data = new Array();
+				data.push('<table border=1><tbody>');
+				for (var i = 0; i < 3; i++) {
+					data.push('<tr>');
+					for (var j = 0; j < 3; j++) {
+						//每场战斗九个单元格依次赋值
+						if ((i==0)&&(j==0)){
+							data.push('<td>' + '<img src="'+group[k][0][0]+'" width="64" height="64" >' + '</td>');
+						}
+						if ((i==0)&&(j==1)){
+							data.push('<td>' + 'VS' +'</td>');
+						}						
+						if ((i==0)&&(j==2)){
+							data.push('<td>' + '<img src="'+group[k][1][0]+'" width="64" height="64" >' + '</td>');
+						}
+						if ((i==1)&&(j==0)){
+							data.push('<td>' + group[k][0][1] +'</td>');
+						}
+						if ((i==1)&&(j==1)){
+							data.push('<td>' + '' +'</td>');
+						}
+						if ((i==1)&&(j==2)){
+							data.push('<td>' + group[k][1][1] +'</td>');
+						}
+						if ((i==2)&&(j==0)){
+							data.push('<td>' + '<img src="'+group[k][0][2]+'" height="30" >' + '</td>');
+						}
+						if ((i==2)&&(j==1)){
+							data.push('<td>' + '' +'</td>');
+						}
+						if ((i==2)&&(j==2)){
+							data.push('<td>' + '<img src="'+group[k][1][2]+'" height="30" >' + '</td>');
+						}
+					}
+					data.push('</tr>');
+       			}
+				data.push('</tbody><table><br>');
+				var tableN = "table" + k;
+				document.getElementById(tableN).innerHTML = data.join('');
+				//tableN就是id为tableN的div
+				//prompt(data.join(''));
+			}
+		}
+	</script>
+    
+    <script>
+	//createDiv();
+	//createTable();
+	</script>
+
+
+
+
+
+
 	<div class="banner1">
 		<div class="banner1-image">
             <div class="banner">
@@ -51,6 +167,122 @@
                 <div class="tab-content">
                 	<!--主页内容开始-->
                     <div class="tab-pane fade in active" id="home">
+
+                        <div id="tablex" style="border: 1px solid black">
+                        </div>
+                        <script language="javascript">  
+                    /*		function createDiv() {
+                                for (var k = 0; k <3 ; k++){
+                                    document.write("截止时间：05/26 15:00");//截止时间赋值
+                                    var div = document.createElement('div');  
+                                    div.id="table"+k;  
+                                    div.style.cssText = 'border: 0px solid black';  
+                                    document.body.appendChild(div);
+                                }
+                            }*/
+                            
+                            
+                            function createTable() {
+                                
+                                var player=new Array();
+                                    for(var i=0;i<6;i++){
+                                        player[i]=new Array(); 
+                                        for(var j=0;j<3;j++){
+                                            player[i][j]=1;
+                                        }
+                                    }
+                    
+                    //赋值
+                                player[0][0] = 'images/kof-1.ico';
+                                player[0][1] = 'play1';
+                                player[0][2] = 'images/CN@3x.png';
+                    
+                                player[1][0] = 'images/kof-2.ico';
+                                player[1][1] = 'play2';
+                                player[1][2] = 'images/DE@3x.png';
+                            
+                                player[2][0] = 'images/kof-3.ico';
+                                player[2][1] = 'play3';
+                                player[2][2] = 'images/JP@3x.png';
+                    
+                                player[3][0] = 'images/kof-4.ico';
+                                player[3][1] = 'play4';
+                                player[3][2] = 'images/FR@3x.png';
+                    
+                                player[4][0] = 'images/kof-5.ico';
+                                player[4][1] = 'play5';
+                                player[4][2] = 'images/GB@3x.png';
+                            
+                                player[5][0] = 'images/kof-6.ico';
+                                player[5][1] = 'play6';
+                                player[5][2] = 'images/ES@3x.png';	
+                    
+                                //两两分组匹配战斗，每组首元素定义红方，次元素定义蓝方
+                                var group=new Array();
+                                group[0]=[player[0],player[3]];
+                                //alert(group[0][0]);alert(group[0][1]);
+                                
+                                group[1]=[player[1],player[4]];
+                                //alert(group[1][0]);alert(group[1][1]);
+                    
+                                group[2]=[player[2],player[5]];
+                                //alert(group[2][0]);alert(group[2][1]);
+                                        
+                    
+                                                    
+                            var data = new Array();
+                                for (var k = 0; k <3 ; k++){
+                                    data.push('<table border=1><tbody>截止时间：05/26 15:00');
+                                
+                                    for (var i = 0; i < 3; i++) {
+                                        data.push('<tr>');
+                                        for (var j = 0; j < 3; j++) {
+                                            //每场战斗九个单元格依次赋值
+                                            if ((i==0)&&(j==0)){
+                                                data.push('<td>' + '<img src="'+group[k][0][0]+'" width="64" height="64" >' + '</td>');
+                                            }
+                                            if ((i==0)&&(j==1)){
+                                                data.push('<td>' + 'VS' +'</td>');
+                                            }						
+                                            if ((i==0)&&(j==2)){
+                                                data.push('<td>' + '<img src="'+group[k][1][0]+'" width="64" height="64" >' + '</td>');
+                                            }
+                                            if ((i==1)&&(j==0)){
+                                                data.push('<td>' + group[k][0][1] +'</td>');
+                                            }
+                                            if ((i==1)&&(j==1)){
+                                                data.push('<td>' + '' +'</td>');
+                                            }
+                                            if ((i==1)&&(j==2)){
+                                                data.push('<td>' + group[k][1][1] +'</td>');
+                                            }
+                                            if ((i==2)&&(j==0)){
+                                                data.push('<td>' + '<img src="'+group[k][0][2]+'" height="30" >' + '</td>');
+                                            }
+                                            if ((i==2)&&(j==1)){
+                                                data.push('<td>' + '' +'</td>');
+                                            }
+                                            if ((i==2)&&(j==2)){
+                                                data.push('<td>' + '<img src="'+group[k][1][2]+'" height="30" >' + '</td>');
+                                            }
+                                        }
+                                        data.push('</tr>');
+                                    }
+                                    data.push('</tbody><table><br>');
+                    
+                                    document.getElementById("tablex").innerHTML = data.join('');
+                                    //tableN就是id为tableN的div
+                                    //prompt(data.join(''));
+                                }
+                            }
+                        </script>
+                        
+                        <script>
+                    //	createDiv();
+                        createTable();
+                        </script>
+
+
                     </div>
                 	<!--主页内容结束-->
                     
