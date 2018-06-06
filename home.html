@@ -33,6 +33,18 @@
 <link href="css/font-awesome.css" type="text/css" rel="stylesheet"> 
 <!-- //font-awesome-icons -->
 
+<script>
+window.onload=function (){
+//	alert('hello');
+//	alert(window.screen.height);
+	var x = window.screen.height;
+
+	x = x-160;
+
+	swiperHeight.style.height=x+"px";
+}
+</script>
+
 </head>
 <body>
 	<div class="banner1">
@@ -52,17 +64,17 @@
                 	<!--主页内容开始-->
                     <div class="tab-pane fade in active" id="home">
                         <div class="preloader"> Loading...</div>
-                        <div class="swiper-container">
+                        <div class="swiper-container" id="swiperHeight">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="" id="tablex">Slide 1</div>
-                                    <script>
-                                    //赋初值
-                                    setPlayerTable();
-                                    setPlayerGroup();
-									createTable();
-                                    </script>
+                                <div class="swiper-slide" id="table0">
+
                                 </div>
+                                <div class="swiper-slide" id="table1">
+
+                                </div>
+                                <div class="swiper-slide" id="table2">
+
+                                </div>                                                                
                             </div>
                         </div>
                     </div>
@@ -131,6 +143,15 @@
 <!--swiper-begin-->
 <script src="js/idangerous.swiper.min.js"></script>
 <script src="js/swiper.js"></script> 
+
+
+
+<script>
+//赋初值
+setPlayerTable();
+setPlayerGroup();
+createTable();
+</script>
 <!--swiper-end-->
 
    
