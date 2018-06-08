@@ -10,15 +10,17 @@
 <!--数组传值-->
 <?php
 //PHP中的变量$ar传值给JS
-$ar = array('apple', 'orange', 'banana', 'strawberry');
-echo json_encode($ar); // ["apple","orange","banana","strawberry"]
+
+$ar = array('苹果', '桔子', '香蕉', '草莓');
+echo json_encode($ar); //此处中文会显示unicode编码["\u82f9\u679c","\u6854\u5b50","\u9999\u8549","\u8349\u8393"]
 echo '<br>';
 ?>
 <script type="text/javascript">
 // pass PHP variable declared above to JavaScript variable
 var ar = <?php echo json_encode($ar) ?>;
-alert(ar);
-console.log(ar);
+//alert(ar);
+//console.log(ar);
+document.write(ar+'<br>');//此处会将unicode编码输出为中文
 </script>
 
 <!--对象传值-->
