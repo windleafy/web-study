@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>php与js文件间传参1</title>
+
+</head>
+
+<p id="demo">这里是第一段落</p>
+
+
+<div style="border:1px solid red; width:400px; z-index:100; height:100px;"">
+
+<script type="text/javascript" src="phpJs2.php">
+/*-----php页面中的变量值被传递到此处-----*/
+/*-----参数内容如下-----
+x = ["apple","orange","banana","strawberry"]-----*/
+</script>
+
+<script>
+//alert(x);
+//document.write(x);
+//console.log(x);
+document.getElementById("demo").innerHTML = x;
+</script>
+
+
+</div>
+<!--<script type="text/javascript" src="b.php?action=test"></script>-->
+<body>
+</body>
+
+</html>
