@@ -19,7 +19,8 @@ $arr = array(
 );
 
 $tmp=$arr[0];
-$tmp['childred']=$arr[2];
+$tmp['childred'][]=$arr[2];
+$tmp['childred'][]=$arr[3];
 print_r($tmp);
 print_r('<br><br><br><br><br><br>');
 
