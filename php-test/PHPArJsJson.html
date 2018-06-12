@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>php js json array</title>
+</head>
+<body>
+<p id="name"></p>
+<p id="nick"></p>
+<p id="email"></p>
+<p id="website"></p>
+ 
+<script type="text/javascript" src="PHPArJsJson.php">
+/*此处取回数组str的值*/
+</script> 
+
+<script type="text/javascript"> 
+/*此处在页面上显示数组str的值*/
+	console.log(str);  
+	document.getElementById('name').innerHTML = 'name: '+str.name;  
+    document.getElementById('nick').innerHTML = 'nick: '+str.nic;  
+	document.getElementById('email').innerHTML = 'email: '+str.contact.email; 
+	document.getElementById('website').innerHTML = 'website: '+str.contact.website; 
+</script> 
+</body>
+</html>
