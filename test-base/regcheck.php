@@ -7,7 +7,7 @@
 <?php  
     if(isset($_POST["Submit"]) && $_POST["Submit"] == "注册")  
     {  
-        $user = $_POST["userName"];  
+        $user = $_POST["username"];  
         $psw = $_POST["password"];  
         $psw_confirm = $_POST["confirm"];
 		date_default_timezone_set('PRC');
@@ -29,6 +29,16 @@
 					$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 					// 设置 PDO 错误模式为异常
 					$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+					
+					//重名判定-开始
+					$sql = "SELECT username FROM user WHERE username = '$_POST[username]'";
+					foreach ($conn->query($sql) as $row) {//echo "<script>alert('hello');</script>";
+					//print $row['userName'] . "\n"  能够进入此循环，表示有重名;
+						$conn = null;
+						echo "<script>alert('重名');</script>";
+						header("Refresh:0.1;url=register.php");
+						exit;
+					}//重名判定-结束
 
 					// 预处理 SQL 并绑定参数
 					$stmt = $conn->prepare("INSERT INTO user (id, phone, gold, username, password, regtime) 
@@ -39,7 +49,8 @@
 					$stmt->bindParam(':username', $username);
 					$stmt->bindParam(':password', $password);
 					$stmt->bindParam(':regtime', $regtime);
-							// 插入行
+
+					// 插入一条数据
 					$id = mt_rand(0,mt_getrandmax());
 					$phone = "1333333333";
 					$gold = "123456789";
@@ -47,14 +58,11 @@
 					$password = $psw;
 					$regtime = $rgt;
 					$stmt->execute();
-
-					echo "新记录插入成功<br>";
 					
-					//数据库查询测试
-					$sql = "SELECT userName FROM user WHERE userName='hollo1'";
-				    foreach ($conn->query($sql) as $row) {
-						print $row['userName'] . "\n";
-        			}//数据库查询测试
+					$conn = null;
+					echo "<script>alert('恭喜注册成功');</script>";
+					header("Refresh:0.1;url=login.php");
+					exit;
 				}
 				
 				catch(PDOException $e)
@@ -63,32 +71,6 @@
 				}
 				$conn = null;
 			}
-/*            {  
-                mysql_connect("localhost","root","root");   //连接数据库  
-                mysql_select_db("user");  //选择数据库  
-                mysql_query("set names 'utf8'"); //设定字符集  
-                $sql = "select username from user where username = '$_POST[username]'"; //SQL语句  
-                $result = mysql_query($sql);    //执行SQL语句  
-                $num = mysql_num_rows($result); //统计执行结果影响的行数  
-                if($num)    //如果已经存在该用户  
-                {  
-                    echo "<script>alert('用户名已存在'); history.go(-1);</script>";  
-                }  
-                else    //不存在当前注册用户名称  
-                {  
-                    $sql_insert = "insert into user (username,password,phone,gold) values('$_POST[username]','$_POST[password]','','')";  
-                    $res_insert = mysql_query($sql_insert);  
-                    //$num_insert = mysql_num_rows($res_insert);  
-                    if($res_insert)  
-                    {  
-                        echo "<script>alert('注册成功！'); history.go(-1);</script>";  
-                    }  
-                    else 
-                    {  
-                        echo "<script>alert('系统繁忙，请稍候！'); history.go(-1);</script>";  
-                    }  
-                }  
-            }  */
             else 
             {  
                 echo "<script>alert('密码不一致！'); history.go(-1);</script>";  
@@ -97,7 +79,8 @@
     }  
     else 
     {  
-        echo "<script>alert('提交未成功！'); history.go(-1);</script>";  
+        //echo "<script>alert('直接地址栏访问本页，则返回登录注册页！'); history.go(-1);</script>";
+		header("location:login.php");
     }  
 ?>
 <body>
