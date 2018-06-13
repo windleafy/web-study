@@ -48,8 +48,15 @@
 					$regtime = $rgt;
 					$stmt->execute();
 
-					echo "新记录插入成功";
+					echo "新记录插入成功<br>";
+					
+					//数据库查询测试
+					$sql = "SELECT userName FROM user WHERE userName='hollo1'";
+				    foreach ($conn->query($sql) as $row) {
+						print $row['userName'] . "\n";
+        			}//数据库查询测试
 				}
+				
 				catch(PDOException $e)
 				{
 					echo "Error: " . $e->getMessage();
