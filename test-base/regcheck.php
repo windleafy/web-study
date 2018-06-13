@@ -11,7 +11,7 @@
         $psw = $_POST["password"];  
         $psw_confirm = $_POST["confirm"];
 		date_default_timezone_set('PRC');
-		//$rgt = date('Y-m-d H:i:s',time());
+		$rgt = date('Y-m-d H:i:s',time());//echo "<script>alert('".$rgt."');</script>";  
         if($user == "" || $psw == "" || $psw_confirm == "")  
         {  
             echo "<script>alert('请确认信息完整性！'); history.go(-1);</script>";  
@@ -31,19 +31,21 @@
 					$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 					// 预处理 SQL 并绑定参数
-					$stmt = $conn->prepare("INSERT INTO user (id, phone, gold, username, password) 
-					VALUES (:id, :phone, :gold, :username, :password)");
+					$stmt = $conn->prepare("INSERT INTO user (id, phone, gold, username, password, regtime) 
+					VALUES (:id, :phone, :gold, :username, :password, :regtime)");
 					$stmt->bindParam(':id', $id);
 					$stmt->bindParam(':phone', $phone);
 					$stmt->bindParam(':gold', $gold);
 					$stmt->bindParam(':username', $username);
 					$stmt->bindParam(':password', $password);
+					$stmt->bindParam(':regtime', $regtime);
 							// 插入行
 					$id = mt_rand(0,mt_getrandmax());
 					$phone = "1333333333";
 					$gold = "123456789";
 					$username = $user;
 					$password = $psw;
+					$regtime = $rgt;
 					$stmt->execute();
 
 					echo "新记录插入成功";
