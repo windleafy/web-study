@@ -6,6 +6,12 @@
 </head>
 <body>
 <?php
+	session_start();
+	if( isset($_SESSION['userName']) ){
+	}
+	else{
+		header("location:login.php");
+	}
 ?>
 hello world
 </body>

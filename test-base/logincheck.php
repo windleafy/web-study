@@ -6,10 +6,11 @@
 </head>
 
 <body>
-<?php  
+<?php
     if(isset($_POST["submit"]) && $_POST["submit"] == "登陆")  
     {  
-        $user = $_POST["username"]; //echo "<script>alert('".$user."');</script>"; 
+		session_start();
+		$user = $_POST["username"]; //echo "<script>alert('".$user."');</script>"; 
         $psw = $_POST["password"]; //echo "<script>alert('".$psw."');</script>"; 
         if($user == "" || $psw == "")  
         {  
@@ -38,7 +39,8 @@
 					//print $row['userName'] . "\n"  能够进入此循环，表示账密匹配成功;
 					//echo('恭喜你，登录成功');
 					$conn = null;
-					header("location:welcome.html");
+					$_SESSION['userName'] = $row['userName'];
+					header("location:welcome.php");
         		}//数据库查询测试-结束
 				$conn = null;
 				echo "<script>alert('用户名或密码不正确！');history.go(-1);</script>"; 
@@ -62,7 +64,8 @@
     }  
     else 
     {  
-        echo "<script>alert('提交未成功！'); history.go(-1);</script>";  
+        echo "<script>alert('提交未成功！');";  
+		header("location:login.php");
     }  
    
 ?>
