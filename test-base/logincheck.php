@@ -32,13 +32,16 @@
 				$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 				// 设置 PDO 错误模式为异常
 				$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-				//数据库查询测试
+				//数据库查询测试-开始
 				$sql = "SELECT userName FROM user WHERE userName = '$_POST[username]' and password = '$_POST[password]'";
-				//$sql = "SELECT userName FROM user WHERE userName = '$_POST[username]' and password = '$_POST[password]'";
 			    foreach ($conn->query($sql) as $row) {//echo "<script>alert('hello');</script>";
-					//print $row['userName'] . "\n";
-					echo('恭喜你，登录成功');
-        		}//数据库查询测试
+					//print $row['userName'] . "\n"  能够进入此循环，表示账密匹配成功;
+					//echo('恭喜你，登录成功');
+					$conn = null;
+					header("location:welcome.html");
+        		}//数据库查询测试-结束
+				$conn = null;
+				echo "<script>alert('用户名或密码不正确！');history.go(-1);</script>"; 
 			}
 			catch(PDOException $e)
 			{

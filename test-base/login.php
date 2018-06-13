@@ -11,8 +11,7 @@
     <br />  
     密码：<input type="password" name="password" />  
     <br />  
-    <input type="submit" name="submit" value="登陆" />  
-           
+    <input type="submit" name="submit" value="登陆" />             
     <a href="register.php">注册</a>  
 </form>
 </body>
