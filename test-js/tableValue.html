@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>test</title>
+<script language="javascript">
+function test()
+{
+document.all("mytable").rows[1].cells[1].innerText = "hello";
+}
+</script>
+</head>
+<body>
+<table id="mytable" width="200" border="1">
+<tr>
+<td>00</td>
+<td>01</td>
+<td>02</td>
+</tr>
+<tr>
+<td>10</td>
+<td>11</td>
+<td>12</td>
+</tr>
+</table>
+<input type="button" onclick="test()" value="赋值">
+</body>
+</html>

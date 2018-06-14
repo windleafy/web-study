@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>无标题文档</title>
+<script>
+window.onload=function (){
+//alert("height"+window.screen.height* window.devicePixelRatio+"px");
+//alert("width"+window.screen.width * window.devicePixelRatio+"px");	
+	var physicHeight = "physicHeight："+window.screen.height* window.devicePixelRatio+"px";
+	var physicWidth = "physicWidth："+window.screen.width * window.devicePixelRatio+"px";
+	var logicHeight = "logicHeight："+window.screen.height+"px";
+	var logicWidth = "logicWidth："+window.screen.width +"px";
+	document.getElementById('pH').innerHTML = physicHeight;
+	document.getElementById('pW').innerHTML = physicWidth;
+	document.getElementById('lH').innerHTML = logicHeight;
+	document.getElementById('lW').innerHTML = logicWidth;
+}
+</script>
+</head>
+
+<body>
+<p id="pH"></p>
+<p id="pW"></p>
+<p id="lH"></p>
+<p id="lW"></p>
+</body>
+</html>
