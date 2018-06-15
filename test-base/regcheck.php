@@ -68,6 +68,7 @@
 					$phone = "1333333333";
 					$gold = "123456789";
 					$username = $user;
+					$psw = md5($psw);	//md5加密处理
 					$password = $psw;
 					$regtime = $rgt;
 					$stmt->execute();
