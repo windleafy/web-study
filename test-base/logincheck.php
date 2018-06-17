@@ -28,7 +28,7 @@
 				$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 				
 				//数据库查询测试-开始
-				$_POST[password] = md5($_POST[password]);	//md5加密处理
+				$_POST["password"] = md5($_POST["password"]);	//md5加密处理
 				$sql = "SELECT userName FROM user WHERE userName = '$_POST[username]' and password = '$_POST[password]'";
 			    foreach ($conn->query($sql) as $row) {//echo "<script>alert('hello');</script>";
 					//print $row['userName'] . "\n"  能够进入此循环，表示账密匹配成功;
