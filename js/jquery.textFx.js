@@ -19,7 +19,11 @@ direction: only applicable to slide, is the direction
 (top, left, down, right) the character slides from
 
 */
-(function(e){function t(t,n,r,i){var s=t.text().split(n),o="";if(s.length){e(s).each(function(e,t){o+='<span class="'+r+(e+1)+'">'+t+"</span>"+i});t.empty().append(o)}}var n={init:function(){return this.each(function(){t(e(this),"","char","")})},words:function(){return this.each(function(){t(e(this)," ","word"," ")})},lines:function(){return this.each(function(){var n="eefec303079ad17405c889e092e105b0";t(e(this).children("br").replaceWith(n).end(),n,"line","")})}};e.fn.lettering=function(t){if(t&&n[t]){return n[t].apply(this,[].slice.call(arguments,1))}else if(t==="letters"||!t){return n.init.apply(this,[].slice.call(arguments,0))}e.error("Method "+t+" does not exist on jQuery.lettering");return this}})(jQuery)(function ( $ ) {
+(function(e){'use strict';function t(t,n,r,i){var s=t.text().split(n),o="";if(s.length){e(s).each(function(e,t){o+='<span class="'+r+(e+1)+'">'+t+"</span>"+i;});t.empty().append(o);}}var n={init:function(){return this.each(function(){t(e(this),"","char","");});},words:function(){return this.each(function(){t(e(this)," ","word"," ");});},lines:function(){return this.each(function(){var n="eefec303079ad17405c889e092e105b0";t(e(this).children("br").replaceWith(n).end(),n,"line","");});}};e.fn.lettering=function(t){if(t&&n[t]){return n[t].apply(this,[].slice.call(arguments,1));}else if(t==="letters"||!t){return n.init.apply(this,[].slice.call(arguments,0));}e.error("Method "+t+" does not exist on jQuery.lettering");return this;};})
+(jQuery);
+
+(function ( $ ) {
+	'use strict';
 	$.fn.textFx = function(options) {
 		//Default settings for $.textFx();
 		var o = $.extend({
@@ -36,7 +40,7 @@ direction: only applicable to slide, is the direction
 			var counter = 0; //Counter for animations of each character.
 			
 			
-			if (o.type == "fadeIn") {
+			if (o.type === "fadeIn") {
 				letters.css({
 					opacity: 0
 				});
@@ -48,26 +52,26 @@ direction: only applicable to slide, is the direction
 				});
 			}
 			
-			if (o.type == "slideIn") {
-				if (o.direction == "top") {
+			if (o.type === "slideIn") {
+				if (o.direction === "top") {
 					letters.css({
 						position: 'relative',
 						top: - letters.position().top - (letters.height() * 2)
 					});
 				}
-				if (o.direction == "bottom") {
+				if (o.direction === "bottom") {
 					letters.css({
 						position: 'relative',
 						top: $(document).height() - letters.position().top + (letters.height() * 2)
 					});
 				}
-				if (o.direction == "left") {
+				if (o.direction === "left") {
 					letters.css({
 						position: 'relative',
 						left: - letters.position().left - $(this).width()
 					});
 				}
-				if (o.direction == "right") {
+				if (o.direction === "right") {
 					letters.css({
 						position: 'relative',
 						left: letters.position().left + $(this).width()
@@ -83,7 +87,7 @@ direction: only applicable to slide, is the direction
 				});
 			}
 			
-			if (o.type == "rotate") {						
+			if (o.type === "rotate") {						
 				letters.css({
 					opacity: 0
 				});
@@ -96,7 +100,7 @@ direction: only applicable to slide, is the direction
 				});
 			}
 			
-			if (o.type == "scale") {						
+			if (o.type === "scale") {						
 				$(this).css({
 					scale: 0
 				});
@@ -112,4 +116,4 @@ direction: only applicable to slide, is the direction
 		});
 	};
 
-}( jQuery ));
+}( jQuery) );
