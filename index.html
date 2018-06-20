@@ -3,12 +3,13 @@
 <head>
 <title>Home</title>
 <!-- meta tags -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
-		function hideURLbar(){ window.scrollTo(0,1); } </script>
+		function hideURLbar(){ window.scrollTo(0,1); } 
+</script>
 <!-- meta tags -->
 <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
 
@@ -19,7 +20,8 @@
 <!-- flexslider -->
 <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
 <!-- //flexslider -->
-<!-- Owl-Carousel-CSS --> <link rel="stylesheet" href="css/owl.carousel.css"   type="text/css" media="all">
+<!-- Owl-Carousel-CSS --> 
+<link rel="stylesheet" href="css/owl.carousel.css"   type="text/css" media="all">
 <!-- //stylesheet -->
 <!-- online fonts -->
 <link href="http://fonts.lug.ustc.edu.cn/css?family=Skranji:400,700" rel="stylesheet">
@@ -68,25 +70,23 @@
 	<script type="text/javascript" src="plugins/jquery.appear.js"></script>
 	<!-- Custom Scripts -->
 	<script type="text/javascript" src="js/custom.js"></script>    
-    
-    
 
 	<!-- text-effect -->
-			<script type="text/javascript" src="js/jquery.textFx.js"></script> 
-			<script type="text/javascript">
-				$(document).ready(function() {
-						$('.test').textFx({
-							type: 'fadeIn',
-							iChar: 100,
-							iAnim: 1000
-						});
+	<script type="text/javascript" src="js/jquery.textFx.js"></script> 
+	<script type="text/javascript">
+		$(document).ready(function() {
+				$('.test').textFx({
+					type: 'fadeIn',
+					iChar: 100,
+					iAnim: 1000
 				});
-			</script>
-			<script type="text/javascript" src="js/jquery.transit.js"></script> 
+		});
+	</script>
+	<script type="text/javascript" src="js/jquery.transit.js"></script> 
 	<!-- //text-effect -->
 	<!-- FlexSlider -->
-	  <script defer src="js/jquery.flexslider.js"></script>
-		<script type="text/javascript">
+	<script defer src="js/jquery.flexslider.js"></script>
+	<script type="text/javascript">
 		$(window).load(function () {
 			$('#carousel').flexslider({
 				animation: "slide",
@@ -97,7 +97,6 @@
 				itemMargin: 5,
 				asNavFor: '#slider'
 			});
-
 			$('#slider').flexslider({
 				animation: "slide",
 				controlNav: false,
@@ -109,36 +108,33 @@
 				}
 			});
 		});
-
-	  </script>
+	</script>
 	<!-- //FlexSlider -->
 	<!-- Owl-Carousel-JavaScript -->
-		<script src="js/owl.carousel.js"></script>
-		<script>
-			$(document).ready(function () {
-				$("#owl-demo, #owl-demo1, #owl-demo2, #owl-demo3, #owl-demo4").owlCarousel({
-					autoPlay: 3000,
-					items: 1,
-					itemsDesktop: [1024, 1],
-					itemsDesktopSmall: [414, 1]
-				});
+	<script src="js/owl.carousel.js"></script>
+	<script>
+		$(document).ready(function () {
+			$("#owl-demo, #owl-demo1, #owl-demo2, #owl-demo3, #owl-demo4").owlCarousel({
+				autoPlay: 3000,
+				items: 1,
+				itemsDesktop: [1024, 1],
+				itemsDesktopSmall: [414, 1]
 			});
-		</script>
+		});
+	</script>
+	<!-- //Owl-Carousel-JavaScript -->
 
-			<!-- //Owl-Carousel-JavaScript -->
-			<script src="js/SmoothScroll.min.js"></script> 
-
-			<!-- start-smooth-scrolling --> 
+	<script src="js/SmoothScroll.min.js"></script> 
+	<!-- start-smooth-scrolling --> 
 	<script type="text/javascript" src="js/move-top.js"></script>
 	<script type="text/javascript" src="js/easing.js"></script>	
 	<script type="text/javascript">
-			jQuery(document).ready(function($) {
-				$(".scroll").click(function(event){		
-					event.preventDefault();
-			
-			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-				});
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){		
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
 			});
+		});
 	</script>
 	<!-- //end-smooth-scrolling -->	 
 	<!-- smooth-scrolling-of-move-up -->
@@ -152,22 +148,10 @@
 				easingType: 'linear' 
 			};
 			*/
-			
 			$().UItoTop({ easingType: 'easeOutQuart' });
-			
 		});
 	</script>
 	<!-- //smooth-scrolling-of-move-up --> 
-
-
-
-							<script>
-								createDiv();
-								createTable();
-							</script>
- 
-			
-<script type="text/javascript" src="js/bootstrap.js"></script>
 
 </body>
 </html>
