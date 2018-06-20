@@ -33,6 +33,43 @@
 <link href="css/font-awesome.css" type="text/css" rel="stylesheet"> 
 <!-- //font-awesome-icons -->
 
+
+<script>
+$(document).ready(function(){
+	$("button").click(function(){
+		console.log(document.getElementById("loginname").value);
+		console.log(document.getElementById("loginpsw").value);
+		console.log (this.value);//通过点击按钮的value值判定，是否要做出响应；
+		if (this.value =='btnlogin'){
+			console.log('hello');
+			$.post("php/logincheck.php",{
+				username:document.getElementById("loginname").value,
+				password:document.getElementById("loginpsw").value,
+				button:'btnlogin'
+			},
+			
+			function(data,status){
+				
+				if (data == 'go'){
+					//alert("数据: \n" + data + "\n状态: " + status);
+					alert("欢迎回来");
+					$(location).attr('href', 'index.html');	
+				}
+				else{
+					alert("账号和密码对不上呢");
+				}
+					
+				
+				//document.getElementById("myp").innerHTML = data;
+				
+			}
+			);
+		};
+	});
+});
+</script>
+
+	
 </head>
 <body>
 	<div class="banner1">
@@ -73,15 +110,15 @@
 					</div>						
 					<div class="center-block"  style="width: 70%">
 					  	<div class="input-group"><span id="addon1" class="input-group-addon">账号</span>
-					    	<input type="text" class="form-control" aria-describedby="addon1">
+					    	<input id="loginname" type="text" class="form-control" aria-describedby="addon1">
 						</div>
 						<br>	
 					<div class="input-group"><span id="contentaddon1" class="input-group-addon">密码</span>
-						<input type="password" class="form-control" aria-describedby="contentaddon1">
+						<input id="loginpsw" type="password" class="form-control" aria-describedby="contentaddon1">
 					</div>
 					</div>
 					<br>
-					<button type="button" class="btn btn-default center-block" style="width: 70%">确认</button><p>&nbsp;</p>
+					<button type="button" class="btn btn-default center-block" style="width: 70%" value="btnlogin">确认</button><p>&nbsp;</p>
 				</div>
 			</div>
 		</div>
@@ -91,6 +128,9 @@
 		<div class="modal fade features-modal" id="register" tabindex="-1" role="dialog" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content text-center col-md-6 col-md-offset-3">
+					
+					<form action="/mytest/web-study-git/php/logincheck.php" method="post">  
+					
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 						<h4 class="modal-title">注册</h4>
@@ -100,15 +140,18 @@
 					</div>	
 					<div class="center-block"  style="width: 70%">
 						<div class="input-group"><span id="addon2" class="input-group-addon">账号</span>
-							<input type="text" class="form-control" aria-describedby="addon2">
+							<input type="text" class="form-control" aria-describedby="addon2" name="account">
 						</div>
 						<br>	
-					<div class="input-group"><span id="contentaddon2" class="input-group-addon">密码</span>
-						<input type="password" class="form-control" aria-describedby="contentaddon2">
-					  </div>
+						<div class="input-group"><span id="contentaddon2" class="input-group-addon">密码</span>
+							<input type="password" class="form-control" aria-describedby="contentaddon2" name="psw">
+						</div>
 					</div>
 					<br>
-   				    <button type="button" class="btn btn-default center-block" style="width: 70%">确认</button><p>&nbsp;</p>
+   				    <button type="button" class="btn btn-default center-block" style="width: 70%" name="wind" value="ydfbtn">确认</button><p>&nbsp;</p>
+					
+					</form>
+					
 				</div>
 			</div>
 		</div>
