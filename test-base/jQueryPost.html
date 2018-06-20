@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQueryPostTest1</title>
+<script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){
+	$("button").click(function(){
+		console.log (this.value);//通过点击按钮的value值判定，是否要做出响应；
+		if (this.value =='btn1'){
+			$.post("jQueryPost.php",{
+				name:'百度',
+				url:"www.baidu.com"
+			},
+			function(data,status){
+				alert("数据: \n" + data + "\n状态: " + status);
+				document.getElementById("myp").innerHTML = data;
+			});
+		};
+	});
+});
+</script>
+	
+</head>
+
+<body>
+	
+<button value="btn1">发送一个 HTTP POST 请求页面并获取返回内容</button>
+<button value="btn2">无法发送 HTTP POST 请求页面并获取返回内容</button>
+<p id="myp"></p>
+	
+</body>
+</html>
