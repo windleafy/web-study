@@ -1,128 +1,99 @@
 /* ----比赛信息处理---- */
 /*--------------------*/
 
-var player=new Array();		
-//运动员信息赋值
-function setPlayerTable() {
-	for(var i=0;i<12;i++){
-		player[i]=new Array(); 
-		for(var j=0;j<3;j++){
-			player[i][j]=1;
-		}
-	}
-	player[0][0] = 'images/kof-1.ico';
-	player[0][1] = 'play1';
-	player[0][2] = 'images/CN@3x.png';
-
-	player[1][0] = 'images/kof-2.ico';
-	player[1][1] = 'play2';
-	player[1][2] = 'images/DE@3x.png';
-
-	player[2][0] = 'images/kof-3.ico';
-	player[2][1] = 'play3';
-	player[2][2] = 'images/JP@3x.png';
-
-	player[3][0] = 'images/kof-4.ico';
-	player[3][1] = 'play4';
-	player[3][2] = 'images/FR@3x.png';
-
-	player[4][0] = 'images/kof-5.ico';
-	player[4][1] = 'play5';
-	player[4][2] = 'images/GB@3x.png';
-
-	player[5][0] = 'images/kof-6.ico';
-	player[5][1] = 'play6';
-	player[5][2] = 'images/ES@3x.png';
-
-
-	player[6][0] = 'images/kof-1.ico';
-	player[6][1] = 'play1';
-	player[6][2] = 'images/CN@3x.png';
-
-	player[7][0] = 'images/kof-2.ico';
-	player[7][1] = 'play2';
-	player[7][2] = 'images/DE@3x.png';
-
-	player[8][0] = 'images/kof-3.ico';
-	player[8][1] = 'play3';
-	player[8][2] = 'images/JP@3x.png';
-
-	player[9][0] = 'images/kof-4.ico';
-	player[9][1] = 'play4';
-	player[9][2] = 'images/FR@3x.png';
-
-	player[10][0] = 'images/kof-5.ico';
-	player[10][1] = 'play5';
-	player[10][2] = 'images/GB@3x.png';
-
-	player[11][0] = 'images/kof-6.ico';
-	player[11][1] = 'play6';
-	player[11][2] = 'images/ES@3x.png';
-}
-
-var group=new Array();
-var groupNum;
-var fighttime=new Array();
-//比赛分组信息赋值		
-function setPlayerGroup(){
-
-	//两两分组匹配战斗，每组首元素定义红方，次元素定义蓝方
-	group[0]=[player[0],player[3]];
-	//alert(group[0][0]);alert(group[0][1]);
-	group[1]=[player[1],player[4]];
-	//alert(group[1][0]);alert(group[1][1]);
-	group[2]=[player[2],player[5]];
-	//alert(group[2][0]);alert(group[2][1]);
-	group[3]=[player[6],player[9]];
-	group[4]=[player[7],player[10]];
-	group[5]=[player[8],player[11]];
-	
-	groupNum=group.length;
-	
-	for(var i=0;i<groupNum;i++){
-		fighttime[i]='截止时间：20180505'; 
-	}			
-}
-
-
-var currentGroup=0;
 //单场比赛信息赋值
-function createTable() {
-	for (var k = 0; k <3 ; k++){
-		if (currentGroup<3){var x=document.getElementById("table"+k);}
-		else{k=3;}
-		var data = new Array();
-		data.push(fighttime[currentGroup]+'<br>');
-		data.push('<table class="swiper-div-center" border=1><tbody>');
-
-
-
-
-		for (var i = 0; i < 3; i++) {
-			data.push('<tr>');
-			for (var j = 0; j < 3; j++) {
-				//每场战斗九个单元格依次赋值
-				if ((i==0)&&(j==0)){data.push('<td>' + '<img src="'+group[currentGroup][0][0]+'" width="64" height="64" >' + '</td>');}
-				if ((i==0)&&(j==1)){data.push('<td>' + 'VS' +'</td>');}						
-				if ((i==0)&&(j==2)){data.push('<td>' + '<img src="'+group[currentGroup][1][0]+'" width="64" height="64" >' + '</td>');}
-				if ((i==1)&&(j==0)){data.push('<td>' + group[currentGroup][0][1] +'</td>');}
-				if ((i==1)&&(j==1)){data.push('<td>' + '' +'</td>');}
-				if ((i==1)&&(j==2)){data.push('<td>' + group[currentGroup][1][1] +'</td>');}
-				if ((i==2)&&(j==0)){data.push('<td>' + '<img src="'+group[currentGroup][0][2]+'" height="30" >' + '</td>');}
-				if ((i==2)&&(j==1)){data.push('<td>' + '' +'</td>');}
-				if ((i==2)&&(j==2)){data.push('<td>' + '<img src="'+group[currentGroup][1][2]+'" height="30" >' + '</td>');}
+function getgameinfo(){
+	gamesinfo = new Array();//定义前台可见的比赛信息数组
+	//选取比赛
+	var i = 0;
+	games.forEach(v=>{
+		var gameinfotemp = [];	//必须放在循环体内，否则循环时回传值数组会全部置为最新值
+		gameinfotemp.endTime = v.endTime;
+		gameinfotemp.allBet = v.allBet;
+		gameinfotemp.result = v.result;
+    	
+		players.forEach(v1=>{
+			var playertmp = new Array();	//必须放在循环体内；
+			if ( v1.id == games[i].playerR ){
+				playertmp.name = v1.name;
+				playertmp.playericon = v1.playericon;
+				playertmp.nationIcon = v1.nationIcon;
+				gameinfotemp.playerR = playertmp;
 			}
-		data.push('</tr>');
-		}
-	
-		data.push('</tbody><table><br>');
+			if (v1.id == games[i].playerL ){
+				playertmp.name = v1.name;
+				playertmp.playericon = v1.playericon;
+				playertmp.nationIcon = v1.nationIcon;
+				gameinfotemp.playerL = playertmp;
+			}	//games表中设定的playerid，如果player表中不存在，此处出现空值
+		});
 		
-		if (currentGroup<3){x.innerHTML=data.join('');}
-		else{
-			document.getElementById("tablex").innerHTML = data.join('');
+		gamesinfo[i] = gameinfotemp;
+		//console.log(gamesinfo);
+		i = i+1;
+	}); 
+}
+
+groupNum = 0;
+currentGroup = 0;
+function createTable1() {
+	'use strict';
+	getgameinfo();//console.log(getgameinfo);console.log(gamesinfo[0].playerR);
+	groupNum = gamesinfo.length;
+	for (var i = 0; i < 3; i++) {
+		if (currentGroup >= 3){i = 3};
+		//console.log(currentGroup);
+		var data = [];
+			data.push('<div class="container">');
+			data.push('<div class="row">');
+			data.push('<div class="pull-left">');
+			data.push('<p id="endTime">');
+			data.push(gamesinfo[currentGroup].endTime);
+			data.push('</p>');
+			data.push('<p id="gameResult">');
+			data.push(gamesinfo[currentGroup].result);
+			data.push('</p>');
+			data.push('<p id="allBet">');
+			data.push(gamesinfo[currentGroup].allBet);
+			data.push('</p>');
+			data.push('</div>');
+			data.push('<div class="pull-right ">');
+			data.push('<table class="pull-right text-center" id="playerR" width="50" border="0">');
+			data.push('<tbody>');
+			data.push('<tr><td ><img id="prIcon" alt="" src="');
+			data.push(gamesinfo[currentGroup].playerR.playericon);
+			data.push('" width="50" height="50"></td><!--pr playerRight--></tr>');
+			data.push('<tr><td id="prName">');
+			data.push(gamesinfo[currentGroup].playerR.name);
+			data.push('</td></tr>');
+			data.push('<tr><td><img id="prNation" alt="" src="');
+			data.push(gamesinfo[currentGroup].playerR.nationIcon);
+			data.push('"height="24"></td></tr>');
+			data.push('</tbody>');
+			data.push('</table>');
+			data.push('<table class="pull-right text-center" width="70" border="0"><tbody><tr><td><br><h1>VS</h1></td></tr></tbody></table>');
+			data.push('<table class="pull-right text-center" id="playerL" width="50" border="0">');
+			data.push('<tbody>');
+			data.push('<tr><td ><img id="plIcon" alt="" src="');
+			data.push(gamesinfo[currentGroup].playerL.playericon);
+			data.push('" width="50" height="50"></td><!--pl playerLeft--></tr>');
+			data.push('<tr><td id="plName">');
+			data.push(gamesinfo[currentGroup].playerL.name);
+			data.push('</td></tr>');
+			data.push('<tr><td><img id="plNation" alt="" src="');
+			data.push(gamesinfo[currentGroup].playerL.nationIcon);
+			data.push('"height="24"></td></tr>');
+			data.push('</tbody></table>');
+			data.push('</div></div></div>');
+		//console.log(gamesinfo[currentGroup]);
+		if (currentGroup<3) {
+			document.getElementById("table"+currentGroup).innerHTML=data.join('');
 		}
-		//tableN就是id为tableN的div
-		//prompt(data.join(''));
+		else {
+			document.getElementById("tablex").innerHTML=data.join('');
+		}
 		currentGroup = currentGroup+1;
 	}
+	//console.log(games);
+	//console.log(players);
 }

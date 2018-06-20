@@ -29,7 +29,7 @@ function loadNewSlides(){
 		  var color = colors[Math.floor(Math.random()*colors.length)];
 		  mySwiper.prependSlide('<div id="tablex" style="border: 1px solid black">jphtml.com '+slideNumber+'</div>');
 	
-			createTable();
+			createTable1();
 	
 		  //Release interactions and set wrapper
 		  mySwiper.setWrapperTranslate(0,0,0)
