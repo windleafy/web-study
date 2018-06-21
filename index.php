@@ -34,6 +34,17 @@
 <!-- //font-awesome-icons -->
 
 </head>
+<?php
+session_start();
+	
+	if( isset($_SESSION['userName']) ){
+		//print ($_SESSION['userName']."<br>");
+	}
+	else{
+		header("location:login.html");
+	}
+?>
+	
 <body>
 	<div class="banner1">
 		<div class="banner1-image">
