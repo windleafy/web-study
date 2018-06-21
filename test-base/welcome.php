@@ -8,6 +8,7 @@
 <?php
 	session_start();
 	if( isset($_SESSION['userName']) ){
+		print ($_SESSION['userName']."<br>");
 	}
 	else{
 		header("location:login.php");
