@@ -1,4 +1,15 @@
 <!DOCTYPE html>
+<?php
+session_start();
+	
+	if( isset($_SESSION['userName']) ){
+		//print ($_SESSION['userName']."<br>");
+	}
+	else{
+		header("location:login.html");
+	}
+?>
+
 <html lang="cn">
 <head>
 <title>Home</title>
