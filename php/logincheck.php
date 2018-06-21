@@ -7,7 +7,8 @@
         $psw = $_POST["password"]; //echo "<script>alert('".$psw."');</script>"; 
         if($user == "" || $psw == "")  
         {  
-            echo "<script>alert('请输入用户名或密码！'); history.go(-1);</script>";  
+            //echo "<script>alert('请输入用户名或密码！'); history.go(-1);</script>";  
+			echo '2';
         }  
         else 
         {  
@@ -28,12 +29,13 @@
 					//echo('恭喜你，登录成功');
 					$conn = null;
 					$_SESSION['userName'] = $row['userName'];
-					echo 'go';exit;
+					echo '0';exit;
 					//header("location:../index.html");
         		}//数据库查询测试-结束
 				
 				$conn = null;
-				echo "<script>alert('用户名或密码不正确！');history.go(-1);</script>"; 
+				//echo "<script>alert('用户名或密码不正确！');history.go(-1);</script>"; 
+				echo '1';
 			}
 			catch(PDOException $e)
 			{

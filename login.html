@@ -37,34 +37,50 @@
 <script>
 $(document).ready(function(){
 	$("button").click(function(){
-		console.log(document.getElementById("loginname").value);
-		console.log(document.getElementById("loginpsw").value);
-		console.log (this.value);//通过点击按钮的value值判定，是否要做出响应；
+		//console.log(document.getElementById("loginname").value);
+		//console.log(document.getElementById("loginpsw").value);
+		//console.log (this.value);//通过点击按钮的value值判定，是否要做出响应；
 		if (this.value =='btnlogin'){
-			console.log('hello');
+			//console.log('点的是登录');
 			$.post("php/logincheck.php",{
-				username:document.getElementById("loginname").value,
-				password:document.getElementById("loginpsw").value,
-				button:'btnlogin'
-			},
-			
-			function(data,status){
-				
-				if (data == 'go'){
-					//alert("数据: \n" + data + "\n状态: " + status);
-					alert("欢迎回来");
-					$(location).attr('href', 'index.php');	
+					username:document.getElementById("loginname").value,
+					password:document.getElementById("loginpsw").value,
+					button:'btnlogin'
+				},
+				function(data,status){
+					var stat = data;
+					switch (parseInt(stat)){
+						case 0:alert("欢迎回来");$(location).attr('href', 'index.php');break;
+						case 1:alert("用户名或密码不正确！");break;
+						case 2:alert("请将信息填完整");break;
+					}
 				}
-				else{
-					alert("账号和密码对不上呢");
-				}
-					
-			
-				//document.getElementById("myp").innerHTML = data;
-				
-			}
 			);
 		};
+		if (this.value =='btnreg'){
+			//console.log('点的是注册');
+			$.post("php/regcheck.php",{
+					regname:document.getElementById("regname").value,
+					regpsw:document.getElementById("regpsw").value,
+					regrepsw:document.getElementById("regrepsw").value,
+					reguuid:document.getElementById("reguuid").value,
+					button:'btnreg'
+				},
+				function(data,status){
+				//alert("数据: \n" + data + "\n状态: " + status);
+					var stat = data;
+					//alert(stat);parseInt(stat)转字符型为整型
+					switch (parseInt(stat)){
+						case 0:alert("请将信息填完整");break;
+						case 1:alert("亲，密码不一致！");break;
+						case 2:alert("恭喜注册成功");$(location).attr('href', 'login.html');break;
+						case 3:alert("重名了，亲");break;
+						case 4:alert("系统有些许忙碌，客官请稍后");break;
+					}
+				}
+			);
+		};
+		
 	});
 });
 </script>
@@ -96,7 +112,7 @@ $(document).ready(function(){
 		</div>
 	</div>
 
-	<!-- Tooltip  登录 注册-->
+	<!-- Tooltip  登录-->
 	<div class="tooltip-content">
 		<div class="modal fade features-modal" id="login" tabindex="-1" role="dialog" aria-hidden="true">
 			<div class="modal-dialog">
@@ -123,14 +139,11 @@ $(document).ready(function(){
 			</div>
 		</div>
 	</div>
-
+	<!-- Tooltip  注册-->
 	<div class="tooltip-content">
 		<div class="modal fade features-modal" id="register" tabindex="-1" role="dialog" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content text-center col-md-6 col-md-offset-3">
-					
-					<form action="/mytest/web-study-git/php/logincheck.php" method="post">  
-					
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 						<h4 class="modal-title">注册</h4>
@@ -140,18 +153,53 @@ $(document).ready(function(){
 					</div>	
 					<div class="center-block"  style="width: 70%">
 						<div class="input-group"><span id="addon2" class="input-group-addon">账号</span>
-							<input type="text" class="form-control" aria-describedby="addon2" name="account">
+							<input type="text" class="form-control" aria-describedby="addon2" id="regname">
 						</div>
 						<br>	
-						<div class="input-group"><span id="contentaddon2" class="input-group-addon">密码</span>
-							<input type="password" class="form-control" aria-describedby="contentaddon2" name="psw">
+						<div class="input-group"><span id="contentaddon2" class="input-group-addon">输入密码</span>
+							<input type="password" class="form-control" aria-describedby="contentaddon2" id="regpsw">
 						</div>
+						<br>
+						<div class="input-group"><span id="contentaddon3" class="input-group-addon">确认密码</span>
+							<input type="password" class="form-control" aria-describedby="contentaddon3" id="regrepsw">
+						</div>
+						<input type="hidden" id="reguuid" name="uuid" value="">
+						<!--注册时生成的uuid-->
+						<script type="text/javascript">
+							document.getElementById("reguuid").value= uuid(8,16);
+							function uuid(len, radix) {
+								var chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split('');
+								var uuid = [], i;
+								radix = radix || chars.length;
+
+								if (len) {
+								  // Compact form
+								  for (i = 0; i < len; i++) uuid[i] = chars[0 | Math.random()*radix];
+								} else {
+								  // rfc4122, version 4 form
+								  var r;
+
+								  // rfc4122 requires these characters
+								  uuid[8] = uuid[13] = uuid[18] = uuid[23] = '-';
+								  uuid[14] = '4';
+
+								  // Fill in random data.  At i==19 set the high bits of clock sequence as
+								  // per rfc4122, sec. 4.1.5
+								  for (i = 0; i < 36; i++) {
+									if (!uuid[i]) {
+									  r = 0 | Math.random()*16;
+									  uuid[i] = chars[(i == 19) ? (r & 0x3) | 0x8 : r];
+									}
+								  }
+								}
+
+								return uuid.join('');
+							}
+						</script>
+						
 					</div>
 					<br>
-   				    <button type="button" class="btn btn-default center-block" style="width: 70%" name="wind" value="ydfbtn">确认</button><p>&nbsp;</p>
-					
-					</form>
-					
+   				    <button type="button" class="btn btn-default center-block" style="width: 70%" value="btnreg">确认</button><p>&nbsp;</p>
 				</div>
 			</div>
 		</div>
