@@ -5,7 +5,29 @@
 <title>jQuery模拟原生态App上拉刷新下拉加载更多页面--精品代码</title>
 <link rel="stylesheet" href="../basetest/jquery_scollview/css/idangerous.swiper.css">
 <meta name="viewport" content="width=device-width">
-
+<link href="/css/bootstrap-3.3.7.css" rel="stylesheet" type="text/css">
+<script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){
+	$("div").click(function(){
+		console.log(document.getElementById("table0").value);
+		//console.log (this.value);//通过点击按钮的value值判定，是否要做出响应；
+		if (this.value !='btn1'){
+			$.post("welcome.php",{
+				name:document.getElementById("table0").value,
+				url:"www.baidu.com"
+			},
+			
+			function(data,status){
+				//alert("数据: \n" + data + "\n状态: " + status);
+				//document.getElementById("myp").innerHTML = data;
+			});
+		};
+	});
+});
+</script>
+	
 <style>
 html {
 	height: 100%;
@@ -93,7 +115,7 @@ body {
 	margin:auto;
 }
 </style>
-
+	
     <script language="javascript">  
 		var player=new Array();		
 		function setPlayerTable() {
@@ -187,13 +209,13 @@ body {
 			data.push('</tr>');
     		}
 		data.push('</tbody><table><br>');
-		document.getElementById("tablex").innerHTML = data.join('');
+		var x = currentGroup;
+		document.getElementById("table"+x).innerHTML = data.join('');
 		//tableN就是id为tableN的div
 		//prompt(data.join(''));
 		currentGroup = currentGroup+1;
 		}
 	</script>  
-
 </head>
 <body>
 
@@ -257,6 +279,7 @@ body {
 		}
     }
   })
+  
   var slideNumber = 0;
   function loadNewSlides(){
 	  
@@ -266,11 +289,18 @@ body {
 		  //Prepend new slide
 		  var colors = ['red','blue','green','orange','pink'];
 		  var color = colors[Math.floor(Math.random()*colors.length)];
-		  mySwiper.prependSlide('<div id="tablex" style="border: 1px solid black">jphtml.com '+slideNumber+'</div>');
+			
+		  var data = [];
+		  data.push('onclick="location=');
+		  data.push("'welcome.html'");
+		  data.push('"');//alert(data.join(''));//onclick="location='welcome.html'"	
+		  var x = currentGroup;
+		  mySwiper.prependSlide('<div '+data.join('')+' id="table'+x+'" style="border: 1px solid black" value="'+currentGroup+'">jphtml.com '+slideNumber+'</div>');
 
-
-
-			createTable();
+          createTable();
+		  //document.getElementById("table"+currentGroup).value = '1';
+		  
+		  alert(currentGroup);
 
 
 
