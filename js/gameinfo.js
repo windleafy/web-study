@@ -2,12 +2,14 @@
 /*--------------------*/
 
 //单场比赛信息赋值
+var gamesinfo = [];//定义前台可见的比赛信息数组
 function getgameinfo(){
-	gamesinfo = new Array();//定义前台可见的比赛信息数组
 	//选取比赛
+	'use strict';
 	var i = 0;
 	games.forEach(v=>{
 		var gameinfotemp = [];	//必须放在循环体内，否则循环时回传值数组会全部置为最新值
+		gameinfotemp.id = v.id;
 		gameinfotemp.endTime = v.endTime;
 		gameinfotemp.allBet = v.allBet;
 		gameinfotemp.result = v.result;
@@ -33,7 +35,7 @@ function getgameinfo(){
 		i = i+1;
 	}); 
 }
-
+//console.log(gamesinfo);
 groupNum = 0;
 currentGroup = 0;
 function createTable1() {
@@ -56,6 +58,12 @@ function createTable1() {
 			data.push('<p id="allBet">');
 			data.push(gamesinfo[currentGroup].allBet);
 			data.push('</p>');
+			
+			data.push('<input type="hidden" id="gameid" name="gameid" value="');
+			//console.log(gamesinfo[currentGroup].id);记录比赛ID
+			data.push(gamesinfo[currentGroup].id);
+			data.push('">');
+					  
 			data.push('</div>');
 			data.push('<div class="pull-right ">');
 			data.push('<table class="pull-right text-center" id="playerR" width="50" border="0">');
@@ -92,8 +100,10 @@ function createTable1() {
 		else {
 			document.getElementById("tablex").innerHTML=data.join('');
 		}
+		
 		currentGroup = currentGroup+1;
 	}
+	
 	//console.log(games);
 	//console.log(players);
 }
