@@ -1,0 +1,72 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="utf-8">  
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />  
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />  
+    <title>index</title>  
+    <meta name="keywords" content="关键词,5个左右,单个8汉字以内">  
+    <meta name="description" content="网站描述，字数尽量空制在80个汉字，160个字符以内！">  
+  
+    <link rel="stylesheet" href="/mytest/web-study-git/test-base/iframe/css/style.css">  
+    <link rel="stylesheet" href="/mytest/web-study-git/test-base/iframe/css/bootstrap.css">  
+    <style type="text/css">  
+        body{  
+            background-color: #0f0f0f;  
+            margin: 20px;  
+  
+        }  
+    </style>  
+  
+  
+  
+</head>  
+<body>  
+<div class="container">  
+<header>  
+    <div style="background-color: #2b542c">  
+        <iframe src="header.html" width="100%" scrolling="no" height="300px"></iframe>  
+    </div>  
+  
+</header>  
+  
+<div class=" col-lg-3 col-md-3 col-sm-3 col-xs-3 nav">  
+    <ul>  
+        <li>我的足迹</li>  
+        <li>沿途风景</li>  
+        <li>旅行攻略</li>  
+    </ul>  
+    <ul class="nav1">  
+        <div> </div>  
+        <div class="input-group " style="width: 200px" >  
+            <span class="input-group-addon"><span class="glyphicon glyphicon-user hidden-xs hidden-sm"></span> 用户名</span>  
+            <input type="text" class="form-control">  
+        </div>  
+        <div> </div>  
+        <div class="input-group " style="width: 200px" >  
+            <span class="input-group-addon"><span class="glyphicon glyphicon-certificate hidden-xs hidden-sm"></span> 密码</span>  
+            <input type="password" class="form-control">  
+        </div>  
+    </ul>  
+</div>  
+<div class=" col-lg-9 col-md-9 col-sm-9 col-xs-9" style="opacity:1.0  background-color: #f00" >  
+    <iframe src="module-swiper.html" id="iframepage" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" onLoad="iFrameHeight()" width="100%"></iframe>  
+</div>  
+  
+<footer>  
+    <iframe src="footer.html" width="100%" style="background-color: #0f0f0f"></iframe>  
+</footer>  
+<script>  
+    function iFrameHeight() {  
+        var ifm= document.getElementById("iframepage");  
+        var subWeb = document.frames ? document.frames["iframepage"].document : ifm.contentDocument;  
+        if(ifm != null && subWeb != null) {  
+            ifm.height = subWeb.body.scrollHeight;  
+            ifm.width = subWeb.body.scrollWidth;  
+        }  
+    }  
+</script>  
+</div>  
+</body>  
+</html>  
