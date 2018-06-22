@@ -34,6 +34,7 @@ window.onload = function ()
 		gameinfotemp.endTime = v.endTime;
 		gameinfotemp.allBet = v.allBet;
 		gameinfotemp.result = v.result;
+		gameinfotemp.id = v.id;
 		//console.log(gameinfotemp); 
     	//console.log(v); 
 		players.forEach(v1=>{
@@ -63,6 +64,7 @@ window.onload = function ()
 	else if (gameinfo[0].result == '2'){document.getElementById("gameResult").innerHTML='蓝方胜';}
 	document.getElementById("endTime").innerHTML = gameinfo[0].endTime;
 	document.getElementById("allBet").innerHTML = gameinfo[0].allBet;
+	document.getElementById("gameid").value = gameinfo[0].id;
 	
 	document.all("playerR").rows[1].cells[0].innerText = gameinfo[0].playerR.name;
 	document.getElementById("prIcon").src = gameinfo[0].playerR.playericon;
