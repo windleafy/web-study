@@ -8,10 +8,11 @@
 <link href="/css/bootstrap-3.3.7.css" rel="stylesheet" type="text/css">
 <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js">
 </script>
+	
 <script>
 $(document).ready(function(){
 	$("button").click(function(){
-		console.log(document.getElementById("value1").value);
+		//console.log(document.getElementById("value1").value);
 		console.log (this.value);//通过点击按钮的value值判定，是否要做出响应；
 		if (this.value =='btn1'){
 			$.post("jQueryPost.php",{
@@ -23,7 +24,21 @@ $(document).ready(function(){
 				alert("数据: \n" + data + "\n状态: " + status);
 				document.getElementById("myp").innerHTML = data;
 			});
+			
 		};
+	});
+	
+	$("div").click(function(){
+		console.log("this.id:"+this.id);
+		console.log("this.value:"+getDivValue(this.id));
+		$.post("jQueryPost.php",{
+			name:getDivValue(this.id),
+			url:"www.baidu.com"
+		},
+		function(data,status){
+			alert("数据: \n" + data + "\n状态: " + status);
+		});
+		location.href="welcome.html";
 	});
 });
 </script>
@@ -45,5 +60,20 @@ $(document).ready(function(){
     <input id="value1" type="text" class="form-control" placeholder="normal sized input group" aria-describedby="addon1">
   </div>
 </div>
+
+<div id="testID" value="yes" >我是div，你好</div>
+	
 </body>
 </html>
+
+
+<script>//为DIV设定value并取值
+function getDivValue(wind){
+	var t1=document.getElementById(wind);     
+	//alert(t1.value);//div 没有value属性，不能直接取值，直接取值值为空
+	//alert(t1.getAttribute("value"));
+	return(t1.getAttribute("value"));
+}
+	
+	
+</script>
