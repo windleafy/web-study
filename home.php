@@ -50,16 +50,19 @@ session_start();
 <script type="text/javascript" src="php/getDbGames.php">
 /*此处取回games的值*/
 </script> 
-
+	
 <script>
 window.onload=function (){
-//	alert('hello');
-//	alert(window.screen.height);
+	//--屏幕高度自适应处理	alert('window.screen.height：'+window.screen.height);
 	var x = window.screen.height;
-
 	x = x-175;
-
 	swiperHeight.style.height=x+"px";
+
+	//--点击比赛条目，跳转对应详情页处理
+	$("table").click(function(){
+		var s = 'hello';
+		location.href="module-gamedetail.php?"+"txt="+encodeURI(s);
+	});
 }
 </script>
 
