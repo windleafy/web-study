@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bootstrap - Prebuilt Layout</title>
+
+<!-- Bootstrap -->
+<link href="../css/bootstrap.css" rel="stylesheet">
+<link href="../css/style.css" rel="stylesheet">
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<script type="text/javascript" src="../php/getDbPlayers.php">
+/*此处取回players的值*/
+</script> 
+<script type="text/javascript" src="../php/getDbGames.php">
+/*此处取回games的值*/
+</script> 
+
+	
+<script>
+window.onload = function ()
+{
+	gameinfo = new Array();//定义前台可见的比赛信息数组
+	//选取比赛
+	var i = 0;
+	games.forEach(v=>{
+		var gameinfotemp = [];	//必须放在循环体内，否则循环时回传值数组会全部置为最新值
+		gameinfotemp.endTime = v.endTime;
+		gameinfotemp.allBet = v.allBet;
+		gameinfotemp.result = v.result;
+		gameinfotemp.id = v.id;
+		//console.log(gameinfotemp); 
+    	//console.log(v); 
+		players.forEach(v1=>{
+			var playertmp = new Array();	//必须放在循环体内；
+			if ( v1.id == games[i].playerR ){
+				playertmp.name = v1.name;
+				playertmp.playericon = v1.playericon;
+				playertmp.nationIcon = v1.nationIcon;
+				gameinfotemp.playerR = playertmp;
+			}
+			if (v1.id == games[i].playerL ){
+				playertmp.name = v1.name;
+				playertmp.playericon = v1.playericon;
+				playertmp.nationIcon = v1.nationIcon;
+				gameinfotemp.playerL = playertmp;
+			}	//games表中设定的playerid，如果player表中不存在，此处出现空值
+		});
+		
+		gameinfo[i] = gameinfotemp;
+		//console.log(gameinfo);
+		//alert(gameinfo[0].id);
+		i = i+1;
+	}); 
+
+	/*---前台显示赋值部分---*/
+	if (gameinfo[0].result == '0'){document.getElementById("gameResult").innerHTML='还没比';}
+	else if (gameinfo[0].result == '1'){document.getElementById("gameResult").innerHTML='红方胜';}
+	else if (gameinfo[0].result == '2'){document.getElementById("gameResult").innerHTML='蓝方胜';}
+	document.getElementById("endTime").innerHTML = gameinfo[0].endTime;
+	document.getElementById("allBet").innerHTML = gameinfo[0].allBet;
+	document.getElementById("gameid").value = gameinfo[0].id;
+	
+	document.all("playerR").rows[1].cells[0].innerText = gameinfo[0].playerR.name;
+	document.getElementById("prIcon").src = gameinfo[0].playerR.playericon;
+	document.getElementById("prNation").src = gameinfo[0].playerR.nationIcon;
+
+	document.all("playerL").rows[1].cells[0].innerText = gameinfo[0].playerL.name;
+	document.getElementById("plIcon").src = gameinfo[0].playerL.playericon;
+	document.getElementById("plNation").src = gameinfo[0].playerL.nationIcon;
+	/*---前台显示赋值部分---*/
+}
+</script>
+	
+<script LANGUAGE="JavaScript">//跳转页面，并传值
+    function jump(){
+		alert('第一页-本场比赛ID：'+gameinfo[0].id);
+        var s = gameinfo[0].id;
+        location.href="module-gamedetail.php?"+"txt="+encodeURI(s);
+    }
+</script>
+	
+</head>
+<body>
+<div class="container">
+   <div class="row" onClick="jump()">
+    <div class="pull-left"> 
+    	<p id="endTime">截止时间：2018-06-12</p><!--endTime投注截止时间-->
+    	<p id="gameResult">比赛结果</p><!--gameResult比赛结果-->
+    	<p id="allBet">下注金额</p><!--allBet下注金额-->
+		<input type="hidden" id="gameid" name="gameid" value=""><!--gameid比赛id-->
+    </div>
+    
+    <div class="pull-right ">
+<!--    <br>     <br>-->
+		<table class="pull-right text-center" id="playerR" width="50" border="0">
+		  <tbody>
+			<tr>
+			  <td ><img id="prIcon" alt="" width="50" height="50"></td><!--pr playerRight-->
+			</tr>
+			<tr>
+			  <td id="prName">&nbsp;</td>
+			</tr>
+			<tr>
+			  <td><img id="prNation" alt="" height="24"></td>
+			</tr>
+		  </tbody>
+		</table>
+		<table class="pull-right text-center" width="70" border="0">
+		  <tbody>
+			<tr>
+			  <td><br><h1>VS</h1></td>
+			</tr>
+		  </tbody>
+		</table>
+		<table class="pull-right text-center" id="playerL" width="50" border="0">
+		  <tbody>
+			<tr>
+			  <td ><img id="plIcon" alt="" width="50" height="50"></td><!--pl playerLeft-->
+			</tr>
+			<tr>
+			  <td id="plName">&nbsp;</td>
+			</tr>
+			<tr>
+			  <td><img id="plNation" alt="" height="24"></td>
+			</tr>
+		  </tbody>
+		</table>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="../js/jquery-2.1.4.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="../js/bootstrap.js"></script>
+</body>
+</html>
