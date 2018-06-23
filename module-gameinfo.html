@@ -7,8 +7,8 @@
 <title>Bootstrap - Prebuilt Layout</title>
 
 <!-- Bootstrap -->
-<link href="/mytest/web-study-git/css/bootstrap.css" rel="stylesheet">
-<link href="/mytest/web-study-git/css/style.css" rel="stylesheet">
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -26,7 +26,7 @@
 <script>
 window.onload = function ()
 {
-	var gameinfo = new Array();//定义前台可见的比赛信息数组
+	gameinfo = new Array();//定义前台可见的比赛信息数组
 	//选取比赛
 	var i = 0;
 	games.forEach(v=>{
@@ -54,7 +54,8 @@ window.onload = function ()
 		});
 		
 		gameinfo[i] = gameinfotemp;
-		console.log(gameinfo);
+		//console.log(gameinfo);
+		//alert(gameinfo[0].id);
 		i = i+1;
 	}); 
 
@@ -76,10 +77,18 @@ window.onload = function ()
 	/*---前台显示赋值部分---*/
 }
 </script>
+	
+<script LANGUAGE="JavaScript">
+    function jump(){
+		alert(gameinfo[0].id);
+        var s = 'gameID'+gameinfo[0].id;
+        location.href="welcome.html?"+"txt="+encodeURI(s);
+    }
+</script>
 </head>
 <body>
 <div class="container">
-   <div class="row">
+   <div class="row" onClick="jump()">
     <div class="pull-left"> 
     	<p id="endTime">截止时间：2018-06-12</p><!--endTime投注截止时间-->
     	<p id="gameResult">比赛结果</p><!--gameResult比赛结果-->
@@ -131,8 +140,8 @@ window.onload = function ()
 
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
-<script src="/mytest/web-study-git/js/jquery-1.11.3.min.js"></script>
+<script src="js/jquery-2.1.4.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed --> 
-<script src="/mytest/web-study-git/js/bootstrap.js"></script>
+<script src="js/bootstrap.js"></script>
 </body>
 </html>

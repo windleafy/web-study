@@ -1,19 +1,11 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>无标题文档</title>
-</head>
-<body>
+
 <?php
-	session_start();
-	if( isset($_SESSION['userName']) ){
-		print ($_SESSION['userName']."<br>");
-	}
-	else{
-		header("location:login.php");
-	}
+$x="";
+if(isset($_POST['name'])){
+echo ($_POST['name']);
+$x = $_POST['name'];
+}
+echo ($x);
+Header("Location: welcome.html"); 
 ?>
-hello world
-</body>
-</html>
+
