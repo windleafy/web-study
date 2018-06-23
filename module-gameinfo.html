@@ -78,13 +78,14 @@ window.onload = function ()
 }
 </script>
 	
-<script LANGUAGE="JavaScript">
+<script LANGUAGE="JavaScript">//跳转页面，并传值
     function jump(){
-		alert(gameinfo[0].id);
-        var s = 'gameID'+gameinfo[0].id;
+		alert('第一页-本场比赛ID：'+gameinfo[0].id);
+        var s = gameinfo[0].id;
         location.href="welcome.html?"+"txt="+encodeURI(s);
     }
 </script>
+	
 </head>
 <body>
 <div class="container">

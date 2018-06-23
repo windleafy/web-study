@@ -13,24 +13,19 @@
     <link rel="stylesheet" href="css/bootstrap.css">  
 	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
     <script src="js/bootstrap.js"></script>  
-    <style>  
-        body{  
-  
-        }  
-    </style>  
-  
   
   
 </head>  
 <body>
-  <script language="javascript" type="text/javascript">
-  var loc = location.href;
-  var n1 = loc.length;//地址的总长度
-  var n2 = loc.indexOf("=");//取得=号的位置
-  var id = decodeURI(loc.substr(n2+1, n1-n2));//从=号后面的内容
-  alert(id);
-  document.write(id)
-  </script>
+<script language="javascript" type="text/javascript">
+	//接受跳转时传来的值
+	var loc = location.href;
+	var n1 = loc.length;//地址的总长度
+	var n2 = loc.indexOf("=");//取得=号的位置
+	var id = decodeURI(loc.substr(n2+1, n1-n2));//从=号后面的内容
+	alert('第二页－本场比赛ID：'+id);
+	document.write('第二页－本场比赛ID：'+id)
+</script>
 <p style="color:blueviolet">hello world</p>
 <p></p>
 <p></p>
