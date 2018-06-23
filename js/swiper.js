@@ -31,7 +31,7 @@ function loadNewSlides(){
 			
 			
 			
-		  var data = [];
+/*		  var data = [];
 		  
 		  //----处理跳转链接----开始
 		  data.push('onclick="location=');
@@ -46,10 +46,11 @@ function loadNewSlides(){
 		  //var str="gamedetail.php?"+"txt="+encodeURI(s);
 		  data.push('"');//alert(data.join(''));//onclick="location='gamedetail.php'"	
 		  //----处理跳转链接----结束
-			
+*/			
+
 		  var x = currentGroup;
-		  mySwiper.prependSlide('<div '+data.join('')+' id="table'+x+'" style="border: 1px solid black" value="'+currentGroup+'">jphtml.com '+slideNumber+'</div>');	
-		
+		  //mySwiper.prependSlide('<div '+data.join('')+' id="table'+x+'" style="border: 1px solid black" value="'+currentGroup+'">jphtml.com '+slideNumber+'</div>');	
+		  mySwiper.prependSlide('<div id="table'+x+'" style="border: 1px solid black" value="'+currentGroup+'">jphtml.com '+slideNumber+'</div>');	
 		
 			
 		

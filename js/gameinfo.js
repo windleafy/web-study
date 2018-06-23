@@ -46,60 +46,75 @@ function createTable1() {
 		if (currentGroup >= 3){i = 3};
 		//console.log(currentGroup);
 		var data = [];
-			data.push('<div class="container">');
-			data.push('<div class="row">');
-			data.push('<div class="pull-left">');
-			data.push('<p id="endTime">');
-			data.push(gamesinfo[currentGroup].endTime);
-			data.push('</p>');
-			data.push('<p id="gameResult">');
-			data.push(gamesinfo[currentGroup].result);
-			data.push('</p>');
-			data.push('<p id="allBet">');
-			data.push(gamesinfo[currentGroup].allBet);
-			data.push('</p>');
-			
-			data.push('<input type="hidden" id="gameid" name="gameid" value="');
-			//console.log(gamesinfo[currentGroup].id);记录比赛ID
-			data.push(gamesinfo[currentGroup].id);
-			data.push('">');
-					  
-			data.push('</div>');
-			data.push('<div class="pull-right ">');
-			data.push('<table class="pull-right text-center" id="playerR" width="50" border="0">');
-			data.push('<tbody>');
-			data.push('<tr><td ><img id="prIcon" alt="" src="');
-			data.push(gamesinfo[currentGroup].playerR.playericon);
-			data.push('" width="50" height="50"></td><!--pr playerRight--></tr>');
-			data.push('<tr><td id="prName">');
-			data.push(gamesinfo[currentGroup].playerR.name);
-			data.push('</td></tr>');
-			data.push('<tr><td><img id="prNation" alt="" src="');
-			data.push(gamesinfo[currentGroup].playerR.nationIcon);
-			data.push('"height="24"></td></tr>');
-			data.push('</tbody>');
-			data.push('</table>');
-			data.push('<table class="pull-right text-center" width="70" border="0"><tbody><tr><td><br><h1>VS</h1></td></tr></tbody></table>');
-			data.push('<table class="pull-right text-center" id="playerL" width="50" border="0">');
-			data.push('<tbody>');
-			data.push('<tr><td ><img id="plIcon" alt="" src="');
-			data.push(gamesinfo[currentGroup].playerL.playericon);
-			data.push('" width="50" height="50"></td><!--pl playerLeft--></tr>');
-			data.push('<tr><td id="plName">');
-			data.push(gamesinfo[currentGroup].playerL.name);
-			data.push('</td></tr>');
-			data.push('<tr><td><img id="plNation" alt="" src="');
-			data.push(gamesinfo[currentGroup].playerL.nationIcon);
-			data.push('"height="24"></td></tr>');
-			data.push('</tbody></table>');
-			data.push('</div></div></div>');
+		data.push('<div class="');//data.push('<div class="container">');
+		data.push('container"');
+		
+		//----处理跳转链接----开始
+		data.push('onclick="location=');
+		//alert('57 currentGroup'+currentGroup);
+		//data.push("'welcome.php?txt=str'");
+		data.push("'gamedetail.php?txt=");
+		var s = currentGroup;
+		var str = encodeURI(s);
+		data.push(str);//var str="gamedetail.php?"+"txt="+encodeURI(s);
+		data.push("'");
+		//location.href="gamedetail.php?"+"txt="+encodeURI(s);
+		data.push('"');//alert(data.join(''));//onclick="location='gamedetail.php'"	
+		//----处理跳转链接----结束		
+		
+		data.push('>');
+
+		data.push('<div class="row">');
+		data.push('<div class="pull-left">');
+		data.push('<p id="endTime">');
+		data.push(gamesinfo[currentGroup].endTime);
+		data.push('</p>');
+		data.push('<p id="gameResult">');
+		data.push(gamesinfo[currentGroup].result);
+		data.push('</p>');
+		data.push('<p id="allBet">');
+		data.push(gamesinfo[currentGroup].allBet);
+		data.push('</p>');
+
+		data.push('<input type="hidden" id="gameid" name="gameid" value="');
+		//console.log(gamesinfo[currentGroup].id);记录比赛ID
+		data.push(gamesinfo[currentGroup].id);
+		data.push('">');
+
+		data.push('</div>');
+		data.push('<div class="pull-right ">');
+		data.push('<table class="pull-right text-center" id="playerR" width="50" border="0">');
+		data.push('<tbody>');
+		data.push('<tr><td ><img id="prIcon" alt="" src="');
+		data.push(gamesinfo[currentGroup].playerR.playericon);
+		data.push('" width="50" height="50"></td><!--pr playerRight--></tr>');
+		data.push('<tr><td id="prName">');
+		data.push(gamesinfo[currentGroup].playerR.name);
+		data.push('</td></tr>');
+		data.push('<tr><td><img id="prNation" alt="" src="');
+		data.push(gamesinfo[currentGroup].playerR.nationIcon);
+		data.push('"height="24"></td></tr>');
+		data.push('</tbody>');
+		data.push('</table>');
+		data.push('<table class="pull-right text-center" width="70" border="0"><tbody><tr><td><br><h1>VS</h1></td></tr></tbody></table>');
+		data.push('<table class="pull-right text-center" id="playerL" width="50" border="0">');
+		data.push('<tbody>');
+		data.push('<tr><td ><img id="plIcon" alt="" src="');
+		data.push(gamesinfo[currentGroup].playerL.playericon);
+		data.push('" width="50" height="50"></td><!--pl playerLeft--></tr>');
+		data.push('<tr><td id="plName">');
+		data.push(gamesinfo[currentGroup].playerL.name);
+		data.push('</td></tr>');
+		data.push('<tr><td><img id="plNation" alt="" src="');
+		data.push(gamesinfo[currentGroup].playerL.nationIcon);
+		data.push('"height="24"></td></tr>');
+		data.push('</tbody></table>');
+		data.push('</div></div></div>');
 		//console.log(gamesinfo[currentGroup]);
-		if (currentGroup<3) {
-			document.getElementById("table"+currentGroup).innerHTML=data.join('');
-		}
-		else {
-			document.getElementById("table"+currentGroup).innerHTML=data.join('');
-		}
+		alert('114 table'+currentGroup);
+		//alert('115 '+data.join(''));
+		document.getElementById("table"+currentGroup).innerHTML=data.join('');
+		
 		
 		currentGroup = currentGroup+1;
 	}

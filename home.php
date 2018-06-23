@@ -52,7 +52,7 @@ session_start();
 </script> 
 	
 <script>
-window.onload=function (){
+/*window.onload=function (){
 	//--屏幕高度自适应处理	alert('window.screen.height：'+window.screen.height);
 	var x = window.screen.height;
 	x = x-175;
@@ -63,7 +63,7 @@ window.onload=function (){
 		var s = 'hello';
 		location.href="module-gamedetail.php?"+"txt="+encodeURI(s);
 	});
-}
+}*/
 </script>
 
 </head>
@@ -156,7 +156,7 @@ window.onload=function (){
 
 <script>
 //赋初值
-createTable1();
+//createTable1();
 </script>
 <!--swiper-end-->
 
