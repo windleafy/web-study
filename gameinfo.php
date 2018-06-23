@@ -57,12 +57,6 @@ window.onload=function (){
 	var x = window.screen.height;
 	x = x-175;
 	swiperHeight.style.height=x+"px";
-
-	//--点击比赛条目，跳转对应详情页处理
-/*	$("table").click(function(){
-		var s = 'hello';
-		location.href="gamedetail.php?"+"txt="+encodeURI(s);
-	});*/
 }
 </script>
 
