@@ -84,20 +84,7 @@ window.onload=function (){
                 <div class="tab-content">
                 	<!--主页内容开始-->
                     <div class="tab-pane fade in active" id="home">
-                        <div class="preloader"> Loading...</div>
-                        <div class="swiper-container" id="swiperHeight">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide" id="table0">
-
-                                </div>
-                                <div class="swiper-slide" id="table1">
-
-                                </div>
-                                <div class="swiper-slide" id="table2">
-
-                                </div>                                                                
-                            </div>
-                        </div>
+						<iframe src="gameinfo.php" width="100%" height="550px" frameborder="0" aallowtransparency="true" scrolling="no"></iframe>
                     </div>
                 	<!--主页内容结束-->
                     

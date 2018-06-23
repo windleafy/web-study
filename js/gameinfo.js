@@ -98,7 +98,7 @@ function createTable1() {
 			document.getElementById("table"+currentGroup).innerHTML=data.join('');
 		}
 		else {
-			document.getElementById("tablex").innerHTML=data.join('');
+			document.getElementById("table"+currentGroup).innerHTML=data.join('');
 		}
 		
 		currentGroup = currentGroup+1;

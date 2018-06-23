@@ -59,33 +59,30 @@ window.onload=function (){
 	swiperHeight.style.height=x+"px";
 
 	//--点击比赛条目，跳转对应详情页处理
-	$("table").click(function(){
+/*	$("table").click(function(){
 		var s = 'hello';
 		location.href="gamedetail.php?"+"txt="+encodeURI(s);
-	});
+	});*/
 }
 </script>
 
 </head>
-<body>
+<body style="background:transparent;">
 
 	<!--主页内容开始-->
-	<div class="tab-pane fade in active" id="home">
+
 		<div class="preloader"> Loading...</div>
 		<div class="swiper-container" id="swiperHeight">
 			<div class="swiper-wrapper">
 				<div class="swiper-slide" id="table0">
-
 				</div>
 				<div class="swiper-slide" id="table1">
-
 				</div>
 				<div class="swiper-slide" id="table2">
-
 				</div>                                                                
 			</div>
 		</div>
-	</div>
+
 	<!--主页内容结束-->
 
 <!--swiper-begin-->
