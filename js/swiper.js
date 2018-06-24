@@ -27,32 +27,10 @@ function loadNewSlides(){
 		  //Prepend new slide
 		  var colors = ['red','blue','green','orange','pink'];
 		  var color = colors[Math.floor(Math.random()*colors.length)];
-			
-			
-			
-			
-/*		  var data = [];
-		  
-		  //----处理跳转链接----开始
-		  data.push('onclick="location=');
-		  alert('38 currentGroup'+currentGroup);
-		  var s = currentGroup;
-		  var str = encodeURI(s);
-		  //data.push("'welcome.php?txt=str'");
-		  data.push("'gamedetail.php?txt=");
-		  data.push(str);
-		  data.push("'");
-		  //location.href="gamedetail.php?"+"txt="+encodeURI(s);
-		  //var str="gamedetail.php?"+"txt="+encodeURI(s);
-		  data.push('"');//alert(data.join(''));//onclick="location='gamedetail.php'"	
-		  //----处理跳转链接----结束
-*/			
 
 		  var x = currentGroup;
 		  //mySwiper.prependSlide('<div '+data.join('')+' id="table'+x+'" style="border: 1px solid black" value="'+currentGroup+'">jphtml.com '+slideNumber+'</div>');	
 		  mySwiper.prependSlide('<div id="table'+x+'" style="border: 1px solid black" value="'+currentGroup+'">jphtml.com '+slideNumber+'</div>');	
-		
-			
 		
 		  createTable1();
 	
