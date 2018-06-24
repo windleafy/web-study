@@ -9,7 +9,8 @@ $dbname = "ydfdbpdo";
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $stmt = $conn->prepare("SELECT id, name, nation, nationIcon, playericon, age FROM player"); 
+    //$stmt = $conn->prepare("SELECT id, name, nation, nationIcon, playerIcon, age FROM player"); 
+	$stmt = $conn->prepare("SELECT * FROM player"); 
     $stmt->execute();
  
     // 设置结果集为关联数组
