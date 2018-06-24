@@ -22,7 +22,7 @@ session_start();
 		function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- meta tags -->
 <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
-<script type="text/javascript" src="js/gameinfo.js"></script>  <!-- 比赛信息处理 -->
+
 
 <!-- stylesheet -->
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
@@ -43,14 +43,6 @@ session_start();
 <!-- font-awesome-icons -->
 <link href="css/font-awesome.css" type="text/css" rel="stylesheet"> 
 <!-- //font-awesome-icons -->
-
-<script type="text/javascript" src="php/getDbPlayers.php">
-/*此处取回players的值*/
-</script> 
-<script type="text/javascript" src="php/getDbGames.php">
-/*此处取回games的值*/
-</script> 
-
 </head>
 <body>
 	<div class="banner1">
