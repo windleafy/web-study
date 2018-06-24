@@ -41,13 +41,13 @@ window.onload = function ()
 			var playertmp = new Array();	//必须放在循环体内；
 			if ( v1.id == games[i].playerR ){
 				playertmp.name = v1.name;
-				playertmp.playericon = v1.playericon;
+				playertmp.playerIcon = v1.playerIcon;
 				playertmp.nationIcon = v1.nationIcon;
 				gameinfotemp.playerR = playertmp;
 			}
 			if (v1.id == games[i].playerL ){
 				playertmp.name = v1.name;
-				playertmp.playericon = v1.playericon;
+				playertmp.playerIcon = v1.playerIcon;
 				playertmp.nationIcon = v1.nationIcon;
 				gameinfotemp.playerL = playertmp;
 			}	//games表中设定的playerid，如果player表中不存在，此处出现空值
@@ -68,11 +68,11 @@ window.onload = function ()
 	document.getElementById("gameid").value = gameinfo[0].id;
 	
 	document.all("playerR").rows[1].cells[0].innerText = gameinfo[0].playerR.name;
-	document.getElementById("prIcon").src = gameinfo[0].playerR.playericon;
+	document.getElementById("prIcon").src = gameinfo[0].playerR.playerIcon;
 	document.getElementById("prNation").src = gameinfo[0].playerR.nationIcon;
 
 	document.all("playerL").rows[1].cells[0].innerText = gameinfo[0].playerL.name;
-	document.getElementById("plIcon").src = gameinfo[0].playerL.playericon;
+	document.getElementById("plIcon").src = gameinfo[0].playerL.playerIcon;
 	document.getElementById("plNation").src = gameinfo[0].playerL.nationIcon;
 	/*---前台显示赋值部分---*/
 }
