@@ -13,19 +13,30 @@ function getgameinfo(){
 		gameinfotemp.endTime = v.endTime;
 		gameinfotemp.allBet = v.allBet;
 		gameinfotemp.result = v.result;
-    	
+    	//console.log('gameinfo.js-player');console.log(players);
 		players.forEach(v1=>{
 			var playertmp = new Array();	//必须放在循环体内；
 			if ( v1.id == games[i].playerR ){
+				//console.log('gameinfo.js-playerR');
 				playertmp.name = v1.name;
-				playertmp.playericon = v1.playericon;
+				playertmp.playerIcon = v1.playerIcon;
 				playertmp.nationIcon = v1.nationIcon;
+				playertmp.heitht = v1.height;
+				playertmp.weitht = v1.weight;
+				playertmp.win = v1.win;
+				playertmp.lose = v1.lose;
+				playertmp.KO = v1.KO;
 				gameinfotemp.playerR = playertmp;
 			}
 			if (v1.id == games[i].playerL ){
 				playertmp.name = v1.name;
-				playertmp.playericon = v1.playericon;
+				playertmp.playerIcon = v1.playerIcon;
 				playertmp.nationIcon = v1.nationIcon;
+				playertmp.heitht = v1.height;
+				playertmp.weitht = v1.weight;
+				playertmp.win = v1.win;
+				playertmp.lose = v1.lose;
+				playertmp.KO = v1.KO;				
 				gameinfotemp.playerL = playertmp;
 			}	//games表中设定的playerid，如果player表中不存在，此处出现空值
 		});
@@ -33,7 +44,7 @@ function getgameinfo(){
 		gamesinfo[i] = gameinfotemp;
 		//console.log(gamesinfo);
 		i = i+1;
-	}); 
+	}); //console.log('gameinfo.js:');console.log(gamesinfo);
 }
 //console.log(gamesinfo);
 groupNum = 0;
@@ -54,7 +65,7 @@ function createTable1() {
 		//alert('57 currentGroup'+currentGroup);
 		//data.push("'welcome.php?txt=str'");
 		data.push("'gamedetail.php?txt=");
-		var s = currentGroup;
+		var s = gamesinfo[currentGroup].id;
 		var str = encodeURI(s);
 		data.push(str);//var str="gamedetail.php?"+"txt="+encodeURI(s);
 		data.push("'");
@@ -86,7 +97,7 @@ function createTable1() {
 		data.push('<table class="pull-right text-center" id="playerR" width="50" border="0">');
 		data.push('<tbody>');
 		data.push('<tr><td ><img id="prIcon" alt="" src="');
-		data.push(gamesinfo[currentGroup].playerR.playericon);
+		data.push(gamesinfo[currentGroup].playerR.playerIcon);
 		data.push('" width="50" height="50"></td><!--pr playerRight--></tr>');
 		data.push('<tr><td id="prName">');
 		data.push(gamesinfo[currentGroup].playerR.name);
@@ -100,7 +111,7 @@ function createTable1() {
 		data.push('<table class="pull-right text-center" id="playerL" width="50" border="0">');
 		data.push('<tbody>');
 		data.push('<tr><td ><img id="plIcon" alt="" src="');
-		data.push(gamesinfo[currentGroup].playerL.playericon);
+		data.push(gamesinfo[currentGroup].playerL.playerIcon);
 		data.push('" width="50" height="50"></td><!--pl playerLeft--></tr>');
 		data.push('<tr><td id="plName">');
 		data.push(gamesinfo[currentGroup].playerL.name);
@@ -110,8 +121,8 @@ function createTable1() {
 		data.push('"height="24"></td></tr>');
 		data.push('</tbody></table>');
 		data.push('</div></div></div>');
-		//console.log(gamesinfo[currentGroup]);
-		alert('114 table'+currentGroup);
+		//console.log(gamesinfo);
+		//alert('114 table'+currentGroup);
 		//alert('115 '+data.join(''));
 		document.getElementById("table"+currentGroup).innerHTML=data.join('');
 		
