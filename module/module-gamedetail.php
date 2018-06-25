@@ -25,7 +25,7 @@ $('#bet').on('hidden.bs.modal', function () {
 	
   
 </head>  
-<body>
+<body style="background:transparent;">
 	<script language="javascript" type="text/javascript">
 		//接受跳转时传来的值
 		var loc = location.href;
