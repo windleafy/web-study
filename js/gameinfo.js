@@ -13,6 +13,10 @@ function getgameinfo(){
 		gameinfotemp.endTime = v.endTime;
 		gameinfotemp.allBet = v.allBet;
 		gameinfotemp.result = v.result;
+		gameinfotemp.gamename = v.gamename;
+		gameinfotemp.gameclass = v.gameclass;
+		gameinfotemp.gamestarttime = v.gamestarttime;
+		//console.log('gameinfo.js-v.gamestarttime');console.log(v.gamestarttime);
     	//console.log('gameinfo.js-player');console.log(players);
 		players.forEach(v1=>{
 			var playertmp = new Array();	//必须放在循环体内；
@@ -26,6 +30,7 @@ function getgameinfo(){
 				playertmp.win = v1.win;
 				playertmp.lose = v1.lose;
 				playertmp.KO = v1.KO;
+				playertmp.id = v1.id;
 				gameinfotemp.playerR = playertmp;
 			}
 			if (v1.id == games[i].playerL ){
@@ -36,7 +41,8 @@ function getgameinfo(){
 				playertmp.weitht = v1.weight;
 				playertmp.win = v1.win;
 				playertmp.lose = v1.lose;
-				playertmp.KO = v1.KO;				
+				playertmp.KO = v1.KO;
+				playertmp.id = v1.id;
 				gameinfotemp.playerL = playertmp;
 			}	//games表中设定的playerid，如果player表中不存在，此处出现空值
 		});
