@@ -28,7 +28,6 @@ session_start();
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link rel="stylesheet" href="css/lightbox.css">  
-<link rel="stylesheet" href="css/idangerous.swiper.css">
 <!-- flexslider -->
 <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
 <!-- //flexslider -->
@@ -120,15 +119,7 @@ session_start();
             </div><!--banner-end-->
         </div><!--banner1-image-end-->
 	</div><!--banner1-end-->
-    </div>
-
-
-<!--swiper-begin>
-<script src="js/idangerous.swiper.min.js"></script>
-<script src="js/swiper.js"></script> 
-<!--swiper-end-->
-
-   
+</div>
     
 	<!-- JavaScript --> 
 	<script type="text/javascript" src="js/bootstrap.js"></script>
