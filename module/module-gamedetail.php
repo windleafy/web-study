@@ -5,7 +5,7 @@
     <meta name="renderer" content="webkit|ie-comp|ie-stand">  
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />  
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />  
-    <title>nav</title>  
+    <title>gamedetail.php</title>  
     <meta name="keywords" content="关键词,5个左右,单个8汉字以内">  
     <meta name="description" content="网站描述，字数尽量空制在80个汉字，160个字符以内！">  
   
@@ -13,60 +13,188 @@
     <link rel="stylesheet" href="../css/bootstrap.css">  
 	<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
     <script src="../js/bootstrap.js"></script>  
-
-<style>
-
-.one,.two{
-width: 20%;
-height: 100px;
-border:1px solid #ccc;
-float: left;
-box-sizing: border-box;
-}
-.three{
-width: 60%;
-height: 100px;
-border:1px solid #ccc;
-float: left;
-box-sizing: border-box;
-}
-
-</style>
   
 </head>  
 <body>
-<script language="javascript" type="text/javascript">
-	//接受跳转时传来的值
-	var loc = location.href;
-	var n1 = loc.length;//地址的总长度
-	var n2 = loc.indexOf("=");//取得=号的位置
-	var id = decodeURI(loc.substr(n2+1, n1-n2));//从=号后面的内容
-	//alert('第二页－本场比赛ID：'+id);
-	//document.write('第二页－本场比赛ID：'+id)
-</script>
+	<script language="javascript" type="text/javascript">
+		//接受跳转时传来的值
+		var loc = location.href;
+		var n1 = loc.length;//地址的总长度
+		var n2 = loc.indexOf("=");//取得=号的位置
+		var id = decodeURI(loc.substr(n2+1, n1-n2));//从=号后面的内容
+		//alert('第二页－本场比赛ID：'+id);
+		//document.write('第二页－本场比赛ID：'+id)
+	</script>
 <p style="color:blueviolet">hello world</p>
 
-<div class="one text-center">第一个div</div>
-	
-<div class="three" style="text-align: center">第三个div
-	
-	<table width="200" border="1" style="width: 100%;margin:auto">
-	  <tbody>
-		<tr>
-		  <td>世界巡回赛-莫斯科站</td>
-		</tr>
-		<tr>
-		  <td>50KG</td>
-		</tr>
-		<tr>
-		  <td>2018-07-08 19:40:58</td>
-		</tr>
-	  </tbody>
-	</table>
+	<!---->
+	<div class="text-center" style="width: 20%; height=80px; float:left">
+		<img src="images/kof-1.ico" alt="" style="width: 64px"/> 
+	</div>
+	<div class="text-center" style="width: 60%; height=80px; float:left">
+	  <table border="0" style="width: 100%; margin-top:7px">
+		  <tbody>
+			<tr>
+			  <td>世界巡回赛-莫斯科站</td>
+			</tr>
+			<tr>
+			  <td>50KG</td>
+			</tr>
+			<tr>
+			  <td>2018-07-08 19:40:58</td>
+			</tr>
+		  </tbody>
+	  </table>
+	</div>
 
-</div>
+<div class="text-center" style="width: 20%; height=80px; float:left">
+<img src="images/kof-2.ico" alt="" style="width: 64px"/> </div>
+	</div>
+
+	<div class="clearfix"></div><!--清除之前设定的浮动，重新开始-->
+	<div>
+		<img src="images/CN@3x.png" alt="" style="width: 32px; margin-left: 5px"/> 
+		<span>渣渣辉</span>
+	  <img class="pull-right" src="images/gb@3x.png" alt="" style="width: 32px; margin-right: 5px; margin-left: 5px"/> 
+		<span class="pull-right">古天乐</span>	
+	</div>
+
 	
-<div class="two">第二个div</div>
+	<div class="clearfix"></div><!--身高--清除之前设定的浮动，重新开始-->
+	<div>
+		<div class="text-center" style="width: 20%; height=80px; float:left">
+			<span style="float: left;margin-left: 5px">身高</span>
+		</div>
+		<div class="text-center" style="width: 60%; height=80px; float:left">
+			<div class="progress" style="margin-bottom: 1px; height: 15px">
+			  <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 49%;">
+					<span class="pull-left">170cm</span>
+				</div>
+			  <div class="progress-bar progress-bar-info" role="progressbar" style="width: 51%;">
+					<span class="pull-right">180cm</span>
+				</div>
+			</div>
+		</div>
+		<div class="text-center" style="width: 20%; height=80px; float:left">
+			<span style="float: right;margin-right: 5px">身高</span>
+		</div>
+	</div>
+	<div class="clearfix"></div><!--体重--清除之前设定的浮动，重新开始-->
+	<div>
+		<div class="text-center" style="width: 20%; height=80px; float:left">
+			<span style="float: left;margin-left: 5px">体重</span>
+		</div>
+		<div class="text-center" style="width: 60%; height=80px; float:left">
+			<div class="progress" style="margin-bottom: 1px; height: 15px">
+			  <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 49%;">
+					<span class="pull-left">50KG</span>
+				</div>
+			  <div class="progress-bar progress-bar-info" role="progressbar" style="width: 51%;">
+					<span class="pull-right">53KG</span>
+				</div>
+			</div>
+		</div>
+		<div class="text-center" style="width: 20%; height=80px; float:left">
+			<span style="float: right;margin-right: 5px">体重</span>
+		</div>
+	</div>
+	<div class="clearfix"></div><!--年龄--清除之前设定的浮动，重新开始-->
+	<div>
+		<div class="text-center" style="width: 20%; height=80px; float:left">
+			<span style="float: left;margin-left: 5px">年龄</span>
+		</div>
+		<div class="text-center" style="width: 60%; height=80px; float:left">
+			<div class="progress" style="margin-bottom: 1px; height: 15px">
+				<div class="progress-bar progress-bar-danger" role="progressbar" style="width: 40%;">
+					<span class="pull-left">20</span>
+				</div>
+				<div class="progress-bar progress-bar-info" role="progressbar" style="width: 60%;">
+					<span class="pull-right">30</span>
+				</div>
+			</div>
+		</div>
+		<div class="text-center" style="width: 20%; height=80px; float:left">
+			<span style="float: right;margin-right: 5px">年龄</span>
+		</div>
+	</div>
+	<div class="clearfix"></div><!--获胜--清除之前设定的浮动，重新开始-->
+	<div>
+		<div class="text-center" style="width: 20%; height=80px; float:left">
+			<span style="float: left;margin-left: 5px">获胜</span>
+		</div>
+		<div class="text-center" style="width: 60%; height=80px; float:left">
+			<div class="progress" style="margin-bottom: 1px; height: 15px">
+			  <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 5%;">
+					<span class="pull-left">5</span>
+				</div>
+			  <div class="progress-bar progress-bar-info" role="progressbar" style="width: 95%;">
+					<span class="pull-right">95</span>
+				</div>
+			</div>
+		</div>
+		<div class="text-center" style="width: 20%; height=80px; float:left">
+			<span style="float: right;margin-right: 5px">获胜</span>
+		</div>
+	</div>
+	<div class="clearfix"></div><!--失败--清除之前设定的浮动，重新开始-->
+	<div>
+		<div class="text-center" style="width: 20%; height=80px; float:left">
+			<span style="float: left;margin-left: 5px">失败</span>
+		</div>
+		<div class="text-center" style="width: 60%; height=80px; float:left">
+			<div class="progress" style="margin-bottom: 1px; height: 15px">
+			  <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 10%;">
+					<span class="pull-left">10</span>
+				</div>
+			  <div class="progress-bar progress-bar-info" role="progressbar" style="width: 90%;">
+					<span class="pull-right">90</span>
+				</div>
+			</div>
+		</div>
+		<div class="text-center" style="width: 20%; height=80px; float:left">
+			<span style="float: right;margin-right: 5px">失败</span>
+		</div>
+	</div>
+	<div class="clearfix"></div><!--KO--清除之前设定的浮动，重新开始-->
+	<div>
+		<div class="text-center" style="width: 20%; height=80px; float:left">
+			<span style="float: left;margin-left: 5px">KO</span>
+		</div>
+		<div class="text-center" style="width: 60%; height=80px; float:left">
+			<div class="progress" style="margin-bottom: 1px; height: 15px">
+			  <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 20%;">
+					<span class="pull-left">5</span>
+				</div>
+			  <div class="progress-bar progress-bar-info" role="progressbar" style="width: 80%;">
+					<span class="pull-right">20</span>
+				</div>
+			</div>
+		</div>
+		<div class="text-center" style="width: 20%; height=80px; float:left">
+			<span style="float: right;margin-right: 5px">KO</span>
+		</div>
+	</div>
 	
+	<div class="clearfix"></div><!--玩法1--清除之前设定的浮动，重新开始-->
+	<hr>
+	<div>
+	  <p style="margin-bottom: -5px; margin-left: 5px">猜胜负</p>
+	  <span class="pull-left" style="margin-left: 5px">下注总金额：</span><span class="pull-left">999999</span>
+	  <span class="pull-right" style="margin-right: 5px">2018-06-25</span><span class="pull-right">下注截止时间：</span>
+	</div>
+	<div class="clearfix"></div>
+		<button type="button" class="btn btn-lg btn-info" style="width: 106px; margin-left: 5px">2.14<br>渣渣辉胜</button>
+		<button type="button" class="btn btn-lg btn-info" style="width: 106px;float: right; margin-right: 5px">1.34<br>古天乐胜</button>
+	<div class="clearfix"></div>
+	<br>
+	<p style="margin-bottom: -5px; margin-left: 5px">是否KO</p>
+	  <span class="pull-left" style="margin-left: 5px">下注总金额：</span><span class="pull-left">999999</span>
+	  <span class="pull-right" style="margin-right: 5px">2018-06-25</span><span class="pull-right">下注截止时间：</span>
+	</div>
+	<div class="clearfix"></div>
+		<button type="button" class="btn btn-lg btn-primary" style="width: 106px; margin-left: 5px">3.14<br>定会OK</button>
+		<button type="button" class="btn btn-lg btn-primary" style="width: 106px;float: right; margin-right: 5px">1.54<br>必不OK</button>
+	<div class="clearfix"></div>
+
 </body>
 </html>
