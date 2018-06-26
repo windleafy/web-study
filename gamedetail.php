@@ -1,4 +1,15 @@
 <!DOCTYPE HTML>  
+<?php
+session_start();
+	
+	if( isset($_SESSION['userName']) ){
+		//print ($_SESSION['userName']."<br>");
+	}
+	else{
+		header("location:login.html");
+	}
+?>
+
 <html>  
 <head>  
     <meta charset="utf-8">  
@@ -14,22 +25,44 @@
 	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
     <script src="js/bootstrap.js"></script>  
 
-	<script type="text/javascript" src="/mytest/web-study-git/php/getDbPlayers.php">/*此处取回players的值*/</script> 
-	<script type="text/javascript" src="/mytest/web-study-git/php/getDbGames.php">/*此处取回games的值*/</script> 
-	<script type="text/javascript" src="/mytest/web-study-git/js/gameinfo.js">/*此处取回gamesinfo的值*/</script> 
-	
+	<script type="text/javascript" src="php/getDbPlayers.php">/*此处取回players的值*/</script> 
+	<script type="text/javascript" src="php/getDbGames.php">/*此处取回games的值*/</script> 
+	<script type="text/javascript" src="js/gameinfo.js">/*此处取回gamesinfo的值*/</script> 
+	<script type="text/javascript" src="php/getDbUsers.php">/*此处取回user的值*/</script> 
 <script>
 	$(document).ready(function(){
-		$('#bet').on('hidden.bs.modal', function () {
+		$('#tpbet').on('hidden.bs.modal', function () {
 			/*console.log('hello');	console.log(document.getElementById('betnum').value);*/
 			document.getElementById('tpBetNum').value = '';
 			document.getElementById('tpRevenue').value = '';
-			});
+		});
 
 		$("button").click(function () {
 			var x = this.value;//console.log(x);
-			settooltip(x);//调用gamedetail.js中的函数
-			});
+			if (x!=('tpbtncfm')){
+				settooltip(x);//调用gamedetail.js中的函数
+			}
+			else{
+				<?php echo('username = "'.$_SESSION['userName'].'";')?>
+				//console.log(user);//user以session中的username，在数据库中取到的
+				var betnum = document.getElementById("tpBetNum").value;//console.log(betnum);//用户下注金币
+				if ( user.gold >= betnum){
+					console.log('扣钱');
+					user.gold = user.gold - betnum;console.log(user.gold);
+					
+					$.post("php/getDbUsers.php",{
+						user_gold:user.gold
+					},
+					function(data,status){
+						//alert("\n状态: " + status);
+						//document.getElementById("myp").innerHTML = data;
+					});
+				}
+				else{console.log('钱不够')}
+					
+				$('#tpbet').modal('hide');//点tooltip确认按钮，关闭窗口
+			}
+		});
 	});
 </script>	
 </head>  
@@ -195,10 +228,10 @@
 		<span class="pull-right" style="font-size: 12px">下注截止时间：</span>
 	</div>
 	<div class="clearfix"></div>
-		<button id="btnLU" value="0" type="button" class="btn btn-lg btn-info" style="width: 106px; margin-left: 5px" data-toggle="modal" data-target="#bet">
+		<button id="btnLU" value="0" type="button" class="btn btn-lg btn-info" style="width: 106px; margin-left: 5px" data-toggle="modal" data-target="#tpbet">
 			<span id="Lwin">2.14</span><br><span id="LwinName">渣渣辉</span>
 		</button>
-		<button id="btnRU" value="1" type="button" class="btn btn-lg btn-info" style="width: 106px;float: right; margin-right: 5px" data-toggle="modal" data-target="#bet">
+		<button id="btnRU" value="1" type="button" class="btn btn-lg btn-info" style="width: 106px;float: right; margin-right: 5px" data-toggle="modal" data-target="#tpbet">
 			<span id="Rwin">1.34</span><br><span id="RwinName">古天乐</span>
 		</button>
 	<div class="clearfix"></div>
@@ -211,10 +244,10 @@
 		<span class="pull-right" style="font-size: 12px">下注截止时间：</span>
 	</div>
 	<div class="clearfix"></div>
-		<button id="btnLD" value="2" type="button" class="btn btn-lg btn-primary" style="width: 106px; margin-left: 5px" data-toggle="modal" data-target="#bet">
+		<button id="btnLD" value="2" type="button" class="btn btn-lg btn-primary" style="width: 106px; margin-left: 5px" data-toggle="modal" data-target="#tpbet">
 			<span id="KO">3.14</span><br><span>定会OK</span>
 		</button>
-		<button id="btnRD" value="3" type="button" class="btn btn-lg btn-primary" style="width: 106px;float: right; margin-right: 5px" data-toggle="modal" data-target="#bet">
+		<button id="btnRD" value="3" type="button" class="btn btn-lg btn-primary" style="width: 106px;float: right; margin-right: 5px" data-toggle="modal" data-target="#tpbet">
 			<span id="NKO">3.14</span><br><span>必不OK</span>
 		</button>
 	
@@ -222,7 +255,7 @@
 	<div class="clearfix"></div>
 	<!-- Tooltip  下注-->
 	<div class="tooltip-content">
-		<div class="modal fade features-modal" id="bet" tabindex="-1" role="dialog" aria-hidden="true" >
+		<div class="modal fade features-modal" id="tpbet" tabindex="-1" role="dialog" aria-hidden="true" >
 			<div class="modal-dialog" style="position: fixed; bottom: 0">
 				<div class="modal-content text-center col-md-6 col-md-offset-3">
 					<div class="modal-header" style=" padding-bottom: 5px; margin-bottom: 10px;">
@@ -251,7 +284,7 @@
 					</div>
 					</div>
 					<br>
-					<button type="button" class="btn btn-default center-block" style="width: 70%" value="btnlogin">确认</button><p>&nbsp;</p>
+					<button id="tpbtncfm" type="button" class="btn btn-default center-block" style="width: 70%" value="tpbtncfm">确认</button><p>&nbsp;</p>
 				</div>
 			</div>
 		</div>
