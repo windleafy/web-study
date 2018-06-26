@@ -126,8 +126,9 @@ $("#tpBetNum").bind('input propertychange',function () {
 	document.getElementById("tpRevenue").value = betNum;
 });
 
-function setTooltip(){//设置tooltip页面的元素赋值
-	var x = this.value;
+function settooltip(x){//设置tooltip页面的元素赋值
+	//console.log(x);
+	'use strict';
 	switch (x){
 	case '0'://下注左边胜
 		document.getElementById('tpBetItem').innerHTML = document.getElementById("playerL.name").innerHTML+'胜';
@@ -147,4 +148,4 @@ function setTooltip(){//设置tooltip页面的元素赋值
 		document.getElementById('tpBetRatio').innerHTML = document.getElementById("NKO").innerHTML;
 		break;
 	}
-};
+}

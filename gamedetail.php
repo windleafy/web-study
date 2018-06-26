@@ -27,7 +27,8 @@
 			});
 
 		$("button").click(function () {
-			setTooltip();//调用gamedetail.js中的函数
+			var x = this.value;//console.log(x);
+			settooltip(x);//调用gamedetail.js中的函数
 			});
 	});
 </script>	
