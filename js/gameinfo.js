@@ -16,8 +16,15 @@ function getgameinfo(){
 		gameinfotemp.gamename = v.gamename;
 		gameinfotemp.gameclass = v.gameclass;
 		gameinfotemp.gamestarttime = v.gamestarttime;
+		gameinfotemp.allBet1 = v.allBet1;
+		gameinfotemp.allBet2 = v.allBet2;
+		gameinfotemp.odds1_1 = v.odds1_1;
+		gameinfotemp.odds1_2 = v.odds1_2;
+		gameinfotemp.odds2_1 = v.odds2_1;
+		gameinfotemp.odds2_2 = v.odds2_2;
+		
 		//console.log('gameinfo.js-v.gamestarttime');console.log(v.gamestarttime);
-    	//console.log('gameinfo.js-player');console.log(players);
+    	//console.log('gameinfo.js-gameinfotemp');console.log(gameinfotemp);
 		players.forEach(v1=>{
 			var playertmp = new Array();	//必须放在循环体内；
 			if ( v1.id == games[i].playerR ){
