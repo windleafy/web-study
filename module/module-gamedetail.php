@@ -23,6 +23,7 @@
 	$('#bet').on('hidden.bs.modal', function () {
 		/*console.log('hello');	console.log(document.getElementById('betnum').value);*/
 		document.getElementById('tpBetNum').value = '';
+		document.getElementById('tpRevenue').value = '';
 		})
 	
 	$("button").click(function () {
@@ -48,8 +49,6 @@
 				document.getElementById('tpBetRatio').innerHTML = document.getElementById("NKO").innerHTML;
 				break;
  		}		
-			
-		
 		});
 	});
 	
@@ -253,7 +252,7 @@
 				<div class="modal-content text-center col-md-6 col-md-offset-3">
 					<div class="modal-header" style=" padding-bottom: 5px; margin-bottom: 10px;">
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-						<span >下注:</span><span id="tpBetItem">渣渣辉</span>胜
+						<span >下注:</span><span id="tpBetItem">渣渣辉</span>
 						<br>
 						<span >赔率:</span><span id="tpBetRatio">2.14</span>
 					</div>
@@ -285,13 +284,15 @@
 
 <script language="javascript" type="text/javascript">
 	
-		//接受跳转时传来的值
+	//接受前一页面跳转时传来的值
 	var loc = location.href;
 	var n1 = loc.length;//地址的总长度
 	var n2 = loc.indexOf("=");//取得=号的位置
 	id = decodeURI(loc.substr(n2+1, n1-n2));//从=号后面的内容
 	//console.log(id);
-	getgameinfo();console.log(gamesinfo);
+	
+	
+	getgameinfo();//console.log(gamesinfo);
 	for (var i=0; i<gamesinfo.length; i++){
 		if (id == gamesinfo[i].id){
 			//alert('module-gamedetail.php-gameid:'+id);
@@ -314,9 +315,8 @@
 			document.getElementById("KO").innerHTML = gamesinfo[i].odds2_1;
 			document.getElementById("NKO").innerHTML = gamesinfo[i].odds2_2;
 
-			
-			console.log(gamesinfo[i].playerL);
-			console.log(gamesinfo[i].playerL.id);
+			//console.log(gamesinfo[i].playerL);
+			//console.log(gamesinfo[i].playerL.id);
 			for (var j=0; j<players.length; j++){
 				if (gamesinfo[i].playerR.id == players[j].id){
 					//右侧运动员赋值
@@ -361,44 +361,52 @@
 				}
 			}
 			
+			//下注按钮上的运动员名称
 			document.getElementById("LwinName").innerHTML = pln+'胜';
 			document.getElementById("RwinName").innerHTML = prn+'胜';
 			
+			//实力对比进度条赋值
 			plh = plh*1;//字符串X1变为数字
 			plw = plw*1;
 			pli = pli*1;
 			pll = pll*1;
 			plK = plK*1;
 			pla = pla*1;
-
-			prh = prh*1;console.log((prh+plh));
+			prh = prh*1;//console.log((prh+plh));
 			prw = prw*1;
 			pri = pri*1;
 			prl = prl*1;
 			prK = prK*1;
 			pra = pra*1;
-						
-			
+			//身高对比			
 			document.getElementById("playerR.heightRatio").style.width = parseInt((prh/(prh + plh))*100)+'%';
 			document.getElementById("playerL.heightRatio").style.width = 100-parseInt((prh/(prh + plh))*100)+'%';
-
+			//体重对比	
 			document.getElementById("playerR.weightRatio").style.width = parseInt((prw/(prw + plw))*100)+'%';
 			document.getElementById("playerL.weightRatio").style.width = 100-parseInt((prw/(prw + plw))*100)+'%';
-
+			//胜利场次对比
 			document.getElementById("playerR.winRatio").style.width = parseInt((pri/(pri + pli))*100)+'%';
 			document.getElementById("playerL.winRatio").style.width = 100-parseInt((pri/(pri + pli))*100)+'%';
-
+			//失败场次对比
 			document.getElementById("playerR.loseRatio").style.width = parseInt((prl/(prl + pll))*100)+'%';
 			document.getElementById("playerL.loseRatio").style.width = 100-parseInt((prl/(prl + pll))*100)+'%';
-
+			//KO场次对比
 			document.getElementById("playerR.KORatio").style.width = parseInt((prK/(prK + plK))*100)+'%';
 			document.getElementById("playerL.KORatio").style.width = 100-parseInt((prK/(prK + plK))*100)+'%';
-
+			//年龄对比
 			document.getElementById("playerR.ageRatio").style.width = parseInt((pra/(pra + pla))*100)+'%';
 			document.getElementById("playerL.ageRatio").style.width = 100-parseInt((pra/(pra + pla))*100)+'%';
-			
 		}
-	}	
+	}
+		//----预期收益input框实时动态赋值----
+	$("#tpBetNum").bind('input propertychange',function () {
+		var betNum = parseInt(document.getElementById('tpBetNum').value);
+		var ratio = parseFloat(document.getElementById('tpBetRatio').innerHTML);
+		//console.log(ratio);
+		betNum = (betNum*ratio).toFixed(0);
+		if (isNaN(betNum)){betNum = '';}
+		document.getElementById("tpRevenue").value = betNum;
+    });
 </script>	
 </body>
 	
