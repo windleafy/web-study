@@ -3,6 +3,24 @@
 //$ret=$_GET;
 session_start();
 
+//根据POST过来的参数，拆分功能模块，放置在不同的switch case中处理
+/*$_POST['stat']="0"; 
+switch ($favcolor) 
+{ 
+case "0": 
+    echo ""; 
+    break; 
+case "1": 
+    echo ""; 
+    break; 
+case "2": 
+    echo ""; 
+    break; 
+default: 
+    echo ""; */
+
+
+
 if( isset($_SESSION['userName']) ){
 	//print ($_SESSION['userName']."<br>");
 	$servername = "localhost";
@@ -12,6 +30,8 @@ if( isset($_SESSION['userName']) ){
 	try {
 		$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+		//--user数据库查寻--开始
 		//$stmt = $conn->prepare("SELECT id, name, nation, nationIcon, playerIcon, age FROM player"); 
 		$stmt = $conn->prepare("SELECT id, userName, gold FROM user"); 
 		$stmt->execute();
@@ -26,16 +46,20 @@ if( isset($_SESSION['userName']) ){
 				$ret = $v;
 			}
 		}
-		$ret=json_encode($ret);
-		echo 'user = '.$ret;
-		//print_r($ret);
 		
-		//--user数据库数值修改--开始
-		if (isset($_POST['user_gold'])){
-		$stmt = $conn->prepare("UPDATE user SET gold=".$_POST['user_gold']." WHERE userName='admin'"); 
-		$stmt->execute();
-		//--user数据库数值修改--结束
-		}
+		//echo $ret['gold'];
+		if (isset($_POST['betnum'])){ 
+			//echo $_POST['betnum'];
+			$ret['gold']=$ret['gold']-ABS($_POST['betnum']);
+			//echo $ret['gold'];
+			if ($ret['gold']<0){echo 0;}//钱不够
+			else{
+				$stmt = $conn->prepare("UPDATE user SET gold=".$ret['gold']." WHERE userName='admin'"); 
+				$stmt->execute();//待处理玩家下注数据
+				echo 1;//下注成功
+			}
+		};
+
 	}
 	catch(PDOException $e) {
 		echo "Error: " . $e->getMessage();
@@ -48,9 +72,5 @@ if( isset($_SESSION['userName']) ){
 else{
 	header("location:login.html");
 }
-
-
-
-
 ?>
 

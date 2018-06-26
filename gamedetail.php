@@ -43,23 +43,13 @@ session_start();
 				settooltip(x);//调用gamedetail.js中的函数
 			}
 			else{
-				<?php echo('username = "'.$_SESSION['userName'].'";')?>
-				//console.log(user);//user以session中的username，在数据库中取到的
-				var betnum = document.getElementById("tpBetNum").value;//console.log(betnum);//用户下注金币
-				if ( user.gold >= betnum){
-					console.log('扣钱');
-					user.gold = user.gold - betnum;console.log(user.gold);
-					
-					$.post("php/getDbUsers.php",{
-						user_gold:user.gold
-					},
-					function(data,status){
-						//alert("\n状态: " + status);
-						//document.getElementById("myp").innerHTML = data;
-					});
-				}
-				else{console.log('钱不够')}
-					
+				$.post("php/getDbUsers.php",{
+					betnum:document.getElementById("tpBetNum").value//用户下注金币
+				},
+				function(data,status){
+					alert('数据: '+data +"\n状态: " + status);
+					//document.getElementById("myp").innerHTML = data;
+				});
 				$('#tpbet').modal('hide');//点tooltip确认按钮，关闭窗口
 			}
 		});
