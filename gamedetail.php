@@ -98,10 +98,10 @@
 		</div>
 		<div class="text-center" style="width: 60%; height=80px; float:left">
 			<div class="progress" style="margin-bottom: 1px; height: 15px">
-			  <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 49%;" id="playerL.heightRatio">
+			  <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 50%;" id="playerL.heightRatio">
 					<span class="pull-left" id="playerL.height">170cm</span>
 				</div>
-			  <div class="progress-bar progress-bar-info" role="progressbar" style="width: 51%;" id="playerR.heightRatio">
+			  <div class="progress-bar progress-bar-info" role="progressbar" style="width: 50%;" id="playerR.heightRatio">
 					<span class="pull-right" id="playerR.height">180cm</span>
 				</div>
 			</div>
@@ -117,10 +117,10 @@
 		</div>
 		<div class="text-center" style="width: 60%; height=80px; float:left">
 			<div class="progress" style="margin-bottom: 1px; height: 15px">
-			  <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 49%;" id= "playerL.weightRatio">
+			  <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 50%;" id= "playerL.weightRatio">
 					<span class="pull-left" id="playerL.weight">50KG</span>
 				</div>
-			  <div class="progress-bar progress-bar-info" role="progressbar" style="width: 51%; " id= "playerR.weightRatio">
+			  <div class="progress-bar progress-bar-info" role="progressbar" style="width: 50%; " id= "playerR.weightRatio">
 					<span class="pull-right" id="playerR.weight">53KG</span>
 				</div>
 			</div>
@@ -136,10 +136,10 @@
 		</div>
 		<div class="text-center" style="width: 60%; height=80px; float:left">
 			<div class="progress" style="margin-bottom: 1px; height: 15px">
-				<div class="progress-bar progress-bar-danger" role="progressbar" style="width: 40%;" id="playerL.ageRatio">
+				<div class="progress-bar progress-bar-danger" role="progressbar" style="width: 50%;" id="playerL.ageRatio">
 					<span class="pull-left" id="playerL.age">20</span>
 				</div>
-				<div class="progress-bar progress-bar-info" role="progressbar" style="width: 60%;" id="playerR.ageRatio">
+				<div class="progress-bar progress-bar-info" role="progressbar" style="width: 50%;" id="playerR.ageRatio">
 					<span class="pull-right" id="playerR.age">30</span>
 				</div>
 			</div>
@@ -155,10 +155,10 @@
 		</div>
 		<div class="text-center" style="width: 60%; height=80px; float:left">
 			<div class="progress" style="margin-bottom: 1px; height: 15px">
-			  <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 5%;" id="playerL.winRatio">
+			  <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 50%;" id="playerL.winRatio">
 					<span class="pull-left" id="playerL.win">5</span>
 				</div>
-			  <div class="progress-bar progress-bar-info" role="progressbar" style="width: 95%;" id="playerR.winRatio">
+			  <div class="progress-bar progress-bar-info" role="progressbar" style="width: 50%;" id="playerR.winRatio">
 					<span class="pull-right" id="playerR.win">95</span>
 				</div>
 			</div>
@@ -174,10 +174,10 @@
 		</div>
 		<div class="text-center" style="width: 60%; height=80px; float:left">
 			<div class="progress" style="margin-bottom: 1px; height: 15px">
-			  <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 10%;" id="playerL.loseRatio">
+			  <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 50%;" id="playerL.loseRatio">
 					<span class="pull-left" id="playerL.lose">10</span>
 				</div>
-			  <div class="progress-bar progress-bar-info" role="progressbar" style="width: 90%;" id="playerR.loseRatio">
+			  <div class="progress-bar progress-bar-info" role="progressbar" style="width: 50%;" id="playerR.loseRatio">
 					<span class="pull-right" id="playerR.lose">90</span>
 				</div>
 			</div>
@@ -193,10 +193,10 @@
 		</div>
 		<div class="text-center" style="width: 60%; height=80px; float:left">
 			<div class="progress" style="margin-bottom: 1px; height: 15px">
-			  <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 20%;" id="playerL.KORatio">
+			  <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 50%;" id="playerL.KORatio">
 					<span class="pull-left" id="playerL.KO">5</span>
 				</div>
-			  <div class="progress-bar progress-bar-info" role="progressbar" style="width: 80%;" id="playerR.KORatio">
+			  <div class="progress-bar progress-bar-info" role="progressbar" style="width: 50%;" id="playerR.KORatio">
 					<span class="pull-right" id="playerR.KO">20</span>
 				</div>
 			</div>
