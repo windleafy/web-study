@@ -60,7 +60,8 @@ session_start();
                 <div class="tab-content">
                 	<!--主页内容开始-->
                     <div class="tab-pane fade in active" id="home">
-						<iframe src="gameinfo.php" width="100%" height="550px" frameborder="0" aallowtransparency="true" scrolling="no"></iframe>
+						<iframe src="gameinfo.php" width="100%" height="450px" frameborder="0" aallowtransparency="true" scrolling="no"></iframe>
+						<!--<iframe src="/mytest/web-study-git/module/module-gamedetail.php" width="100%" height="470px" frameborder="0" aallowtransparency="true" scrolling="no"></iframe>-->						
                     </div>
                 	<!--主页内容结束-->
                     
