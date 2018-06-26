@@ -19,21 +19,46 @@
 	<script type="text/javascript" src="/mytest/web-study-git/js/gameinfo.js">/*此处取回gamesinfo的值*/</script> 
 	
 <script>
-$(document).ready(function(){
-$('#bet').on('hidden.bs.modal', function () {
-	/*console.log('hello');	console.log(document.getElementById('betnum').value);*/
-	document.getElementById('betnum').value = '';
-	})
-});
-//console.log(games);console.log(players);
+	$(document).ready(function(){
+	$('#bet').on('hidden.bs.modal', function () {
+		/*console.log('hello');	console.log(document.getElementById('betnum').value);*/
+		document.getElementById('tpBetNum').value = '';
+		})
+	
+	$("button").click(function () {
+		console.log(this.id);console.log(this.value);
+
+		var x = this.value;
+		switch (x){
+			case '0'://下注左边胜
+				document.getElementById('tpBetItem').innerHTML = document.getElementById("playerL.name").innerHTML+'胜';
+				document.getElementById('tpBetRatio').innerHTML = document.getElementById("Lwin").innerHTML;
+				//document.getElementById('tpRevenue').innerHTML = '';
+				break;
+			case '1'://下注右边胜
+				document.getElementById('tpBetItem').innerHTML = document.getElementById("playerR.name").innerHTML+'胜';
+				document.getElementById('tpBetRatio').innerHTML = document.getElementById("Rwin").innerHTML;
+				break;
+			case '2'://下注KO
+				document.getElementById('tpBetItem').innerHTML = "出现KO";
+				document.getElementById('tpBetRatio').innerHTML = document.getElementById("KO").innerHTML;
+				break;
+			case '3'://下注NKO
+				document.getElementById('tpBetItem').innerHTML = "不出现KO";
+				document.getElementById('tpBetRatio').innerHTML = document.getElementById("NKO").innerHTML;
+				break;
+ 		}		
+			
+		
+		});
+	});
+	
 </script>	
 	
   
 </head>  
-<body style="background:transparent;">
-<script language="javascript" type="text/javascript">
-
-</script>
+<!--<body style="background:transparent;">-->
+<body style = "background-color: #a0a0a0;">
 
 <p style="color:blueviolet;margin-bottom: -10px">hello world</p>
 
@@ -190,28 +215,37 @@ $('#bet').on('hidden.bs.modal', function () {
 	<hr style="margin-bottom: 0px;margin-top: 0px">
 	<div style="color: aliceblue">
 	  <p style="margin-bottom: -5px; margin-left: 5px; color: aqua">猜胜负</p>
-	  <span class="pull-left" style="margin-left: 5px">下注总金额：</span><span class="pull-left">999999</span>
-	  <span class="pull-right" style="margin-right: 5px">2018-06-25</span><span class="pull-right">下注截止时间：</span>
+		<span class="pull-left" style="margin-left: 5px; font-size: 12px">下注总金额：</span>
+		<span class="pull-left" id="game.allBet1" style="font-size: 12px">999999</span>
+	  <span class="pull-right" style="margin-right: 5px; font-size: 12px" id="game.endTime1">2018-06-25</span>
+		<span class="pull-right" style="font-size: 12px">下注截止时间：</span>
 	</div>
 	<div class="clearfix"></div>
-		<button type="button" class="btn btn-lg btn-info" style="width: 106px; margin-left: 5px" data-toggle="modal" data-target="#bet">2.14<br>渣渣辉胜</button>
-		<button type="button" class="btn btn-lg btn-info" style="width: 106px;float: right; margin-right: 5px" data-toggle="modal" data-target="#bet">1.34<br>古天乐胜</button>
+		<button id="btnLU" value="0" type="button" class="btn btn-lg btn-info" style="width: 106px; margin-left: 5px" data-toggle="modal" data-target="#bet">
+			<span id="Lwin">2.14</span><br><span id="LwinName">渣渣辉</span>
+		</button>
+		<button id="btnRU" value="1" type="button" class="btn btn-lg btn-info" style="width: 106px;float: right; margin-right: 5px" data-toggle="modal" data-target="#bet">
+			<span id="Rwin">1.34</span><br><span id="RwinName">古天乐</span>
+		</button>
 	<div class="clearfix"></div>
 	<br>
 	<div style="color: aliceblue">
 		<p style="margin-bottom: -5px; margin-left: 5px; color: aqua">是否KO</p>
-		<span class="pull-left" style="margin-left: 5px">下注总金额：</span><span class="pull-left">999999</span>
-		<span class="pull-right" style="margin-right: 5px">2018-06-25</span><span class="pull-right">下注截止时间：</span>
+		<span class="pull-left" style="margin-left: 5px; font-size: 12px">下注总金额：</span>
+		<span class="pull-left" id="game.allBet2" style="font-size: 12px">999999</span>
+		<span class="pull-right" style="margin-right: 5px; font-size: 12px" id="game.endTime2">2018-06-25</span>
+		<span class="pull-right" style="font-size: 12px">下注截止时间：</span>
 	</div>
 	<div class="clearfix"></div>
-		<button onClick="" type="button" class="btn btn-lg btn-primary" style="width: 106px; margin-left: 5px" data-toggle="modal" data-target="#bet">
-			3.14<br>定会OK
+		<button id="btnLD" value="2" type="button" class="btn btn-lg btn-primary" style="width: 106px; margin-left: 5px" data-toggle="modal" data-target="#bet">
+			<span id="KO">3.14</span><br><span>定会OK</span>
 		</button>
-		<button type="button" class="btn btn-lg btn-primary" style="width: 106px;float: right; margin-right: 5px" data-toggle="modal" data-target="#bet">1.54<br>必不OK</button>
+		<button id="btnRD" value="3" type="button" class="btn btn-lg btn-primary" style="width: 106px;float: right; margin-right: 5px" data-toggle="modal" data-target="#bet">
+			<span id="NKO">3.14</span><br><span>必不OK</span>
+		</button>
+	
+	
 	<div class="clearfix"></div>
-
-
-
 	<!-- Tooltip  下注-->
 	<div class="tooltip-content">
 		<div class="modal fade features-modal" id="bet" tabindex="-1" role="dialog" aria-hidden="true" >
@@ -219,19 +253,19 @@ $('#bet').on('hidden.bs.modal', function () {
 				<div class="modal-content text-center col-md-6 col-md-offset-3">
 					<div class="modal-header" style=" padding-bottom: 5px; margin-bottom: 10px;">
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-						<span >下注:</span><span >渣渣辉胜</span>
+						<span >下注:</span><span id="tpBetItem">渣渣辉</span>胜
 						<br>
-						<span >赔率:</span><span >2.14</span>
+						<span >赔率:</span><span id="tpBetRatio">2.14</span>
 					</div>
 				
 					<div class="center-block"  style="width: 70%; margin-top: 3px">
 					  	<div class="input-group"><span id="addon1" class="input-group-addon">预期收益</span>
-					    	<input id="loginname" type="text" class="form-control" disabled aria-describedby="addon1">
+					    	<input id="tpRevenue" type="text" class="form-control" disabled aria-describedby="addon1">
 						</div>
 						<br>	
 					<div class="input-group"><span id="contentaddon1" class="input-group-addon">下注金额</span>
-						<input id="betnum" type="number" class="form-control" aria-describedby="contentaddon1" autocomplete="off">
-							<style>
+						<input id="tpBetNum" type="number" class="form-control" aria-describedby="contentaddon1" autocomplete="off">
+							<style>/*取消num输入框的spiner*/
 								input::-webkit-outer-spin-button,
 								input::-webkit-inner-spin-button {
 									-webkit-appearance: none;
@@ -257,7 +291,7 @@ $('#bet').on('hidden.bs.modal', function () {
 	var n2 = loc.indexOf("=");//取得=号的位置
 	id = decodeURI(loc.substr(n2+1, n1-n2));//从=号后面的内容
 	//console.log(id);
-	getgameinfo();
+	getgameinfo();console.log(gamesinfo);
 	for (var i=0; i<gamesinfo.length; i++){
 		if (id == gamesinfo[i].id){
 			//alert('module-gamedetail.php-gameid:'+id);
@@ -269,6 +303,18 @@ $('#bet').on('hidden.bs.modal', function () {
 			document.getElementById("game.name").innerHTML = gamesinfo[i].gamename;
 			document.getElementById("game.gamestarttime").innerHTML = gamesinfo[i].gamestarttime;
 			document.getElementById("game.class").innerHTML = gamesinfo[i].gameclass;
+			
+			document.getElementById("game.endTime1").innerHTML = gamesinfo[i].endTime;
+			document.getElementById("game.endTime2").innerHTML = gamesinfo[i].endTime;
+			document.getElementById("game.allBet1").innerHTML = gamesinfo[i].allBet1;
+			document.getElementById("game.allBet2").innerHTML = gamesinfo[i].allBet2;
+			
+			document.getElementById("Lwin").innerHTML = gamesinfo[i].odds1_2;
+			document.getElementById("Rwin").innerHTML = gamesinfo[i].odds1_1;
+			document.getElementById("KO").innerHTML = gamesinfo[i].odds2_1;
+			document.getElementById("NKO").innerHTML = gamesinfo[i].odds2_2;
+
+			
 			console.log(gamesinfo[i].playerL);
 			console.log(gamesinfo[i].playerL.id);
 			for (var j=0; j<players.length; j++){
@@ -314,6 +360,10 @@ $('#bet').on('hidden.bs.modal', function () {
 					document.getElementById("playerL.age").innerHTML = pla;
 				}
 			}
+			
+			document.getElementById("LwinName").innerHTML = pln+'胜';
+			document.getElementById("RwinName").innerHTML = prn+'胜';
+			
 			plh = plh*1;//字符串X1变为数字
 			plw = plw*1;
 			pli = pli*1;
