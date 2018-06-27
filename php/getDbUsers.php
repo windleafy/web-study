@@ -63,13 +63,10 @@ if( isset($_SESSION['userName']) ){
 					$rgt = date('Y-m-d H:i:s',time());	//echo "<script>alert('".$rgt."');</script>";  
 					//echo $rgt;
 					$betnum = $_POST['betnum'];
-					$userId = $_SESSION['userName'];
+					$userName = $_SESSION['userName'];
 					$gameId = $_POST['gameId'];
 					$bet = $_POST['bet'];
-					$odds = 99.99;
-
-
-					
+					$odds = 1.00;
 					//处理gameId对应的odds--开始  
 					//--games数据库查寻--
 					//$stmt = $conn->prepare("SELECT id, name, nation, nationIcon, playerIcon, age FROM player"); 
@@ -99,8 +96,8 @@ if( isset($_SESSION['userName']) ){
 
 					
 					
-					$sql = "INSERT INTO useraction (userId, gameId, bet, odds, bettime, betnum)
-					VALUES ('".$userId."', '".$gameId."', '".$bet."', '".$odds."', '".$rgt."', '".$betnum."')";
+					$sql = "INSERT INTO useraction (userName, gameId, bet, odds, bettime, betnum)
+					VALUES ('".$userName."', '".$gameId."', '".$bet."', '".$odds."', '".$rgt."', '".$betnum."')";
 					// 使用 exec() ，没有结果返回 
 					$conn->exec($sql);
 					//echo "新记录插入成功";
