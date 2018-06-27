@@ -67,13 +67,14 @@ if( isset($_SESSION['userName']) ){
 					$gameId = $_POST['gameId'];
 					$bet = $_POST['bet'];
 					$odds = 99.99;
+
+
 					
 					//处理gameId对应的odds--开始  
 					//--games数据库查寻--
 					//$stmt = $conn->prepare("SELECT id, name, nation, nationIcon, playerIcon, age FROM player"); 
-					$stmt = $conn->prepare("SELECT id, odds1_1, odds1_2, odds2_1, odds2_2 FROM games"); 
+					$stmt = $conn->prepare("SELECT id, odds1_1, odds1_2, odds2_1, odds2_2, allBet1, allBet2 FROM games"); 
 					$stmt->execute();
-
 					// 设置结果集为关联数组
 					$result = $stmt->setFetchMode(PDO::FETCH_ASSOC); 
 
@@ -84,12 +85,15 @@ if( isset($_SESSION['userName']) ){
 							$ret = $v;
 						}
 					}
+					$allBet1 = $ret['allBet1']; 
+					$allBet2 = $ret['allBet2'];
+				
 					switch ($_POST['bet']) 
 					{ 
-					case "0": $odds = $ret['odds1_2']; break; 
-					case "1": $odds = $ret['odds1_1']; break;
-					case "2": $odds = $ret['odds2_1']; break; 
-					case "3": $odds = $ret['odds2_2']; 
+					case "0": $odds = $ret['odds1_2']; $allBet1 = $betnum+$ret['allBet1']; break; 
+					case "1": $odds = $ret['odds1_1']; $allBet1 = $betnum+$ret['allBet1']; break;
+					case "2": $odds = $ret['odds2_1']; $allBet2 = $betnum+$ret['allBet2']; break; 
+					case "3": $odds = $ret['odds2_2']; $allBet2 = $betnum+$ret['allBet2']; 
 					}
 					//处理gameId对应的odds--结束
 
@@ -101,6 +105,16 @@ if( isset($_SESSION['userName']) ){
 					$conn->exec($sql);
 					//echo "新记录插入成功";
 				//--处理useraction表--结束				
+				
+				//--处理指定比赛的总下注额--开始
+				
+					$stmt = $conn->prepare("UPDATE games SET allBet1=".$allBet1." WHERE id='".$ret['id']."'"); //处理加钱
+					$stmt->execute();//
+					$stmt = $conn->prepare("UPDATE games SET allBet2=".$allBet2." WHERE id='".$ret['id']."'"); //处理加钱
+					$stmt->execute();//				
+				//--处理指定比赛的总下注额--结束
+				
+				
 				
 				echo 1;//下注成功
 			}
