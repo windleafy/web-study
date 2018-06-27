@@ -36,22 +36,32 @@ session_start();
 			document.getElementById('tpBetNum').value = '';
 			document.getElementById('tpRevenue').value = '';
 		});
-
+		
+		var betx;
 		$("button").click(function () {
 			var x = this.value;//console.log(x);
 			if (x!=('tpbtncfm')){
 				settooltip(x);//调用gamedetail.js中的函数
+				betx = x;
 			}
-			else{
+			else{ 
 				$.post("php/getDbUsers.php",{
-					betnum:document.getElementById("tpBetNum").value//用户下注金币
+					betnum:document.getElementById("tpBetNum").value,//用户下注金币
+					bet:betx,
+					gameId:id
 				},
 				function(data,status){
-					alert('数据: '+data +"\n状态: " + status);
-					//document.getElementById("myp").innerHTML = data;
-				});
+					//alert('数据: '+data +"\n状态: " + status);
+					switch (parseInt(data)){
+						case 0:alert("钱不够");
+						break;
+						case 1:alert("下注成功");
+						break;
+					};
+				})
+			
 				$('#tpbet').modal('hide');//点tooltip确认按钮，关闭窗口
-			}
+			};
 		});
 	});
 </script>	
