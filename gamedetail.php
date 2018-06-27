@@ -29,6 +29,14 @@ session_start();
 	<script type="text/javascript" src="php/getDbGames.php">/*此处取回games的值*/</script> 
 	<script type="text/javascript" src="js/gameinfo.js">/*此处取回gamesinfo的值*/</script> 
 	<script type="text/javascript" src="php/getDbUsers.php">/*此处取回user的值*/</script> 
+<!--	<script language="JavaScript">
+		function myrefresh()
+		{
+		   window.location.reload();
+		}
+		setTimeout('myrefresh()',3000); //指定1秒刷新一次
+	</script>-->
+	
 <script>
 	$(document).ready(function(){
 		$('#tpbet').on('hidden.bs.modal', function () {
@@ -36,6 +44,8 @@ session_start();
 			document.getElementById('tpBetNum').value = '';
 			document.getElementById('tpRevenue').value = '';
 		});
+		
+		
 		
 		var betx;
 		$("button").click(function () {
@@ -57,7 +67,10 @@ session_start();
 						switch (parseInt(data)){
 							case 0:alert("钱不够");
 							break;
-							case 1:alert("下注成功");
+							case 1:
+								window.location.reload();
+								alert("下注成功");								
+								console.log(games);
 							break;
 						};
 					})
