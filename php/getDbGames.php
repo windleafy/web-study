@@ -18,10 +18,17 @@ try {
 	foreach(($stmt->fetchAll()) as $k=>$v) { 
 		//print_r($v);
 		$gameAr[]=$v;
+		if (isset($_POST['gameId'])&&($_POST['gameId']==$v['id'])){//找到玩家选择的比赛，存入slcGame
+			$slcGame=$v;
+		}
 		//echo '</br>';
     }
 	$gameAr=json_encode($gameAr);
-	echo 'games = '.$gameAr;
+	if(isset($_POST['gamedetail'])){
+		echo json_encode($slcGame);
+	}
+	else {echo 'games = '.$gameAr;}
+	
 	//print_r($ret);
 }
 catch(PDOException $e) {

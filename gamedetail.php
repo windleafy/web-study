@@ -55,7 +55,7 @@ session_start();
 				betx = x;
 			}
 			else{ 
-				betnum = document.getElementById("tpBetNum").value;
+				betnum = document.getElementById("tpBetNum").value;//输入为空不处理
 				if ((betnum!='')&&(betnum!='0')){
 					$.post("php/getDbUsers.php",{
 						betnum:document.getElementById("tpBetNum").value,//用户下注金币
@@ -68,13 +68,25 @@ session_start();
 							case 0:alert("钱不够");
 							break;
 							case 1:
-								window.location.reload();
+								//window.location.reload();
+								//console.log(games);
 								alert("下注成功");								
-								console.log(games);
+								
 							break;
 						};
 					})
 				}
+				$.post("php/getDbGames.php",{
+					gamedetail:1,
+					gameId:id
+				},
+				function (data,status){
+					//alert('数据: '+data +"\n状态: " + status);
+					slcgame = JSON.parse(data);//将收到的json串转为对象
+					//console.log(slcgame.allBet1);console.log(slcgame.allBet2);
+					document.getElementById('game.allBet1').innerHTML = slcgame.allBet1;//刷新前端显示
+					document.getElementById('game.allBet2').innerHTML = slcgame.allBet2;
+				})
 				$('#tpbet').modal('hide');//点tooltip确认按钮，关闭窗口
 			};
 		});
