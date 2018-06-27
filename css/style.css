@@ -2329,7 +2329,7 @@ ul.top-links li {
 	background: #973e76;
 }
 .swiper-slide {
-	height: 165px;
+	height: 120px;
 	width: 100%;
 	//line-height: 100px;
 	opacity: 0.2;
@@ -2362,3 +2362,4 @@ ul.top-links li {
 	margin:auto;
 }
 /* -- swapper end -- */
+
