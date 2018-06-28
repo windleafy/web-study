@@ -1,9 +1,9 @@
 <?php
 /*---取出当前竞猜中的比赛---*/
 
-$servername = "localhost";
+$servername = "39.106.1.194";
 $username = "root";
-$password = "root";
+$password = "wdlinux.cn";
 $dbname = "ydfdbpdo";
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
@@ -29,7 +29,7 @@ try {
 	}
 	else {echo 'games = '.$gameAr;}
 	
-	//print_r($ret);
+	//print_r('<br><br>'.$gameAr);
 }
 catch(PDOException $e) {
     echo "Error: " . $e->getMessage();
