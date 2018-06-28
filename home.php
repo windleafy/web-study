@@ -101,6 +101,7 @@ session_start();
                 	<!--记录页面开始-->
                     <div class="tab-pane fade" id="note">
                         <p>请在此页面查看种奖<font color="#00FF00">记录</font>。</p>
+						<iframe src="record.php" width="100%" height="450px" frameborder="0" aallowtransparency="true" scrolling="no"></iframe>						
                     </div>
                 	<!--记录页面结束-->
 

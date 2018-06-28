@@ -62,6 +62,7 @@ function getgameinfo(){
 //console.log(gamesinfo);
 groupNum = 0;
 currentGroup = 0;
+currentGroup2 = 0;
 function createTable1() {
 	'use strict';
 	getgameinfo();//console.log(getgameinfo);console.log(gamesinfo[0].playerR);
@@ -142,6 +143,56 @@ function createTable1() {
 		
 		
 		currentGroup = currentGroup+1;
+	}
+	
+	//console.log(games);
+	//console.log(players);
+}
+
+function createTable2() {
+	'use strict';
+	//getgameinfo();//console.log(getgameinfo);console.log(gamesinfo[0].playerR);
+	//groupNum = gamesinfo.length;
+	//console.log(userbet);
+	for (var i = 0; i < 3; i++) {
+		if (currentGroup2 >= 3){i = 3};
+		//console.log(currentGroup);
+		var data = [];
+		data.push('<div><div style="text-align: center; color: aliceblue; margin-left: -30px"><span>');
+		data.push(userbet[currentGroup2].playerL);
+		data.push('</span><span>VS</span><span>');
+		data.push(userbet[currentGroup2].playerR);
+		data.push('</span><span>');
+		data.push('(玩法'+userbet[currentGroup2].bet+')');
+		data.push('</span></div>');
+		data.push('<div style="text-align: center; margin-left: -30px"><p style="font-size: 12px;">竞猜时间：<span>');
+		data.push(userbet[currentGroup2].bettime);
+		data.push('</span></p></div><div class="clearfix"></div>');
+		data.push('<div class="record-div"><p class="record-p">竞猜选项：<span>');
+		data.push(userbet[currentGroup2].bet);
+		data.push('</span></p></div>');
+		data.push('<div class="record-div"><p class="record-p">比赛结果：<span>');
+		data.push(userbet[currentGroup2].result);
+		data.push('</span></p></div><div class="clearfix"></div>');
+		data.push('<div class="record-div"><p class="record-p">下注金额：<span>')
+		data.push(userbet[currentGroup2].betnum);
+		data.push('</span></p></div>');
+		data.push('<div class="record-div"><p class="record-p">下注赔率：<span>');
+		data.push(userbet[currentGroup2].odds);
+		data.push('</span></p></div>');
+		data.push('<div class="record-div"><p class="record-p">竞猜结果：<span>');
+		data.push(userbet[currentGroup2].result);
+		data.push('</span></p></div>');
+		data.push('<div class="record-div"><p class="record-p">竞猜收益：<span>');
+		data.push(userbet[currentGroup2].result);
+		data.push('</span></p></div>');
+		data.push('<div class="clearfix"></div><hr style="margin-bottom: 5px; margin-top: 5px"></div>');
+
+		//console.log(gamesinfo);
+		//alert('114 table'+currentGroup);
+		//alert('115 '+data.join(''));
+		document.getElementById("table"+currentGroup).innerHTML=data.join('');
+		currentGroup2 = currentGroup2+1;
 	}
 	
 	//console.log(games);

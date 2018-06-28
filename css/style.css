@@ -2368,6 +2368,7 @@ ul.top-links li {
 .record-div{
 	width:50%;
 	float:left;
+	text-align: left;
 }
 .record-p{
 	font-size:12px;

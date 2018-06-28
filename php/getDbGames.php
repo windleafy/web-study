@@ -42,7 +42,7 @@ try {
 		echo(json_encode($userbet));		
 	}
 	else{
-		echo 'games = '.$gameAr;
+		echo 'games = '.$gameAr;//games数据库取值在此处理
 	}
 	
 	//print_r('<br><br>'.$gameAr);
