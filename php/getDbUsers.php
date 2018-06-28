@@ -49,7 +49,7 @@ if( isset($_SESSION['userName']) ){
 		
 		//echo $ret['gold'];
 
-		if (isset($_POST['betnum'])||isset($_POST['bet'])){ 
+		if (isset($_POST['betnum'])&&isset($_POST['bet'])){ 
 			//echo 'betnum'.$_POST['betnum'];	echo 'bet'.$_POST['bet'];			
 			$ret['gold']=$ret['gold']-ABS($_POST['betnum']);
 			//echo $ret['gold'];
@@ -59,59 +59,58 @@ if( isset($_SESSION['userName']) ){
 				$stmt->execute();//待处理玩家下注数据
 				
 				//--处理useraction表--开始  
-					date_default_timezone_set('PRC');
-					$rgt = date('Y-m-d H:i:s',time());	//echo "<script>alert('".$rgt."');</script>";  
-					//echo $rgt;
-					$betnum = $_POST['betnum'];
-					$userName = $_SESSION['userName'];
-					$gameId = $_POST['gameId'];
-					$bet = $_POST['bet'];
-					$odds = 1.00;
-					//处理gameId对应的odds--开始  
-					//--games数据库查寻--
-					//$stmt = $conn->prepare("SELECT id, name, nation, nationIcon, playerIcon, age FROM player"); 
-					$stmt = $conn->prepare("SELECT id, odds1_1, odds1_2, odds2_1, odds2_2, allBet1, allBet2 FROM games"); 
-					$stmt->execute();
-					// 设置结果集为关联数组
-					$result = $stmt->setFetchMode(PDO::FETCH_ASSOC); 
+				date_default_timezone_set('PRC');
+				$rgt = date('Y-m-d H:i:s',time());	//echo "<script>alert('".$rgt."');</script>";  
+				//echo $rgt;
+				$betnum = $_POST['betnum'];
+				$userName = $_SESSION['userName'];
+				$gameId = $_POST['gameId'];
+				$bet = $_POST['bet'];
+				$odds = 1.00;
+				$playerL = $_POST['playerL'];
+				$playerR = $_POST['playerR'];
 
-					//print_r($stmt);echo '</br>';
-					foreach(($stmt->fetchAll()) as $k=>$v) { 
-						//print_r($v);
-						if ( $v['id'] == $_POST['gameId'] ){
-							$ret = $v;
-						}
+				//处理gameId对应的odds--开始  
+				//--games数据库查寻--
+				//$stmt = $conn->prepare("SELECT id, name, nation, nationIcon, playerIcon, age FROM player"); 
+				$stmt = $conn->prepare("SELECT id, odds1_1, odds1_2, odds2_1, odds2_2, allBet1, allBet2 FROM games"); 
+				$stmt->execute();
+				// 设置结果集为关联数组
+				$result = $stmt->setFetchMode(PDO::FETCH_ASSOC); 
+
+				//print_r($stmt);echo '</br>';
+				foreach(($stmt->fetchAll()) as $k=>$v) { 
+					//print_r($v);
+					if ( $v['id'] == $_POST['gameId'] ){
+						$ret = $v;
 					}
-					$allBet1 = $ret['allBet1']; 
-					$allBet2 = $ret['allBet2'];
+				}
+				$allBet1 = $ret['allBet1']; 
+				$allBet2 = $ret['allBet2'];
+
+				switch ($_POST['bet']) 
+				{ 
+				case "0": $odds = $ret['odds1_2']; $allBet1 = $betnum+$ret['allBet1']; break; 
+				case "1": $odds = $ret['odds1_1']; $allBet1 = $betnum+$ret['allBet1']; break;
+				case "2": $odds = $ret['odds2_1']; $allBet2 = $betnum+$ret['allBet2']; break; 
+				case "3": $odds = $ret['odds2_2']; $allBet2 = $betnum+$ret['allBet2']; 
+				}
+				//处理gameId对应的odds--结束
+
+				$sql = "INSERT INTO useraction (userName, gameId, bet, odds, bettime, betnum, playerL, playerR)
+				VALUES ('".$userName."', '".$gameId."', '".$bet."', '".$odds."', '".$rgt."', '".$betnum."', '".$playerL."', '".$playerR."')";
 				
-					switch ($_POST['bet']) 
-					{ 
-					case "0": $odds = $ret['odds1_2']; $allBet1 = $betnum+$ret['allBet1']; break; 
-					case "1": $odds = $ret['odds1_1']; $allBet1 = $betnum+$ret['allBet1']; break;
-					case "2": $odds = $ret['odds2_1']; $allBet2 = $betnum+$ret['allBet2']; break; 
-					case "3": $odds = $ret['odds2_2']; $allBet2 = $betnum+$ret['allBet2']; 
-					}
-					//处理gameId对应的odds--结束
-
-					
-					
-					$sql = "INSERT INTO useraction (userName, gameId, bet, odds, bettime, betnum)
-					VALUES ('".$userName."', '".$gameId."', '".$bet."', '".$odds."', '".$rgt."', '".$betnum."')";
-					// 使用 exec() ，没有结果返回 
-					$conn->exec($sql);
-					//echo "新记录插入成功";
+				// 使用 exec() ，没有结果返回 
+				$conn->exec($sql);
+				//echo "新记录插入成功";
 				//--处理useraction表--结束				
-				
+
 				//--处理指定比赛的总下注额--开始
-				
-					$stmt = $conn->prepare("UPDATE games SET allBet1=".$allBet1." WHERE id='".$ret['id']."'"); //处理加钱
-					$stmt->execute();//
-					$stmt = $conn->prepare("UPDATE games SET allBet2=".$allBet2." WHERE id='".$ret['id']."'"); //处理加钱
-					$stmt->execute();//				
+				$stmt = $conn->prepare("UPDATE games SET allBet1=".$allBet1." WHERE id='".$ret['id']."'"); //处理加钱
+				$stmt->execute();//
+				$stmt = $conn->prepare("UPDATE games SET allBet2=".$allBet2." WHERE id='".$ret['id']."'"); //处理加钱
+				$stmt->execute();//				
 				//--处理指定比赛的总下注额--结束
-				
-				
 				
 				echo 1;//下注成功
 			}
