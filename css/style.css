@@ -2361,5 +2361,17 @@ ul.top-links li {
 	height:auto;
 	margin:auto;
 }
-/* -- swapper end -- */
+/* -- swipper end -- */
 
+/* -- record begin -- */
+
+.record-div{
+	width:50%;
+	float:left;
+}
+.record-p{
+	font-size:12px;
+	margin-left:5px;
+}
+
+/* -- record end -- */
