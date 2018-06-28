@@ -39,7 +39,7 @@ session_start();
 	
 <script>
 	$(document).ready(function(){
-		$('#tpbet').on('hidden.bs.modal', function () {
+		$('#tpbet').on('hidden.bs.modal', function () {//关闭下注模态窗口时，输入框清空
 			/*console.log('hello');	console.log(document.getElementById('betnum').value);*/
 			document.getElementById('tpBetNum').value = '';
 			document.getElementById('tpRevenue').value = '';
@@ -52,7 +52,7 @@ session_start();
 			var x = this.value;//console.log(x);
 			if (x!=('tpbtncfm')){
 				settooltip(x);//调用gamedetail.js中的函数
-				betx = x;
+				betx = x;//x = 0 1 2 3四种下注方式
 			}
 			else{ 
 				betnum = document.getElementById("tpBetNum").value;//输入为空不处理
@@ -60,7 +60,9 @@ session_start();
 					$.post("php/getDbUsers.php",{
 						betnum:document.getElementById("tpBetNum").value,//用户下注金币
 						bet:betx,
-						gameId:id
+						gameId:id,
+						playerL:pln,//左边运动员，从gamedetail取出，存入用户下注数据库
+						playerR:prn //右边
 					},
 					function(data,status){
 						//alert('数据: '+data +"\n状态: " + status);
@@ -71,7 +73,6 @@ session_start();
 								//window.location.reload();
 								//console.log(games);
 								alert("下注成功");								
-								
 							break;
 						};
 					})
