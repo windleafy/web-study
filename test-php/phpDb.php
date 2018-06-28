@@ -7,9 +7,9 @@
 
 <body>
 <?php
-$servername = "localhost";
+$servername = "39.106.1.194";
 $username = "root";
-$password = "root";
+$password = "wdlinux.cn";
 $dbname = "ydfdbpdo";
 
 //数据库取值--开始--

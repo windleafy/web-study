@@ -43,9 +43,9 @@ enctype="multipart/form-data">
 </form>-->
 
 <?php /*?><?php
-$servername = "localhost";
+$servername = "39.106.1.194";
 $username = "root";
-$password = "root";
+$password = "wdlinux.cn";
  
 // 创建连接
 $conn = new mysqli($servername, $username, $password);
@@ -59,9 +59,9 @@ echo "连接成功";
 
 
 <?php /*?><?php
-$servername = "localhost";
+$servername = "39.106.1.194";
 $username = "root";
-$password = "root";
+$password = "wdlinux.cn";
  
 try {
     $conn = new PDO("mysql:host=$servername;dbname=test", $username, $password);
@@ -75,9 +75,9 @@ catch(PDOException $e)
 
 
 <?php /*?><?php 
-$servername = "localhost"; 
+$servername = "39.106.1.194"; 
 $username = "root"; 
-$password = "root"; 
+$password = "wdlinux.cn"; 
 
 try { 
     $conn = new PDO("mysql:host=$servername;dbname=test", $username, $password); 
@@ -100,9 +100,9 @@ $conn = null;
 ?><?php */?>
 
 <?php /*?><?php
-$servername = "localhost";
+$servername = "39.106.1.194";
 $username = "root";
-$password = "root";
+$password = "wdlinux.cn";
 $dbname = "ydfDBPDO";
 
 try {
@@ -132,9 +132,9 @@ $conn = null;
 ?><?php */?>
 
 <?php
-$servername = "localhost";
+$servername = "39.106.1.194";
 $username = "root";
-$password = "root";
+$password = "wdlinux.cn";
 $dbname = "ydfDBPDO";
 
 /*try {
@@ -231,9 +231,9 @@ class TableRows extends RecursiveIteratorIterator {
     } 
 } 
  
-$servername = "localhost";
+$servername = "39.106.1.194";
 $username = "root";
-$password = "root";
+$password = "wdlinux.cn";
 $dbname = "ydfDBPDO";
  
 try {
