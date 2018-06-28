@@ -73,7 +73,8 @@ function createTable1() {
 		data.push('<div class="');//data.push('<div class="container">');
 		data.push('container"');
 		
-		//----处理跳转链接----开始
+		//----处理跳转链接----开始--
+		//选中某比赛条目，跳转至对应比赛详情页
 		data.push('onclick="location=');
 		//alert('57 currentGroup'+currentGroup);
 		//data.push("'welcome.php?txt=str'");
