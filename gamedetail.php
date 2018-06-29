@@ -85,10 +85,15 @@ session_start();
 					//alert('数据: '+data +"\n状态: " + status);
 					slcgame = JSON.parse(data);//将收到的json串转为对象
 					//console.log(slcgame.allBet1);console.log(slcgame.allBet2);
-					slcgame.allBet1 =parseInt(slcgame.allBet1) + parseInt(betnum);//字符串转下数字
-					slcgame.allBet2 =parseInt(slcgame.allBet2) + parseInt(betnum);//数据库原值+本次加的值
-					document.getElementById('game.allBet1').innerHTML = slcgame.allBet1;//刷新前端显示
-					document.getElementById('game.allBet2').innerHTML = slcgame.allBet2;
+					//slcgame.allBet1 =parseInt(slcgame.allBet1) + parseInt(betnum);//字符串转下数字
+					//slcgame.allBet2 =parseInt(slcgame.allBet2) + parseInt(betnum);//数据库原值+本次加的值
+					var x = document.getElementById('game.allBet1').innerHTML;
+					var y = document.getElementById('game.allBet2').innerHTML;
+					console.log(betx);
+					if ((betx=='0')||(betx=='1')){//刷新前端显示
+					document.getElementById('game.allBet1').innerHTML = parseInt(betnum)+parseInt(x);}
+					else{
+					document.getElementById('game.allBet2').innerHTML = parseInt(betnum)+parseInt(y);}
 				})
 				$('#tpbet').modal('hide');//点tooltip确认按钮，关闭窗口
 			};
