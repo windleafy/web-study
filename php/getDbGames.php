@@ -22,18 +22,11 @@ try {
 	foreach(($stmt->fetchAll()) as $k=>$v) { 
 		//print_r($v);
 		$gameAr[]=$v;
-		if (isset($_POST['gameId'])&&($_POST['gameId']==$v['id'])){//找到玩家选择的比赛，存入slcGame
-			$slcGame=$v;
-		}
-		
 		//echo '</br>';
     }
 	$gameAr = json_encode($gameAr);
 
-	if(isset($_POST['gamedetail'])){//gamedetail.php页面在此处理
-		echo json_encode($slcGame);
-	}
-	elseif(isset($_POST['record_userName'])){//record.php页面在此处理
+	if(isset($_POST['record_userName'])){//record.php页面在此处理
 		$stmt = $conn->prepare("SELECT * FROM useraction where userName='".$_POST['record_userName']."'"); 
 		$stmt->execute();$result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
 		foreach(($stmt->fetchAll()) as $k=>$v){
