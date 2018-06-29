@@ -11,13 +11,13 @@ function getgameinfo(){
 		var gameinfotemp = [];	//必须放在循环体内，否则循环时回传值数组会全部置为最新值
 		gameinfotemp.id = v.id;
 		gameinfotemp.endTime = v.endTime;
-		gameinfotemp.allBet = v.allBet;
 		gameinfotemp.result = v.result;
 		gameinfotemp.gamename = v.gamename;
 		gameinfotemp.gameclass = v.gameclass;
 		gameinfotemp.gamestarttime = v.gamestarttime;
 		gameinfotemp.allBet1 = v.allBet1;
 		gameinfotemp.allBet2 = v.allBet2;
+		gameinfotemp.allBet = parseInt(v.allBet1)+parseInt(v.allBet2);
 		gameinfotemp.odds1_1 = v.odds1_1;
 		gameinfotemp.odds1_2 = v.odds1_2;
 		gameinfotemp.odds2_1 = v.odds2_1;
@@ -91,14 +91,14 @@ function createTable1() {
 		data.push('>');
 
 		data.push('<div class="row">');
-		data.push('<div class="pull-left">');
+		data.push('<div class="pull-left" style="font-size:12px">');
 		data.push('<p id="endTime">');
 		data.push(gamesinfo[currentGroup].endTime);
 		data.push('</p>');
-		data.push('<p id="gameResult">');
+		data.push('<p id="gameResult" style="text-align:left">比赛结果:');
 		data.push(gamesinfo[currentGroup].result);
 		data.push('</p>');
-		data.push('<p id="allBet">');
+		data.push('<p id="allBet" style="text-align:left">下注总额:');
 		data.push(gamesinfo[currentGroup].allBet);
 		data.push('</p>');
 

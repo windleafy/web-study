@@ -81,8 +81,10 @@ window.onload=function (){
 <script src="js/swiper.js"></script> 
 
 <script>
-//赋初值
-createTable1();
+	//赋初值
+	createTable1();
+	console.log(games);
+	//alert(document.getElementById('allBet').innerHTML);
 </script>
 <!--swiper-end-->
 
