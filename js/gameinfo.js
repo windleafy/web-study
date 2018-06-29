@@ -62,7 +62,7 @@ function getgameinfo(){
 //console.log(gamesinfo);
 groupNum = 0;
 currentGroup = 0;
-currentGroup2 = 0;
+
 function createTable1() {
 	'use strict';
 	getgameinfo();//console.log(getgameinfo);console.log(gamesinfo[0].playerR);
@@ -149,13 +149,16 @@ function createTable1() {
 	//console.log(players);
 }
 
+groupNum2 = 0;
+currentGroup2 = 0;
 function createTable2() {
 	'use strict';
 	//getgameinfo();//console.log(getgameinfo);console.log(gamesinfo[0].playerR);
-	//groupNum = gamesinfo.length;
+	groupNum2 = userbet.length;
 	//console.log(userbet);
-	for (var i = 0; i < 3; i++) {
-		if (currentGroup2 >= 3){i = 3};
+	for (var i = 0; ((i < 3)&&(i < userbet.length)); i++) {
+		//console.log(currentGroup2);
+		if (currentGroup2 >= 2){i = 3};
 		//console.log(currentGroup);
 		var data = [];
 		data.push('<div><div style="text-align: center; color: aliceblue; margin-left: -30px"><span>');
@@ -188,10 +191,10 @@ function createTable2() {
 		data.push('</span></p></div>');
 		data.push('<div class="clearfix"></div><hr style="margin-bottom: 5px; margin-top: 5px"></div>');
 
-		//console.log(gamesinfo);
-		//alert('114 table'+currentGroup);
-		//alert('115 '+data.join(''));
-		document.getElementById("table"+currentGroup).innerHTML=data.join('');
+		//console.log(userbet[i]);
+		//console.log('table'+currentGroup2);
+		//console.log(data.join(''));
+		document.getElementById("table"+currentGroup2).innerHTML=data.join('');
 		currentGroup2 = currentGroup2+1;
 	}
 	
