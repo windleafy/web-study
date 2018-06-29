@@ -39,7 +39,8 @@ try {
 		foreach(($stmt->fetchAll()) as $k=>$v){
 			$userbet[] = $v; 
 		}
-		echo(json_encode($userbet));		
+		if(isset($userbet)){echo(json_encode($userbet));}
+		else{echo '0';}
 	}
 	else{
 		echo 'games = '.$gameAr;//games数据库取值在此处理
