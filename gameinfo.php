@@ -83,7 +83,7 @@ window.onload=function (){
 <script>
 	//赋初值
 	createTable1();
-	console.log(games);
+	//console.log(games);
 	//alert(document.getElementById('allBet').innerHTML);
 </script>
 <!--swiper-end-->
