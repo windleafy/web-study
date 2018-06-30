@@ -82,11 +82,11 @@ session_start();
 				var y = document.getElementById('game.allBet2').innerHTML;
 				//console.log(betx);
 				if ((betx==0)||(betx==1)){
-					console.log('wind1');//刷新前端显示
+					//console.log('wind1');//刷新前端显示
 					document.getElementById('game.allBet1').innerHTML = parseInt(betnum)+parseInt(x);
 				}
 				else{ 
-					console.log('wind2');
+					//console.log('wind2');
 					document.getElementById('game.allBet2').innerHTML = parseInt(betnum)+parseInt(y);
 				}//--前端按玩法刷新下注总额--				
 

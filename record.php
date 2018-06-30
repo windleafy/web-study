@@ -45,7 +45,7 @@ window.onload=function (){
 			//alert('数据: '+data +"\n状态: " + status);
 			userbet = JSON.parse(data);
 			//console.log(userbet);
-			createTable2();
+			createTable2();//gameinfo.js
 		})
 	})
 </script>
