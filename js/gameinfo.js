@@ -163,10 +163,10 @@ function createTable2() {
 		var data = [];
 		data.push('<div><div style="text-align: center; color: aliceblue; margin-left: -30px"><span>');
 		data.push(userbet[currentGroup2].playerL);
-		data.push('</span><span>VS</span><span>');
+		data.push('</span><span>  VS  </span><span>');
 		data.push(userbet[currentGroup2].playerR);
 		data.push('</span><span>');
-		data.push('(玩法'+userbet[currentGroup2].bet+')');
+		data.push('  (玩法'+userbet[currentGroup2].bet+')');
 		data.push('</span></div>');
 		data.push('<div style="text-align: center; margin-left: -30px"><p style="font-size: 12px;">竞猜时间：<span>');
 		data.push(userbet[currentGroup2].bettime);
