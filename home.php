@@ -42,6 +42,15 @@ session_start();
 <!-- font-awesome-icons -->
 <link href="css/font-awesome.css" type="text/css" rel="stylesheet"> 
 <!-- //font-awesome-icons -->
+
+<script type="text/javascript">
+<!--
+function refreshFrame(){
+    document.getElementById('record').contentWindow.location.reload(true);
+}
+//-->
+</script>	
+	
 </head>
 <body>
 	<div class="banner1">
@@ -53,7 +62,7 @@ session_start();
                     <li><a href="#charge" data-toggle="tab">充值</a></li>
                     <li><a href="#rules" data-toggle="tab">规则</a></li>
                     <li><a href="#mall" data-toggle="tab">商城</a></li>
-                    <li><a href="#note" data-toggle="tab">记录</a></li>
+                    <li><a href="#note" data-toggle="tab"  onclick="javascript:refreshFrame();" value="Refresh Frame">记录</a></li>
                     <li><a href="#msg" data-toggle="tab">消息</a></li>
                 </ul>
                 
@@ -101,7 +110,7 @@ session_start();
                 	<!--记录页面开始-->
                     <div class="tab-pane fade" id="note">
                         <p>请在此页面查看种奖<font color="#00FF00">记录</font>。</p>
-						<iframe src="record.php" width="100%" height="450px" frameborder="0" aallowtransparency="true" scrolling="no"></iframe>						
+						<iframe id="record" src="record.php" width="100%" height="450px" frameborder="0" aallowtransparency="true" scrolling="no"></iframe>						
                     </div>
                 	<!--记录页面结束-->
 
