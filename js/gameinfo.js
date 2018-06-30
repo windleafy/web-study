@@ -92,6 +92,7 @@ function createTable1() {
 
 		data.push('<div class="row">');
 		data.push('<div class="pull-left" style="font-size:12px">');
+		data.push('<p style="text-align:left; margin-top: 15px;">下注截止时间:</p>');
 		data.push('<p id="endTime">');
 		data.push(gamesinfo[currentGroup].endTime);
 		data.push('</p>');
