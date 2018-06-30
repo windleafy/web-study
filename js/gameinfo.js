@@ -161,7 +161,7 @@ function createTable2() {
 		if (currentGroup2 >= 2){i = 3};
 		//console.log(currentGroup);
 		var data = [];
-		data.push('<div style="background-color: rgb(0,0,0); opacity: 0.7"><div style="text-align: center; color: aliceblue; margin-left: -30px"><span>');
+		data.push('<div style="background-color: rgb(0,0,0); opacity: 0.7; filter:alpha(opacity=70);"><div style="text-align: center; color: aliceblue; margin-left: -30px"><span>');
 		data.push(userbet[currentGroup2].playerL);
 		data.push('</span><span>  VS  </span><span>');
 		data.push(userbet[currentGroup2].playerR);

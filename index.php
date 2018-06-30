@@ -59,7 +59,7 @@ session_start();
                                 <p>雄兔脚扑朔，雌兔眼迷离；<br>双兔傍地走，安能辨我是雄雌。</p>
                                 <ul>
                                     <li><a href="home.php" class="w3ls_more hvr-shutter-in-vertical">开始竞猜</a></li>
-                                    <li><a href="#test" class="w3ls_more scroll hvr-shutter-in-vertical">关于赛事</a></li>
+                                    <li><a href="#" class="w3ls_more hvr-shutter-in-vertical">关于赛事</a></li>
                                 </ul>
                             </div>
 						</div>
