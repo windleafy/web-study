@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <?php
-/*session_start();
+session_start();
 	
 	if( isset($_SESSION['userName']) ){
 		//print ($_SESSION['userName']."<br>");
 	}
 	else{
 		header("location:login.html");
-	}*/
+	}
 ?>
 
 <html lang="cn">
@@ -38,8 +38,9 @@ window.onload=function (){
 	
 <script>
 	$(document).ready(function(){
+		<?php echo "var x =".json_encode($_SESSION['userName']).";"?>
 		$.post("php/getDbGames.php",{
-			record_userName:'admin',//查询此用户的下注清单
+			record_userName:x,//查询此用户的下注清单
 		},
 		function(data,status){
 			//alert('数据: '+data +"\n状态: " + status);
