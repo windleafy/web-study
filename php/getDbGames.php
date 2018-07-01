@@ -10,8 +10,18 @@ $dbname = "ydfdbpdo";
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-
+	if(isset($_POST['record_userName'])){//record.php页面在此处理
+		$stmt = $conn->prepare("SELECT * FROM useraction where userName='".$_POST['record_userName']."'"."ORDER BY bettime DESC"); 
+		
+		$stmt->execute();
+		$result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+		foreach(($stmt->fetchAll()) as $k=>$v){
+			$userbet[] = $v; 
+		}
+		if(isset($userbet)){echo(json_encode($userbet));}
+		else{echo '0';}//无下注信息时的处理
+	}
+	else{
 	$stmt = $conn->prepare("SELECT * FROM games where bettinggame='1'"); 
     $stmt->execute();
  
@@ -25,19 +35,6 @@ try {
 		//echo '</br>';
     }
 	$gameAr = json_encode($gameAr);
-
-	if(isset($_POST['record_userName'])){//record.php页面在此处理
-		$stmt = $conn->prepare("SELECT * FROM useraction where userName='".$_POST['record_userName']."'"."ORDER BY bettime DESC"); 
-		
-		$stmt->execute();
-		$result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-		foreach(($stmt->fetchAll()) as $k=>$v){
-			$userbet[] = $v; 
-		}
-		if(isset($userbet)){echo(json_encode($userbet));}
-		else{echo '0';}//无下注信息时的处理
-	}
-	else{
 		echo 'games = '.$gameAr;//games数据库取值在此处理
 	}
 	
