@@ -26,6 +26,7 @@ session_start();
 <script type="text/javascript" src="js/gameinfo.js">/*-- 比赛信息处理 --*/</script>
 <script type="text/javascript" src="php/getDbPlayers.php">/*此处取回players的值*/</script> 
 <script type="text/javascript" src="php/getDbGames.php">/*此处取回games的值*/</script> 
+<script type="text/javascript" src="php/getUserBet.php">/*此处取回games的值*/</script> 	
 	
 <script>/*--窗口自适应处理--*/
 window.onload=function (){
@@ -38,13 +39,15 @@ window.onload=function (){
 	
 <script>
 	$(document).ready(function(){
-		<?php echo "var x =".json_encode($_SESSION['userName']).";"?>
-		$.post("php/getDbGames.php",{
-			record_userName:x,//查询此用户的下注清单
+		
+		$.post("php/getUserbet.php",{
+			//record_userName:x,//查询此用户的下注清单
 		},
 		function(data,status){
 			//alert('数据: '+data +"\n状态: " + status);
+			//console.log(data);
 			userbet = JSON.parse(data);
+			//console.log(userbet);
 			if((userbet) == ''){
 				//$("#nodata").show();
 				var x=document.getElementById("nodata");
@@ -52,7 +55,7 @@ window.onload=function (){
 				x.innerHTML=data;
 			}
 			//console.log(userbet);
-			else{createTable2();}//gameinfo.js
+			else{createTable2();}//gameinfo.js*/
 		})
 	})
 </script>

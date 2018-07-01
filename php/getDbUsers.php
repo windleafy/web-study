@@ -19,8 +19,6 @@ case "2":
 default: 
     echo ""; */
 
-
-
 if( isset($_SESSION['userName']) ){
 	//print ($_SESSION['userName']."<br>");
 	$servername = "39.106.1.194";
@@ -48,7 +46,6 @@ if( isset($_SESSION['userName']) ){
 		}
 		
 		//echo $ret['gold'];
-
 		if (isset($_POST['betnum'])&&isset($_POST['bet'])){ 
 			//echo 'betnum'.$_POST['betnum'];	echo 'bet'.$_POST['bet'];			
 			$ret['gold']=$ret['gold']-ABS($_POST['betnum']);
@@ -99,11 +96,12 @@ if( isset($_SESSION['userName']) ){
 
 				$sql = "INSERT INTO useraction (userName, gameId, bet, odds, bettime, betnum, playerL, playerR)
 				VALUES ('".$userName."', '".$gameId."', '".$bet."', '".$odds."', '".$rgt."', '".$betnum."', '".$playerL."', '".$playerR."')";
-				
+				//--处理useraction表--结束
 				// 使用 exec() ，没有结果返回 
 				$conn->exec($sql);
 				//echo "新记录插入成功";
-				//--处理useraction表--结束				
+				echo 1;//下注成功
+			
 
 				//--处理指定比赛的总下注额--开始
 				$stmt = $conn->prepare("UPDATE games SET allBet1=".$allBet1." WHERE id='".$ret['id']."'"); //处理加钱
@@ -111,8 +109,20 @@ if( isset($_SESSION['userName']) ){
 				$stmt = $conn->prepare("UPDATE games SET allBet2=".$allBet2." WHERE id='".$ret['id']."'"); //处理加钱
 				$stmt->execute();//				
 				//--处理指定比赛的总下注额--结束
+
+
 				
-				echo 1;//下注成功
+				$stmt = $conn->prepare("SELECT * FROM useraction where userName='".$_SESSION['userName']."'"."ORDER BY bettime DESC"); 
+				$stmt->execute();
+				$result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+				foreach(($stmt->fetchAll()) as $k=>$v){
+					$userbet[] = $v; 
+				}
+				$_SESSION['userbet'] = $userbet;
+				//echo json_encode($_SESSION['userbet']);
+				//if(isset($userbet)){echo(json_encode($userbet));}
+				//else{echo '0';}//无下注信息时的处理
+
 			}
 		};
 

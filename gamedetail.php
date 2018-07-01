@@ -66,6 +66,7 @@ session_start();
 					},
 					function(data,status){
 						//alert('数据: '+data +"\n状态: " + status);
+						//console.log(data);
 						switch (parseInt(data)){
 							case 0:alert("钱不够");
 							break;
