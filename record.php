@@ -45,6 +45,7 @@ window.onload=function (){
 		function(data,status){
 			//alert('数据: '+data +"\n状态: " + status);
 			userbet = JSON.parse(data);
+			if((userbet) == ''){$("#nodata").show();};
 			//console.log(userbet);
 			createTable2();//gameinfo.js
 		})
@@ -54,7 +55,7 @@ window.onload=function (){
 <body style="background:transparent;">
 
 	<!--主页内容开始-->
-
+<p id="nodata" style="display: none;">你还没有过下注<font color="#00FF00">记录</font>，亲。</p>
 		<div class="preloader"> Loading...</div>
 		<div class="swiper-container" id="swiperHeight">
 			<div class="swiper-wrapper">
