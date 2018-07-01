@@ -7,7 +7,34 @@ function getgameinfo(){
 	//选取比赛
 	'use strict';
 	var i = 0;
-	games.forEach(v=>{
+	//处理foreachIE兼容--开始
+	if (!Array.prototype.forEach) {
+		Array.prototype.forEach = function(callback/*, thisArg*/) {
+		var T, k;
+		if (this == null) {
+		  throw new TypeError('this is null or not defined');
+		}
+		var O = Object(this);
+		var len = O.length >>> 0;
+		if (typeof callback !== 'function') {
+		  throw new TypeError(callback + ' is not a function');
+		}
+		if (arguments.length > 1) {
+		  T = arguments[1];
+		}
+		k = 0;
+		while (k < len) {
+		  var kValue;
+		  if (k in O) {
+			kValue = O[k];
+			callback.call(T, kValue, k, O);
+		  }
+		  k++;
+		}
+	  };
+	}
+	//处理foreachIE兼容--结束
+	games.forEach(function (v, k) {
 		var gameinfotemp = [];	//必须放在循环体内，否则循环时回传值数组会全部置为最新值
 		gameinfotemp.id = v.id;
 		gameinfotemp.endTime = v.endTime;
@@ -25,7 +52,7 @@ function getgameinfo(){
 		
 		//console.log('gameinfo.js-v.gamestarttime');console.log(v.gamestarttime);
     	//console.log('gameinfo.js-gameinfotemp');console.log(gameinfotemp);
-		players.forEach(v1=>{
+		players.forEach(function (v1, k) {
 			var playertmp = new Array();	//必须放在循环体内；
 			if ( v1.id == games[i].playerR ){
 				//console.log('gameinfo.js-playerR');
