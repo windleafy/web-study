@@ -41,7 +41,9 @@ window.onload=function (){
 			if((userbet) == ''){
 				//$("#nodata").show();
 				var x=document.getElementById("nodata");
-				var data='<p>你还没有过下注<font color="#00FF00">记录</font>，亲。</p>';
+				
+				//console.log('wind2');
+				var data='<p style="font-size:12px">你还没有过下注<font color="#00FF00">记录</font>，亲。</p>';
 				x.innerHTML=data;
 			}
 			//console.log(userbet);

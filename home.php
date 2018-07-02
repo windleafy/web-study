@@ -43,12 +43,26 @@ session_start();
 <link href="css/font-awesome.css" type="text/css" rel="stylesheet"> 
 <!-- //font-awesome-icons -->
 
+<script>
+$(document).ready(function(){
+	$("li").click(function(){
+    //console.log(this.id);
+		if(this.id!='5'){//点击非“记录”页，为“记录”页赋初值空，避免闪烁
+			//console.log('tab'+this.id);  
+			document.getElementById("record").src='';
+		}
+	});
+});
+</script>	
+	
+	
 <script type="text/javascript">
 <!--
 function refreshFrame(){
     //document.getElementById('record').contentWindow.location.reload(true);
 	var randnum=Math.floor(Math.random()*100000);
-	document.getElementById("record").src = "record.php?new="+randnum; 
+	document.getElementById("record").src = "record.php?new="+randnum; //保证每次进入页面时刷新
+	//console.log('wind1');
 	//console.log("record.php?new="+randnum); 
 
 }
@@ -62,12 +76,12 @@ function refreshFrame(){
             <div class="banner">
                 <div class="container">
                 <ul class="nav nav-tabs">
-                    <li class="active"><a href="#home" data-toggle="tab">首页</a></li>
-                    <li><a href="#charge" data-toggle="tab">充值</a></li>
-                    <li><a href="#rules" data-toggle="tab">规则</a></li>
-                    <li><a href="#mall" data-toggle="tab">商城</a></li>
-                    <li><a href="#note" data-toggle="tab" onClick="refreshFrame();">记录</a></li>
-                    <li><a href="#msg" data-toggle="tab">消息</a></li>
+                    <li id="1" class="active"><a href="#home" data-toggle="tab">首页</a></li>
+                    <li id="2"><a href="#charge" data-toggle="tab">充值</a></li>
+                    <li id="3"><a href="#rules" data-toggle="tab">规则</a></li>
+                    <li id="4"><a href="#mall" data-toggle="tab">商城</a></li>
+                    <li id="5"><a href="#note" data-toggle="tab" onClick="refreshFrame();">记录</a></li>
+                    <li id="6"><a href="#msg" data-toggle="tab">消息</a></li>
                 </ul>
                 
                 <div class="tab-content">
@@ -112,7 +126,7 @@ function refreshFrame(){
                 	<!--商城页面结束-->
 
                 	<!--记录页面开始-->
-                    <div class="tab-pane fade" id="note">
+                    <div class="tab-pane" id="note">
                         
 						<iframe id="record" src="" width="100%" height="450px" frameborder="0" aallowtransparency="true" scrolling="no"></iframe>						
                     </div>
