@@ -94,7 +94,8 @@ function refreshFrame(){
                     
                 	<!--充值页面开始-->                    
                     <div class="tab-pane fade" id="charge">
-                        <p>请在此页面进行<font color="#00FF00">充值</font>。</p>
+						<iframe src="charge.php" width="100%" height="520px" frameborder="0" aallowtransparency="true" scrolling="no"></iframe>						
+						
                     </div>
                 	<!--充值页面结束-->
 
