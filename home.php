@@ -47,8 +47,9 @@ session_start();
 <!--
 function refreshFrame(){
     //document.getElementById('record').contentWindow.location.reload(true);
-	
-	document.getElementById("record").src = "record.php"; 
+	var randnum=Math.floor(Math.random()*100000);
+	document.getElementById("record").src = "record.php?new="+randnum; 
+	//console.log("record.php?new="+randnum); 
 
 }
 //-->
