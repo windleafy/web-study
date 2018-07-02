@@ -46,7 +46,10 @@ session_start();
 <script type="text/javascript">
 <!--
 function refreshFrame(){
-    document.getElementById('record').contentWindow.location.reload(true);
+    //document.getElementById('record').contentWindow.location.reload(true);
+	
+	document.getElementById("record").src = "record.php"; 
+
 }
 //-->
 </script>	
@@ -62,7 +65,7 @@ function refreshFrame(){
                     <li><a href="#charge" data-toggle="tab">充值</a></li>
                     <li><a href="#rules" data-toggle="tab">规则</a></li>
                     <li><a href="#mall" data-toggle="tab">商城</a></li>
-                    <li><a href="#note" data-toggle="tab"  onclick="javascript:refreshFrame();" value="Refresh Frame">记录</a></li>
+                    <li><a href="#note" data-toggle="tab" onClick="refreshFrame();">记录</a></li>
                     <li><a href="#msg" data-toggle="tab">消息</a></li>
                 </ul>
                 

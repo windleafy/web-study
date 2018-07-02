@@ -24,6 +24,7 @@ window.onload=function (){
 	var x = window.screen.height;
 	x = x-175;
 	swiperHeight.style.height=x+"px";
+	console.log('hello');
 }
 </script>
 	
