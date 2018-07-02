@@ -102,7 +102,7 @@ session_start();
 <!--<p style="color:blueviolet;margin-bottom: -10px">hello world</p>-->
 	
 	<div class="text-center" style="width: 20%; height=80px; float:left">
-		<img id="playerL.icon" src="module/images/kof-1.ico" alt="" style="width: 64px"/> 
+		<img id="playerL.icon" src="images/kof-1.ico" alt="" style="width: 64px"/> 
 	</div>
 	<div class="text-center" style="width: 60%; height=80px; float:left; color: aliceblue">
 	  <table border="0" style="width: 100%; margin-top:7px">
@@ -121,15 +121,15 @@ session_start();
 	</div>
 
 	<div class="text-center" style="width: 20%; height=80px; float:left">
-		<img id="playerR.icon" src="module/images/kof-2.ico" alt="" style="width: 64px"/> 
+		<img id="playerR.icon" src="images/kof-2.ico" alt="" style="width: 64px"/> 
 	</div>
 
 
 	<div class="clearfix"></div><!--清除之前设定的浮动，重新开始-->
 	<div style="color: aliceblue">
-		<img id="playerL.nationIcon" src="module/images/CN@3x.png" alt="" style="width: 32px; margin-left: 5px"/> 
+		<img id="playerL.nationIcon" src="images/CN@3x.png" alt="" style="width: 32px; margin-left: 5px"/> 
 		<span id="playerL.name">渣渣辉</span>
-	  	<img id="playerR.nationIcon" class="pull-right" src="module/images/gb@3x.png" alt="" style="width: 32px; margin-right: 5px; margin-left: 5px"/> 
+	  	<img id="playerR.nationIcon" class="pull-right" src="images/GB@3x.png" alt="" style="width: 32px; margin-right: 5px; margin-left: 5px"/> 
 		<span class="pull-right" id="playerR.name">古天乐</span>	
 	</div>
 
