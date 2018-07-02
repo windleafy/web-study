@@ -114,7 +114,7 @@ function refreshFrame(){
                 	<!--记录页面开始-->
                     <div class="tab-pane fade" id="note">
                         
-						<iframe id="record" src="record.php" width="100%" height="450px" frameborder="0" aallowtransparency="true" scrolling="no"></iframe>						
+						<iframe id="record" src="" width="100%" height="450px" frameborder="0" aallowtransparency="true" scrolling="no"></iframe>						
                     </div>
                 	<!--记录页面结束-->
 
