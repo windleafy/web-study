@@ -14,10 +14,13 @@ session_start();
 <meta charset="utf-8">
 <!-- stylesheet -->
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
 <style>
-.goldtip{
+	.goldtip{
 	margin:0 auto;
 	background:rgba(14, 255, 0, 0.23);
 	width:70px;
@@ -27,6 +30,15 @@ session_start();
 	line-height: 200px;
 	padding-bottom: 5px;
 }
+	.cgtb{
+		width: 300px;
+		height: 500px;
+		border: 0px;
+		text-align: center;
+		margin: auto;
+		border-collapse: separate;
+		border-spacing: 2rem;
+	}
 	.cgtr{
 		background: rgba(0, 38, 49, 0.65);
 	}
@@ -42,7 +54,7 @@ session_start();
 
 	<!--主页内容开始-->
 <div id="charge">
-	<table width="300" height="500" border="0" cellspacing="20" style="text-align: center; margin:auto">
+	<table class="cgtb">
 	  <tbody>
 		<tr class="cgtr">
 		  <td><img src="images/money1.png" class="cgtd"><p>1000金币</p><div class="goldtip"><p class="cgfont">￥9999</p></div></td>
