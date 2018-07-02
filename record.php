@@ -24,8 +24,6 @@ session_start();
 <link rel="stylesheet" href="css/idangerous.swiper.css">
 <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
 <script type="text/javascript" src="js/gameinfo.js">/*-- 比赛信息处理 --*/</script>
-<script type="text/javascript" src="php/getDbPlayers.php">/*此处取回players的值*/</script> 
-<script type="text/javascript" src="php/getDbGames.php">/*此处取回games的值*/</script> 
 <script type="text/javascript" src="php/getUserBet.php">/*此处取回games的值*/</script> 	
 	
 <script>/*--窗口自适应处理--*/
@@ -39,7 +37,6 @@ window.onload=function (){
 	
 <script>
 	$(document).ready(function(){
-		
 		$.post("php/getUserbet.php",{
 			//record_userName:x,//查询此用户的下注清单
 		},
