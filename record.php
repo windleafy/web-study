@@ -29,7 +29,7 @@ window.onload=function (){
 	
 <script>
 	$(document).ready(function(){
-		$.post("php/getUserbet.php",{
+		$.post("php/getUserBet.php",{
 			//record_userName:x,//查询此用户的下注清单
 		},
 		function(data,status){
