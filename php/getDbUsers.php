@@ -111,7 +111,7 @@ if( isset($_SESSION['userName']) ){
 				//--处理指定比赛的总下注额--结束
 
 
-				
+				//用户下注后，刷新其下注清单--开始
 				$stmt = $conn->prepare("SELECT * FROM useraction where userName='".$_SESSION['userName']."'"."ORDER BY bettime DESC"); 
 				$stmt->execute();
 				$result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
@@ -119,9 +119,7 @@ if( isset($_SESSION['userName']) ){
 					$userbet[] = $v; 
 				}
 				$_SESSION['userbet'] = $userbet;
-				//echo json_encode($_SESSION['userbet']);
-				//if(isset($userbet)){echo(json_encode($userbet));}
-				//else{echo '0';}//无下注信息时的处理
+				//用户下注后，刷新其下注清单--结束
 
 			}
 		};
