@@ -9,15 +9,12 @@ session_start();
 		header("location:login.html");
 	}
 ?>
-<html lang="cn">
+
 <head>
 <meta charset="utf-8">
-<title>Home-record</title>
-<!-- meta tags -->
-
 <!-- stylesheet -->
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/idangerous.swiper.css" rel="stylesheet">
+<link rel="stylesheet" href="css/idangerous.swiper.css">
 <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
 <script type="text/javascript" src="js/gameinfo.js">/*-- 比赛信息处理 --*/</script>
 <script type="text/javascript" src="php/getUserBet.php">/*此处取回games的值*/</script> 	
