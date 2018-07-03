@@ -20,13 +20,35 @@ session_start();
 
 <script>
 $(document).ready(function(){
+	var cgitem;
 	$("td").click(function(){
-		var x = this.id//thisid == itemx
+		cgitem = this.id//thisid == itemx
 		//console.log(x.substring(4));
-		x = x.substring(4);//取第5位x的值
-		document.getElementById("cgval").innerHTML=document.getElementById("cgval"+x).innerHTML;
-		document.getElementById("getval").innerHTML=document.getElementById("getval"+x).innerHTML;
+		var x = cgitem.substring(4);//取第5位x的值
+		cgval = document.getElementById("cgval"+x).innerHTML;
+		getval = document.getElementById("getval"+x).innerHTML;
+		document.getElementById("cgval").innerHTML= cgval;
+		document.getElementById("getval").innerHTML= getval;
 	});
+
+	$("#cg_cfm").click(function(){//console.log('hello');
+		$("#myModal").modal('hide');
+		$.post("php/setUserCharge.php",{//调用充值接口
+			charge_item:cgitem,
+		},
+		function(data,status){
+			console.log(data);//alert('获得金币'+getval);
+			switch(parseInt(data)){
+				case 1 : alert('获得金币'+getval);break;
+				case 2 : alert('获得金币'+getval);break;
+				case 3 : alert('获得金币'+getval);break;
+				case 4 : alert('获得金币'+getval);break;
+				case 5 : alert('获得金币'+getval);break;
+				case 6 : alert('获得金币'+getval);break;
+			}
+		})
+	});
+	
 });
 </script>		
 	
@@ -152,7 +174,7 @@ $(document).ready(function(){
 			<div class="mymodal-footer">
 				<button type="button" class="btn btn-default pull-left" data-dismiss="modal">再想想
 				</button>
-				<button type="button" class="btn btn-primary">
+				<button type="button" class="btn btn-primary" id="cg_cfm">
 					充值吧
 				</button>
 			</div>
