@@ -3,7 +3,10 @@
 <head>
 	<meta charset="utf-8">  
     <title>js动态创建div等元素实例</title>  
-    <style type="text/css">  
+    <style type="text/css">
+		.mycalss{
+			border-radius: 5px;
+		}
     </style>  
     </head>  
     <body> 
@@ -42,7 +45,7 @@
 				var childDiv= document.createElement('div');  
                 childDiv.id="childDiv";  
                 childDiv.style.cssText = 'border:2px solid gray; width:200px; z-index:100; height:30px;';           
-				
+				childDiv.setAttribute("class","myclass");
 				div.appendChild(childDiv);  
                 
             },  			
