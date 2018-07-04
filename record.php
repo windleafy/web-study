@@ -53,7 +53,7 @@ window.onload=function (){
 </script>
 </head>
 <body style="background:transparent;">
-
+	<input id="tableId" type="hidden" value="1">
 	<!--主页内容开始-->
 	<div id="nodata"></div>
 		<div class="preloader"> Loading...</div>
