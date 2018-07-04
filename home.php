@@ -76,12 +76,12 @@ function refreshFrame(){
             <div class="banner">
                 <div class="container">
                 <ul class="nav nav-tabs">
-                    <li id="1" class="active"><a href="#home" data-toggle="tab">首页</a></li>
-                    <li id="2"><a href="#charge" data-toggle="tab">充值</a></li>
-                    <li id="3"><a href="#rules" data-toggle="tab">规则</a></li>
-                    <li id="4"><a href="#mall" data-toggle="tab">商城</a></li>
-                    <li id="5"><a href="#note" data-toggle="tab" onClick="refreshFrame();">记录</a></li>
-                    <li id="6"><a href="#msg" data-toggle="tab">消息</a></li>
+                    <li id="1" class="active"><a href="#home" data-toggle="tab" style="padding-left: 8px;padding-right: 8px">首页</a></li>
+                    <li id="2"><a href="#charge" data-toggle="tab" style="padding-left: 8px;padding-right: 8px">充值</a></li>
+                    <li id="3"><a href="#rules" data-toggle="tab" style="padding-left: 8px;padding-right: 8px">规则</a></li>
+                    <li id="4"><a href="#mall" data-toggle="tab" style="padding-left: 8px;padding-right: 8px">商城</a></li>
+                    <li id="5"><a href="#note" data-toggle="tab" style="padding-left: 8px;padding-right: 8px" onClick="refreshFrame();">记录</a></li>
+                    <li id="6"><a href="#msg" data-toggle="tab" style="padding-left: 8px;padding-right: 8px">消息</a></li>
                 </ul>
                 
                 <div class="tab-content">
@@ -122,7 +122,6 @@ function refreshFrame(){
 
                 	<!--商城页面开始-->
                     <div class="tab-pane fade" id="mall">
-                        <p>请在此页面兑换<font color="#00FF00">商品</font>。</p>
 						<iframe src="mall.php" width="100%" height="520px" frameborder="0" aallowtransparency="true" scrolling="no"></iframe>							
                     </div>
                 	<!--商城页面结束-->

@@ -24,15 +24,30 @@ var slideNumber = 0;
 function loadNewSlides(){
 	//alert(currentGroup);alert(groupNum);
 	var table = 0;		//0 处理主页对战列表；1 处理记录页列表；2处理商城列表
-	crtGroup = currentGroup;
-	grpNum = groupNum;
-	if ((currentGroup==0)&&(groupNum==0)){
-		crtGroup = currentGroup2;
-		grpNum = groupNum2;
-		table = 1;	
-	}
+	table = document.getElementById('tableId').value;
+	//console.log('table:'+table);
 	
-	if (crtGroup<grpNum){//此处为是否有新条目的开关
+	switch (table){
+		case '0':
+			crtGroup = currentGroup;
+			grpNum = groupNum;
+			itNum = 0;//没有用到
+			break;
+		case '1':
+			crtGroup = currentGroup2;
+			grpNum = groupNum2;
+			itNum = 0;//没有用到
+			break;
+		case '2':
+			crtGroup = currentGroup3;
+			grpNum = groupNum3;
+			itNum = itemNum;
+			break;
+	}
+	//console.log(crtGroup);console.log(grpNum);
+
+	
+	if ((crtGroup<grpNum)&&(itNum<grpNum)){//此处为是否有新条目的开关
 		setTimeout(function(){
 		  //Prepend new slide
 		  var colors = ['red','blue','green','orange','pink'];
@@ -40,11 +55,19 @@ function loadNewSlides(){
 
 		  var x = crtGroup;
 		  //mySwiper.prependSlide('<div '+data.join('')+' id="table'+x+'" style="border: 1px solid black" value="'+currentGroup+'">jphtml.com '+slideNumber+'</div>');	
-		  mySwiper.prependSlide('<div id="table'+x+'" style="border: 1px solid black" value="'+crtGroup+'">jphtml.com '+slideNumber+'</div>');	
-		  
-		  if( table==0){createTable1();}
-		  else{createTable2();}
-		  
+		  mySwiper.prependSlide('<div id="table'+x+'" style="border: 0px solid black" value="'+crtGroup+'">'+'</div>');	
+
+		switch (table){
+			case '0':
+				createTable1();
+				break;
+			case '1':
+				createTable2();
+				break;
+			case '2':
+				createTable3();
+				break;
+		}			
 			
 	
 		  //Release interactions and set wrapper

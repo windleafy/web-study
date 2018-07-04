@@ -33,18 +33,13 @@ $(document).ready(function(){
 
 </head>
 <body style="background:transparent;">
-	<input id="tableId" type="hidden" value="3">
+	<input id="tableId" type="hidden" value="2">
 	<!--主页内容开始-->
 	<div id="mall"></div>
 		<div class="preloader"> Loading...</div>
 		<div class="swiper-container" id="swiperHeight">
-			<div class="swiper-wrapper">
-				<div class="swiper-slide" id="table0">
-				</div>
-				<div class="swiper-slide" id="table1">
-				</div>
-				<div class="swiper-slide" id="table2">
-				</div>                                                                
+			<div class="swiper-wrapper" id="swiper-mall">
+                                                           
 			</div>
 		</div>
 	<!--主页内容结束-->
@@ -54,8 +49,8 @@ $(document).ready(function(){
 <!--swiper-end-->
 </body>
 <script>
-	createDiv();
-	createTable3();
+	createDiv();//mallitem.js
+	createTable3();//mallitem.js
 </script>
 
 </html>

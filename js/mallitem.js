@@ -2,13 +2,19 @@
 /*--------------------*/
 var swiperInt = 3;
 function createDiv(){
+	for (var i = 0; i<swiperInt; i++){
+		var div = document.getElementById('swiper-mall');	
+		var child_1_div = document.createElement('div');		
+		child_1_div.id="table"+i; 		
+		child_1_div.setAttribute("class","swiper-slide swiper-slide-visible"); 		
+		div.appendChild(child_1_div);
+	}
 	for (var i = 0; (i < swiperInt*2); i++){
-		var j = Math.floor(i/2);console.log(j);
+		var j = Math.floor(i/2);//console.log(j);
 		var div = document.getElementById('table'+j);
-		
-		var childdiv = document.createElement('div');  
-		childdiv.id='div'+i;
-		div.appendChild(childdiv);	
+		var child_2_div = document.createElement('div');  
+		child_2_div.id='div'+i;
+		div.appendChild(child_2_div);	
 	}
 };
 
@@ -17,7 +23,7 @@ currentGroup3 = 0;
 itemNum = 0;
 function createTable3() {
 	'use strict';
-	console.log(mall);
+	//console.log(mall);
 	//getgameinfo();//console.log(getgameinfo);console.log(gamesinfo[0].playerR);
 	groupNum3 = mall.length;//console.log(groupNum3);//console.log(mall[itemNum]['name']);
 
@@ -29,13 +35,11 @@ function createTable3() {
 		
 		if (itemNum < mall.length){
 			//上述再来一遍
-			console.log('hello');
+			//console.log('hello');
 			createItem();
 		}
-		
-
+		currentGroup3 = currentGroup3 + 1;
 	}
-	currentGroup3 = currentGroup3 + 1;
 };
 function createItem(data){
 	'use strict';
@@ -47,13 +51,22 @@ function createItem(data){
 	data.push('<p class="line" id="itemName">');
 	data.push(mall[itemNum]['name']);
 	data.push('</p>');
-	data.push('<p class="line" id="leftNum">');
+	data.push('<p class="line" id="leftNum">剩余:');
 	data.push(mall[itemNum]['leftNum']);
 	data.push('</p>');
 	data.push('<div class="goldbg"><p class="itemPrice">￥<span id="price">');
 	data.push(mall[itemNum]['price']);
 	data.push('</span></p></div></div>');
-	console.log(data.join(''));
-	document.getElementById("div"+itemNum).innerHTML=data.join('');
+	//console.log(data.join(''));
+	if (currentGroup3<swiperInt){
+		document.getElementById("div"+itemNum).innerHTML=data.join('');
+	}
+	else{
+		var div = document.getElementById('table'+currentGroup3);
+		var childdiv = document.createElement('div');  
+		childdiv.id='div'+itemNum;
+		div.appendChild(childdiv);
+		document.getElementById("div"+itemNum).innerHTML=data.join('');
+	}
 	itemNum = itemNum + 1;
 }
