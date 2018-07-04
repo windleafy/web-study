@@ -23,7 +23,7 @@ var mySwiper = new Swiper('.swiper-container',{
 var slideNumber = 0;
 function loadNewSlides(){
 	//alert(currentGroup);alert(groupNum);
-	var table = 0;		//0 处理主页对战列表；//1 处理记录页列表
+	var table = 0;		//0 处理主页对战列表；1 处理记录页列表；2处理商城列表
 	crtGroup = currentGroup;
 	grpNum = groupNum;
 	if ((currentGroup==0)&&(groupNum==0)){

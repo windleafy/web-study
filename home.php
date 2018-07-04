@@ -123,6 +123,7 @@ function refreshFrame(){
                 	<!--商城页面开始-->
                     <div class="tab-pane fade" id="mall">
                         <p>请在此页面兑换<font color="#00FF00">商品</font>。</p>
+						<iframe src="mall.php" width="100%" height="520px" frameborder="0" aallowtransparency="true" scrolling="no"></iframe>							
                     </div>
                 	<!--商城页面结束-->
 
