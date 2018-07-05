@@ -39,6 +39,13 @@ $(document).ready(function(){
 		<div class="preloader"> Loading...</div>
 		<div class="swiper-container" id="swiperHeight">
 			<div class="swiper-wrapper" id="swiper-mall">
+
+				<div class="swiper-slide" id="table0">
+				</div>
+				<div class="swiper-slide" id="table1">
+				</div>
+				<div class="swiper-slide" id="table2">
+				</div>				
                                                            
 			</div>
 		</div>

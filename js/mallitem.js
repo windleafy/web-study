@@ -2,18 +2,19 @@
 /*--------------------*/
 var swiperInt = 3;
 function createDiv(){
-	for (var i = 0; i<swiperInt; i++){
+/*	for (var i = 0; i<swiperInt; i++){
 		var div = document.getElementById('swiper-mall');	
 		var child_1_div = document.createElement('div');		
 		child_1_div.id="table"+i; 		
 		child_1_div.setAttribute("class","swiper-slide swiper-slide-visible"); 		
 		div.appendChild(child_1_div);
-	}
+	}*/
 	for (var i = 0; (i < swiperInt*2); i++){
 		var j = Math.floor(i/2);//console.log(j);
 		var div = document.getElementById('table'+j);
 		var child_2_div = document.createElement('div');  
 		child_2_div.id='div'+i;
+		child_2_div.setAttribute("onclick","location='shopDetail.php'"); 
 		div.appendChild(child_2_div);	
 	}
 };
@@ -65,6 +66,7 @@ function createItem(data){
 		var div = document.getElementById('table'+currentGroup3);
 		var childdiv = document.createElement('div');  
 		childdiv.id='div'+itemNum;
+		childdiv.setAttribute("onclick","location='shopDetail.php'"); 
 		div.appendChild(childdiv);
 		document.getElementById("div"+itemNum).innerHTML=data.join('');
 	}
