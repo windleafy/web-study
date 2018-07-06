@@ -24,9 +24,24 @@ var slideNumber = 0;
 function loadNewSlides(){
 	//alert(currentGroup);alert(groupNum);
 	var table = 0;		//0 处理主页对战列表；1 处理记录页列表；2处理商城列表
+	var tmp = document.getElementById('tableId');
+	
+	if (!tmp && typeof(tmp)!="undefined" && tmp!=0){//页面中没有定义tableID,则关闭preloader后退出
+		setTimeout(function(){
+		  mySwiper.setWrapperTranslate(0,0,0)
+		  mySwiper.params.onlyExternal=false;
+		  //Update active slide
+		  mySwiper.updateActiveSlide(0)
+		  //Hide loader
+		  $('.preloader').removeClass('visible');
+		},1000)
+		//slideNumber++;			
+			return;
+		}
+	
+	
 	table = document.getElementById('tableId').value;
 	//console.log('table:'+table);
-	
 	switch (table){
 		case '0':
 			crtGroup = currentGroup;

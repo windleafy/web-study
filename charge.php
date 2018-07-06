@@ -14,14 +14,16 @@ session_start();
 <meta charset="utf-8">
 <!-- stylesheet -->
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/style_charge.css" rel="stylesheet" type="text/css" media="all" />	
 <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/idangerous.swiper.css">
 <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <script>
 $(document).ready(function(){
 	var cgitem;
-	$("td").click(function(){
+	$("item").click(function(){
 		cgitem = this.id//thisid == itemx
 		//console.log(x.substring(4));
 		var x = cgitem.substring(4);//取第5位x的值
@@ -51,111 +53,63 @@ $(document).ready(function(){
 	
 });
 </script>		
-	
 
-<style>
-	.goldtip{
-	margin:0 auto;
-	background:rgba(14, 255, 0, 0.23);
-	width:70px;
-	height:20px;
-	border-radius:5px;
-	text-align: center;
-	line-height: 200px;
-	padding-bottom: 5px;
-}
-	.cgtb{
-		width: 300px;
-		height: 500px;
-		border: 0px;
-		text-align: center;
-		margin: auto;
-		border-collapse: separate;
-		border-spacing: 2rem;
-	}
-	.cgtr{
-		background: rgba(0, 38, 49, 0.65);
-	}
-	.cgtd{
-		border-radius: 10px;
-	}
-	.cgfont{
-		color: yellow;
-	}
-	
-.mymodal-footer {
-  padding: 15px;
-  text-align: right;
-  /*border-top: 1px solid #e5e5e5;*/
-}
-.mymodal-footer .btn + .btn {
-  margin-bottom: 0;
-  margin-left: 5px;
-}
-.mymodal-footer .btn-group .btn + .btn {
-  margin-left: -1px;
-}
-.mymodal-footer .btn-block + .btn-block {
-  margin-left: 0;
-}
-.mymodal-footer:before,
-.mymodal-footer:after {
-  display: table;
-  content: " ";
-}
-.mymodal-footer:after {
-  clear: both;
-}
-</style>
 </head>
 <body style="background:transparent;">
 
 	<!--主页内容开始-->
 <div id="charge">
-	<table class="cgtb">
-		<tbody>
-			<tr class="cgtr">
-				<td id="item1" data-toggle="modal" data-target="#myModal">
-					<img src="images/money1.png" class="cgtd">
-					<p><span id="getval1">1000</span>金币</p>
-					<div class="goldtip"><p class="cgfont">￥<span id="cgval1">10</span></p></div>
-				</td>
-				<td id="item2" data-toggle="modal" data-target="#myModal">
-					<img src="images/money2.png" class="cgtd">
-					<p><span id="getval2">2000</span>金币</p>
-					<div class="goldtip"><p class="cgfont">￥<span id="cgval2">20</p></div>
-				</td>
-			</tr>
-			<tr class="cgtr">
-				<td id="item3" data-toggle="modal" data-target="#myModal">
-					<img src="images/money3.png" class="cgtd">
-					<p><span id="getval3">3000</span>金币</p>
-					<div class="goldtip"><p class="cgfont">￥<span id="cgval3">30</p></div>
-				</td>
-				<td id="item4" data-toggle="modal" data-target="#myModal">
-					<img src="images/money4.png" class="cgtd">
-					<p><span id="getval4">4000</span>金币</p>
-					<div class="goldtip"><p class="cgfont">￥<span id="cgval4">40</p></div>
-				</td>
-			</tr>
-			<tr class="cgtr">
-				<td id="item5" data-toggle="modal" data-target="#myModal">
-					<img src="images/money6.png" class="cgtd">
-					<p><span id="getval5">5000</span>金币</p>
-					<div class="goldtip"><p class="cgfont">￥<span id="cgval5">50</p></div>
-				</td>
-				<td id="item6" data-toggle="modal" data-target="#myModal">
-					<img src="images/money6.png" class="cgtd">
-					<p><span id="getval6">6000</span>金币</p>
-					<div class="goldtip"><p class="cgfont">￥<span id="cgval6">60</p></div>
-				</td>
-			</tr>
-		</tbody>
-	</table>
+		<div class="preloader"> Loading...</div>
+		<div class="swiper-container" id="swiperHeight">
+			<div class="swiper-wrapper" id="swiper-mall">
+				<div class="swiper-slide swiperitem" id="table0">
+					<item class="pull-left cgtr" id="item1" data-toggle="modal" data-target="#myModal">
+						<img src="images/money1.png" class="cgtd">
+						<p><span id="getval1">1000</span>金币</p>
+						<div class="goldtip"><p class="cgfont">￥<span id="cgval1">10</span></p></div>
+					</item>
+					<item class="pull-left cgtr" id="item2" data-toggle="modal" data-target="#myModal">
+						<img src="images/money2.png" class="cgtd">
+						<p><span id="getval2">2000</span>金币</p>
+						<div class="goldtip"><p class="cgfont">￥<span id="cgval2">20</p></div>
+					</itme>					
+					
+				</div>
+				<div class="swiper-slide swiperitem" id="table1">
+					<item class="pull-left cgtr" id="item3" data-toggle="modal" data-target="#myModal">
+						<img src="images/money3.png" class="cgtd">
+						<p><span id="getval3">3000</span>金币</p>
+						<div class="goldtip"><p class="cgfont">￥<span id="cgval3">30</p></div>
+					</item>
+					<item class="pull-left cgtr" id="item4" data-toggle="modal" data-target="#myModal">
+						<img src="images/money4.png" class="cgtd">
+						<p><span id="getval4">4000</span>金币</p>
+						<div class="goldtip"><p class="cgfont">￥<span id="cgval4">40</p></div>
+					</item>					
+					
+				</div>
+				<div class="swiper-slide swiperitem" id="table2">
+					<item class="pull-left cgtr" id="item5" data-toggle="modal" data-target="#myModal">
+						<img src="images/money6.png" class="cgtd">
+						<p><span id="getval5">5000</span>金币</p>
+						<div class="goldtip"><p class="cgfont">￥<span id="cgval5">50</p></div>
+					</item>
+					<item class="pull-left cgtr" id="item6" data-toggle="modal" data-target="#myModal">
+						<img src="images/money6.png" class="cgtd">
+						<p><span id="getval6">6000</span>金币</p>
+						<div class="goldtip"><p class="cgfont">￥<span id="cgval6">60</p></div>
+					</item>					
+					
+				</div>				
+                                                           
+			</div>
+		</div>	
+
+
 </div>
 	<!--主页内容结束-->
 
-<!-- 模态框（Modal） -->
+<!-- 充值确认（Modal） -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog" style="position:fixed; bottom: 0; width: 70%; margin: 0 15%">
 		<div class="modal-content text-center ">
@@ -182,7 +136,10 @@ $(document).ready(function(){
 	</div><!-- /.modal -->
 </div>	
 	
-	
+<!--swiper-begin-->
+<script src="js/idangerous.swiper.min.js"></script>
+<script src="js/swiper.js"></script> 
+<!--swiper-end-->	
 	
 </body>
 </html>

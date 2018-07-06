@@ -1,0 +1,32 @@
+/* -- style_mall -- */
+
+	.goldbg{
+	margin:0 auto;
+    margin-top: 5px;
+	background:rgba(14, 255, 0, 0.23);
+	width:70px;
+	height:20px;
+	border-radius:5px;
+	text-align: center;
+	padding-bottom: 5px;
+}
+	.mallItem{
+		width: 40%;
+		height: 154px;
+		border: 0px;
+		text-align: center;
+		margin: 5%;
+		float: left;
+		background: rgba(0, 38, 49, 0.65);
+	}
+
+	.itemPrice{
+		color: yellow;
+		font-size: 16px;
+	}
+	.line{
+		font-size:12px;
+		margin-bottom: 0px;
+	}
+
+

@@ -1,0 +1,142 @@
+/* -- style_charge -- */
+	.goldtip{
+	margin:0 auto;
+	background:rgba(14, 255, 0, 0.23);
+	width:70px;
+	height:20px;
+	border-radius:5px;
+	text-align: center;
+	line-height: 200px;
+	padding-bottom: 5px;
+}
+	.cgtb{
+		width: 300px;
+		height: 500px;
+		border: 0px;
+		text-align: center;
+		margin: auto;
+		border-collapse: separate;
+		border-spacing: 2rem;
+	}
+	.cgtr{
+		background: rgba(0, 38, 49, 0.65);
+		width: 40%;
+		margin-left: 5%;
+		margin-right: 5%;
+	    padding-bottom: 10px;
+    	padding-top: 10px;
+	}
+	.cgtd{
+		border-radius: 10px;
+	}
+	.cgfont{
+		color: yellow;
+	}
+	
+	
+.mymodal-footer {
+  padding: 15px;
+  text-align: right;
+  /*border-top: 1px solid #e5e5e5;*/
+}
+.mymodal-footer .btn + .btn {
+  margin-bottom: 0;
+  margin-left: 5px;
+}
+.mymodal-footer .btn-group .btn + .btn {
+  margin-left: -1px;
+}
+.mymodal-footer .btn-block + .btn-block {
+  margin-left: 0;
+}
+.mymodal-footer:before,
+.mymodal-footer:after {
+  display: table;
+  content: " ";
+}
+.mymodal-footer:after {
+  clear: both;
+}
+
+
+/* -- swiper begin -- */
+.preloader {
+	position: absolute;
+	left: 0;
+	top: -100px;
+	z-index: 0;
+	color: #fff;
+	text-align: center;
+	line-height: 100px;
+	height: 100px;
+	width: 100%;
+	opacity: 0;
+	font-size: 25px;
+	-webkit-transition: 300ms;
+	-moz-transition: 300ms;
+	-ms-transition: 300ms;
+	-o-transition: 300ms;
+	transition: 300ms;
+	background: rgba(0,0,0,0.1);
+}
+.preloader.visible {
+	top: 0;
+	opacity: 1;
+}
+.swiper-container {
+	width: 100%;
+	height: 455px;
+	color: #fff;
+	text-align: center;
+	position: relative;
+	z-index: 10;
+}
+.red-slide {
+	background: #ca4040;
+}
+.blue-slide {
+	background: #4390ee;
+}
+.orange-slide {
+	background: #ff8604;
+}
+.green-slide {
+	background: #49a430;
+}
+.pink-slide {
+	background: #973e76;
+}
+.swiper-slide {
+	height: 150px;
+	width: 100%;
+	//line-height: 100px;
+	opacity: 0.2;
+	-webkit-transition: 300ms;
+	-moz-transition: 300ms;
+	-ms-transition: 300ms;
+	-o-transition: 300ms;
+	transition: 300ms;
+}
+.swiper-slide-visible {
+	opacity: 1;
+}
+.swiper-slide .title {
+	font-style: italic;
+	font-size: 10px;
+}
+
+
+.swiper-div-height{
+	border:1px 
+	solid #F00; 
+	width:300px; 
+	height:auto;
+	height:344px;
+ 	min-height:344px;
+} 
+.swiper-div-center{
+	width:300px;
+	height:auto;
+	margin:auto;
+}
+/* -- swipper end -- */
