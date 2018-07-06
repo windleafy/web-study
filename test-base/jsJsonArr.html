@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+<script LANGUAGE="JavaScript">
+    function jump(){
+		
+		var arr=new Array();
+		arr="beijing";
+		arr="newyork";
+		arr="tokyo";
+		console.log(arr);
+		
+
+		var sites= [
+		{ "name":"菜鸟教程" , "url":"www.runoob.com" }, 
+		{ "name":"google" , "url":"www.google.com" }, 
+		{ "name":"微博" , "url":"www.weibo.com" }
+		]
+		console.log('');
+		console.log(sites);
+		console.log(JSON.stringify(sites));		
+		console.log(sites[0].name);
+		console.log(sites[0]['name']);
+		console.log('');
+		
+		var person0 = {
+			firstName:"John", 
+			lastName:"Doe", 
+			age:50, 
+			eyeColor:"blue"};
+		console.log('');
+		console.log('person0');
+		console.log(person0);
+		console.log('person0.firstName');
+		console.log(person0.firstName);
+		console.log("person0['firstName']");
+		console.log(person0['firstName']);
+		console.log('JSON.stringify(person0)');
+		console.log(JSON.stringify(person0));
+		console.log('');
+		
+		var person1=[];
+			person1['firstName']='John';
+			person1['lastName']='Doe';
+			person1['age']=50;
+			person1['eyeColor']='blue';
+		console.log('');
+		console.log('person1');
+		console.log(person1);
+		console.log('person1.firstName');
+		console.log(person1.firstName);
+		console.log("person1['firstName']");
+		console.log(person1['firstName']);
+		console.log('JSON.stringify(person1)');
+		console.log(JSON.stringify(person1));
+		console.log('');
+    }
+</script>
+<body>
+
+<input type="text" id="txt">
+<br>
+<input type="button" value="TEST" onclick="jump()"/>
+</body>
+</html>
