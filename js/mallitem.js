@@ -14,7 +14,16 @@ function createDiv(){
 		var div = document.getElementById('table'+j);
 		var child_2_div = document.createElement('div');  
 		child_2_div.id='div'+i;
-		child_2_div.setAttribute("onclick","location='shopDetail.php'"); 
+		
+		//向跳转页面传值
+		var x = JSON.stringify(mall[i]);
+		x = encodeURI(x);
+		var tmp = [];//location='shopDetail.php?txt=encodeURI(x)'
+		tmp.push("location='shopDetail.php");
+		tmp.push("?txt="+x);
+		tmp.push("'");
+		//console.log(data.join(''));
+		child_2_div.setAttribute("onclick",tmp.join('')); 
 		div.appendChild(child_2_div);	
 	}
 };
@@ -66,7 +75,17 @@ function createItem(data){
 		var div = document.getElementById('table'+currentGroup3);
 		var childdiv = document.createElement('div');  
 		childdiv.id='div'+itemNum;
-		childdiv.setAttribute("onclick","location='shopDetail.php'"); 
+		
+		//向跳转页面传值
+		var x = JSON.stringify(mall[itemNum]);
+		x = encodeURI(x);
+		var tmp = [];//location='shopDetail.php?txt=encodeURI(x)'
+		tmp.push("location='shopDetail.php");
+		tmp.push("?txt="+x);
+		tmp.push("'");
+		//console.log(data.join(''));
+		childdiv.setAttribute("onclick",tmp.join('')); 		
+
 		div.appendChild(childdiv);
 		document.getElementById("div"+itemNum).innerHTML=data.join('');
 	}

@@ -26,7 +26,10 @@
 
 <script>
 $(document).ready(function(){
-	$("td").click(function(){
+	//console.log(mall);
+	
+	$("#div0").click(function(){
+		//console.log('hello');
 	});
 });
 </script>		
