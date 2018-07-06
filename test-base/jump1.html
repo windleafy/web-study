@@ -3,20 +3,48 @@
 <head>
 <meta charset="utf-8">
 <title>无标题文档</title>
+	<script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js">
+</script>
 </head>
 <script LANGUAGE="JavaScript">
-    function jump(){
+	
+$(document).ready(function(){	
+	$('input').click(function()
+    {
+		console.log(this.value);
+		if(this.value=='js对象'){
         //var s = document.getElementById("txt");
 		//location.href="jump2.html?"+"txt="+encodeURI(s.value);
-		var s = 'hello';
-		location.href="jump2.html?"+"txt="+encodeURI('hello');
-        
-    }
+		
+		var data = {
+			"name":"菜鸟教程", 
+			"site":"http://www.runoob.com"
+		}
+		console.log(data);
+		//alert(data);
+		data = JSON.stringify(data);
+		console.log(data);
+		location.href="jump2.html?"+"txt="+encodeURI(data);
+		}
+		else{
+		var sites= [
+		{ "name":"菜鸟教程" , "url":"www.runoob.com" }, 
+		{ "name":"google" , "url":"www.google.com" }, 
+		{ "name":"微博" , "url":"www.weibo.com" }
+		]
+		console.log(sites);
+		sites = JSON.stringify(sites);
+		console.log(sites);
+		location.href="jump2.html?"+"txt="+encodeURI(sites);
+		}
+    });
+});
 </script>
 <body>
 
 <input type="text" id="txt">
 <br>
-<input type="button" value="TEST" onclick="jump()"/>
+<input type="button" value="js对象"/>
+<input type="button" value="js数组"/>	
 </body>
 </html>

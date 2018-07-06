@@ -10,9 +10,21 @@
   var loc = location.href;
   var n1 = loc.length;//地址的总长度
   var n2 = loc.indexOf("=");//取得=号的位置
-  var id = decodeURI(loc.substr(n2+1, n1-n2));//从=号后面的内容
-  alert(id);
-  document.write(id)
+  var xiaoming = decodeURI(loc.substr(n2+1, n1-n2));//从=号后面的内容
+  //alert(id);
+  //document.write(id)
+	  console.log(xiaoming);
+	  
+	  xiaoming = JSON.parse(xiaoming);
+	  console.log(typeof(xiaoming.length));
+	  if (typeof(xiaoming.length)=='undefined'){
+		console.log(xiaoming.name);  
+	  }
+	  
+	  else{
+		  console.log(xiaoming[0].name);
+	  }
+	  //console.log(xiaoming[0].name);
   </script>
 	
 </body>
