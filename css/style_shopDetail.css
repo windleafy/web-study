@@ -30,3 +30,27 @@
 	}
 
 
+.mymodal-footer {
+  padding: 15px;
+  text-align: right;
+  /*border-top: 1px solid #e5e5e5;*/
+}
+.mymodal-footer .btn + .btn {
+  margin-bottom: 0;
+  margin-left: 5px;
+}
+.mymodal-footer .btn-group .btn + .btn {
+  margin-left: -1px;
+}
+.mymodal-footer .btn-block + .btn-block {
+  margin-left: 0;
+}
+.mymodal-footer:before,
+.mymodal-footer:after {
+  display: table;
+  content: " ";
+}
+.mymodal-footer:after {
+  clear: both;
+}
+

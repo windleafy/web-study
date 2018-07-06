@@ -64,7 +64,7 @@ function createItem(data){
 	data.push('<p class="line" id="leftNum">剩余:');
 	data.push(mall[itemNum]['leftNum']);
 	data.push('</p>');
-	data.push('<div class="goldbg"><p class="itemPrice">￥<span id="price">');
+	data.push('<div class="goldbg"><p class="itemPrice">金币<span id="price">');
 	data.push(mall[itemNum]['price']);
 	data.push('</span></p></div></div>');
 	//console.log(data.join(''));
