@@ -255,14 +255,14 @@ session_start();
 	  <p style="margin-bottom: -5px; margin-left: 5px; color: aqua">猜胜负</p>
 		<span class="pull-left" style="margin-left: 5px; font-size: 12px">下注总金额：</span>
 		<span class="pull-left" id="game.allBet1" style="font-size: 12px">999999</span>
-	  <span class="pull-right" style="margin-right: 5px; font-size: 12px" id="game.endTime1">2018-06-25</span>
 		<span class="pull-right" style="font-size: 12px">下注截止时间：</span>
+		<span class="pull-right" style="margin-right: 5px; font-size: 12px" id="game.endTime1">2018-06-25</span>
 	</div>
 	<div class="clearfix"></div>
-		<button id="btnLU" value="0" type="button" class="btn btn-lg btn-info" style="width: 106px; margin-left: 5px" data-toggle="modal" data-target="#tpbet">
+		<button id="btnLU" value="0" type="button" class="btn btn-lg btn-info" style="width: 106px; margin-left: 5px;padding-top: 0;padding-bottom: 0" data-toggle="modal" data-target="#tpbet">
 			<span id="Lwin">2.14</span><br><span id="LwinName">渣渣辉</span>
 		</button>
-		<button id="btnRU" value="1" type="button" class="btn btn-lg btn-info" style="width: 106px;float: right; margin-right: 5px" data-toggle="modal" data-target="#tpbet">
+		<button id="btnRU" value="1" type="button" class="btn btn-lg btn-info" style="width: 106px;float: right; margin-right: 5px;padding-top: 0;padding-bottom: 0" data-toggle="modal" data-target="#tpbet">
 			<span id="Rwin">1.34</span><br><span id="RwinName">古天乐</span>
 		</button>
 	<div class="clearfix"></div>
@@ -271,14 +271,14 @@ session_start();
 		<p style="margin-bottom: -5px; margin-left: 5px; color: aqua">是否KO</p>
 		<span class="pull-left" style="margin-left: 5px; font-size: 12px">下注总金额：</span>
 		<span class="pull-left" id="game.allBet2" style="font-size: 12px">999999</span>
-		<span class="pull-right" style="margin-right: 5px; font-size: 12px" id="game.endTime2">2018-06-25</span>
 		<span class="pull-right" style="font-size: 12px">下注截止时间：</span>
+		<span class="pull-right" style="margin-right: 5px; font-size: 12px" id="game.endTime2">2018-06-25</span>
 	</div>
 	<div class="clearfix"></div>
-		<button id="btnLD" value="2" type="button" class="btn btn-lg btn-primary" style="width: 106px; margin-left: 5px" data-toggle="modal" data-target="#tpbet">
+		<button id="btnLD" value="2" type="button" class="btn btn-lg btn-primary" style="width: 106px; margin-left: 5px;padding-top: 0;padding-bottom: 0" data-toggle="modal" data-target="#tpbet">
 			<span id="KO">3.14</span><br><span>定会OK</span>
 		</button>
-		<button id="btnRD" value="3" type="button" class="btn btn-lg btn-primary" style="width: 106px;float: right; margin-right: 5px" data-toggle="modal" data-target="#tpbet">
+		<button id="btnRD" value="3" type="button" class="btn btn-lg btn-primary" style="width: 106px;float: right; margin-right: 5px;padding-top: 0;padding-bottom: 0" data-toggle="modal" data-target="#tpbet">
 			<span id="NKO">3.14</span><br><span>必不OK</span>
 		</button>
 	
