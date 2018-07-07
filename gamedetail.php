@@ -253,10 +253,14 @@ session_start();
 	<hr style="margin-bottom: 0px;margin-top: 0px">
 	<div style="color: aliceblue">
 	  <p style="margin-bottom: -5px; margin-left: 5px; color: aqua">猜胜负</p>
-		<span class="pull-left" style="margin-left: 5px; font-size: 12px">下注总金额：</span>
-		<span class="pull-left" id="game.allBet1" style="font-size: 12px">999999</span>
-		<span class="pull-right" style="font-size: 12px">下注截止时间：</span>
-		<span class="pull-right" style="margin-right: 5px; font-size: 12px" id="game.endTime1">2018-06-25</span>
+		<div class="pull-left">
+		<span style="margin-left: 5px; font-size: 12px">下注总金额：</span>
+		<span style="font-size: 12px" id="game.allBet1">999999</span>
+		</div>
+		<div class="pull-right">
+		<span style="font-size: 12px">下注截止时间：</span><br>
+		<span style="margin-right: 5px; font-size: 12px" id="game.endTime1">2018-06-25</span>
+		</div>
 	</div>
 	<div class="clearfix"></div>
 		<button id="btnLU" value="0" type="button" class="btn btn-lg btn-info" style="width: 106px; margin-left: 5px;padding-top: 0;padding-bottom: 0" data-toggle="modal" data-target="#tpbet">
@@ -269,10 +273,14 @@ session_start();
 	<br>
 	<div style="color: aliceblue">
 		<p style="margin-bottom: -5px; margin-left: 5px; color: aqua">是否KO</p>
-		<span class="pull-left" style="margin-left: 5px; font-size: 12px">下注总金额：</span>
-		<span class="pull-left" id="game.allBet2" style="font-size: 12px">999999</span>
-		<span class="pull-right" style="font-size: 12px">下注截止时间：</span>
-		<span class="pull-right" style="margin-right: 5px; font-size: 12px" id="game.endTime2">2018-06-25</span>
+		<div class="pull-left">
+		<span style="margin-left: 5px; font-size: 12px">下注总金额：</span>
+		<span style="font-size: 12px" id="game.allBet2">999999</span>
+		</div>
+		<div class="pull-right">
+		<span style="font-size: 12px">下注截止时间：</span><br>
+		<span style="margin-right: 5px; font-size: 12px" id="game.endTime2">2018-06-25</span>
+		</div>
 	</div>
 	<div class="clearfix"></div>
 		<button id="btnLD" value="2" type="button" class="btn btn-lg btn-primary" style="width: 106px; margin-left: 5px;padding-top: 0;padding-bottom: 0" data-toggle="modal" data-target="#tpbet">
