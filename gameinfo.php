@@ -88,7 +88,7 @@ window.onload=function (){
 </script>
 <!--swiper-end-->
 
-<script type="text/javascript" src="js/bootstrap.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </body>
 </html>
