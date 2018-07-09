@@ -53,14 +53,17 @@ $(document).ready(function(){
 		}
 		if(this.id!='4'){//点击非“商城”页，为“商城”页赋初值空，避免闪烁
 			document.getElementById("mall").src='';
-		}		
+		}	
+		if(this.id!='2'){//点击非“商城”页，为“商城”页赋初值空，避免闪烁
+			document.getElementById("charge").src='';
+		}	
 	});
 });
 </script>	
 	
 	
 <script type="text/javascript">
-function refreshRecord(){console.log('hello');
+function refreshRecord(){
     //document.getElementById('record').contentWindow.location.reload(true);
 	var randnum=Math.floor(Math.random()*100000);
 	document.getElementById("record").src = "record.php?new="+randnum; //保证每次进入页面时刷新
@@ -69,10 +72,15 @@ function refreshRecord(){console.log('hello');
 
 };
 
-function refreshMall(){console.log('hello1');
+function refreshMall(){
 	var randnum=Math.floor(Math.random()*100000);
 	document.getElementById("mall").src = "mall.php?new="+randnum; //保证每次进入页面时刷新
-}
+};
+
+function refreshDonate(){
+	var randnum=Math.floor(Math.random()*100000);
+	document.getElementById("donate").src = "charge.php?new="+randnum; //保证每次进入页面时刷新
+};
 //-->
 </script>	
 	
@@ -84,7 +92,7 @@ function refreshMall(){console.log('hello1');
                 <div class="container">
                 <ul class="nav nav-tabs">
                     <li id="1" class="active"><a href="#home" data-toggle="tab" style="padding-left: 7px;padding-right: 7px">首页</a></li>
-                    <li id="2"><a href="#charge" data-toggle="tab" style="padding-left: 7px;padding-right: 7px">充值</a></li>
+                    <li id="2"><a href="#charge" data-toggle="tab" style="padding-left: 7px;padding-right: 7px " onClick="refreshDonate();">充值</a></li>
                     <li id="3"><a href="#rules" data-toggle="tab" style="padding-left: 7px;padding-right: 7px">规则</a></li>
                     <li id="4"><a href="#shopmall" data-toggle="tab" style="padding-left: 7px;padding-right: 7px" onClick="refreshMall();">商城</a></li>
                     <li id="5"><a href="#note" data-toggle="tab" style="padding-left: 7px;padding-right: 7px" onClick="refreshRecord();">记录</a></li>
@@ -101,7 +109,7 @@ function refreshMall(){console.log('hello1');
                     
                 	<!--充值页面开始-->                    
                     <div class="tab-pane fade" id="charge">
-						<iframe src="charge.php" width="100%" height="450px" frameborder="0" aallowtransparency="true" scrolling="no"></iframe>						
+						<iframe id="donate" src="" width="100%" height="450px" frameborder="0" aallowtransparency="true" scrolling="no"></iframe>						
 						
                     </div>
                 	<!--充值页面结束-->
