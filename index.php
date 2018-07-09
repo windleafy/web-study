@@ -11,12 +11,12 @@
 		function hideURLbar(){ window.scrollTo(0,1); } 
 </script>
 <!-- meta tags -->
-<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
 
 <!-- stylesheet -->
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-<link rel="stylesheet" href="css/lightbox.css">  
+<!--<link rel="stylesheet" href="css/lightbox.css">  -->
 <!-- flexslider -->
 <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
 <!-- //flexslider -->
@@ -74,7 +74,7 @@ session_start();
 
     
 	<!-- JavaScript --> 
-	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="plugins/modernizr.js"></script>
 	<script type="text/javascript" src="plugins/isotope/isotope.pkgd.min.js"></script>
 	<script type="text/javascript" src="plugins/jquery.backstretch.min.js"></script>

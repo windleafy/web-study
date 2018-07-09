@@ -25,7 +25,7 @@ session_start();
 
 
 <!-- stylesheet -->
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link rel="stylesheet" href="css/lightbox.css">  
 <!-- flexslider -->
@@ -51,20 +51,27 @@ $(document).ready(function(){
 			//console.log('tab'+this.id);  
 			document.getElementById("record").src='';
 		}
+		if(this.id!='4'){//点击非“商城”页，为“商城”页赋初值空，避免闪烁
+			document.getElementById("mall").src='';
+		}		
 	});
 });
 </script>	
 	
 	
 <script type="text/javascript">
-<!--
-function refreshFrame(){
+function refreshRecord(){console.log('hello');
     //document.getElementById('record').contentWindow.location.reload(true);
 	var randnum=Math.floor(Math.random()*100000);
 	document.getElementById("record").src = "record.php?new="+randnum; //保证每次进入页面时刷新
 	//console.log('wind1');
 	//console.log("record.php?new="+randnum); 
 
+};
+
+function refreshMall(){console.log('hello1');
+	var randnum=Math.floor(Math.random()*100000);
+	document.getElementById("mall").src = "mall.php?new="+randnum; //保证每次进入页面时刷新
 }
 //-->
 </script>	
@@ -79,8 +86,8 @@ function refreshFrame(){
                     <li id="1" class="active"><a href="#home" data-toggle="tab" style="padding-left: 7px;padding-right: 7px">首页</a></li>
                     <li id="2"><a href="#charge" data-toggle="tab" style="padding-left: 7px;padding-right: 7px">充值</a></li>
                     <li id="3"><a href="#rules" data-toggle="tab" style="padding-left: 7px;padding-right: 7px">规则</a></li>
-                    <li id="4"><a href="#mall" data-toggle="tab" style="padding-left: 7px;padding-right: 7px">商城</a></li>
-                    <li id="5"><a href="#note" data-toggle="tab" style="padding-left: 7px;padding-right: 7px" onClick="refreshFrame();">记录</a></li>
+                    <li id="4"><a href="#shopmall" data-toggle="tab" style="padding-left: 7px;padding-right: 7px" onClick="refreshMall();">商城</a></li>
+                    <li id="5"><a href="#note" data-toggle="tab" style="padding-left: 7px;padding-right: 7px" onClick="refreshRecord();">记录</a></li>
                     <li id="6"><a href="#msg" data-toggle="tab" style="padding-left: 7px;padding-right: 7px">消息</a></li>
                 </ul>
                 
@@ -121,8 +128,8 @@ function refreshFrame(){
                 	<!--规则页面开始-->
 
                 	<!--商城页面开始-->
-                    <div class="tab-pane fade" id="mall">
-						<iframe src="mall.php" width="100%" height="450px" frameborder="0" aallowtransparency="true" scrolling="no"></iframe>							
+                    <div class="tab-pane fade" id="shopmall">
+						<iframe id="mall" src="" width="100%" height="450px" frameborder="0" aallowtransparency="true" scrolling="no"></iframe>							
                     </div>
                 	<!--商城页面结束-->
 
@@ -152,7 +159,7 @@ function refreshFrame(){
 </div>
     
 	<!-- JavaScript --> 
-	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="plugins/modernizr.js"></script>
 	<script type="text/javascript" src="plugins/isotope/isotope.pkgd.min.js"></script>
 	<script type="text/javascript" src="plugins/jquery.backstretch.min.js"></script>
@@ -235,7 +242,7 @@ function refreshFrame(){
 	</script>
 	<!-- //smooth-scrolling-of-move-up --> 
 
-<script type="text/javascript" src="js/bootstrap.js"></script>
+<!--<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
 
 </body>
 </html>
