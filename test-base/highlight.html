@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>highlight.js测试</title>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>	
+<link href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow-night-eighties.min.css" rel="stylesheet">
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.3.0/highlightjs-line-numbers.min.js"></script>
+
+<script>
+	hljs.initHighlightingOnLoad();
+	hljs.initLineNumbersOnLoad();
+</script>
+
+<style>
+/* for block of numbers */
+td.hljs-ln-numbers {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    text-align: center;
+    color: #ccc;
+    border-right: 1px solid #CCC;
+    vertical-align: top;
+    padding-right: 5px;
+
+    /* your custom style here */
+}
+
+/* for block of code */
+td.hljs-ln-code {
+    padding-left: 0px;
+	
+}
+
+</style>
+
+</head>
+
+<body>
+	hello
+	<pre>
+	<code class="php">	
+	class Test { 
+	  private $name; 
+	  private $age; 
+	  public function __construct($array) { 
+		$this->name = $array['name']; 
+		$this->age = $array['age']; 
+	  } 
+	  public function getName() { 
+		return $this->name; 
+	  } 
+	  public function setName($name) { 
+		$this->name = $name; 
+	  } 
+	  public function getAge() { 
+		return $this->age; 
+	  } 
+	  public function show() { 
+		printf('my name is %s,age is %d',$this->name,$this->age); 
+	  } 
+	} 
+	</code>
+	</pre>
+</body>
+</html>
