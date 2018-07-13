@@ -3,6 +3,19 @@
 <head>
 <meta charset="utf-8">
 <title>php js json array</title>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	$.post("PhpDbJsJson.php",{
+		
+	},
+	function(data,status){
+		console.log(data);
+		console.log(JSON.parse(data));
+	});
+});
+</script>
+	
 </head>
 <body>
 <p id="name1"></p>
@@ -18,11 +31,11 @@
 
 <script type="text/javascript"> 
 /*此处在页面上显示数组str的值*/
-	console.log(str1);  
-	document.getElementById('name1').innerHTML = 'name: '+str1[0].id;  
+	//console.log(str1);  
+/*	document.getElementById('name1').innerHTML = 'name: '+str1[0].id;  
     document.getElementById('nick1').innerHTML = 'gamename: '+str1[0].gamename;  
 	document.getElementById('email1').innerHTML = 'endTime: '+str1[0].endTime; 
-	document.getElementById('website1').innerHTML = 'allBet: '+str1[0].allBet; 
+	document.getElementById('website1').innerHTML = 'allBet: '+str1[0].allBet; */
 </script> 
 
 <script type="text/javascript"> 

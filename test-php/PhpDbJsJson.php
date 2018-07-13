@@ -23,6 +23,7 @@ catch(PDOException $e) {
 echo "Error: " . $e->getMessage();
 }
 $reArr = json_encode($reArr);
-echo 'str1 = '.$reArr;
+//echo 'str1 = '.$reArr;	//输出带有变量赋值，前台js可直接用变量的值
+echo $reArr;	//输出不带变量赋值，前台js需要用JSON.parse()处理
 //----------------取DB数组向js传值----------------结束*/
 ?>
