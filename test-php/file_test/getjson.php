@@ -19,11 +19,9 @@ echo '<br><br>';
 <?php
     //echo "json文件转成php数组<br>";
 
-    // 文件格式  无bom utf-8  
+    // 文件格式  无bom utf-8
+	// 从文件取来的数据，是字符串
     $json_string = file_get_contents('res/mall.json');  
-      
-    // 用参数true把JSON字符串强制转成PHP数组  
-    $data = json_decode($json_string, true);  
       
     // 显示出来看看  
     //var_dump($json_string); 
@@ -35,6 +33,8 @@ echo '<br><br>';
 	//echo(json_encode($data[2]).'<br>');
 	//echo('<br><br>');
 	
+    // 用参数true把JSON字符串强制转成PHP数组  
+    $data = json_decode($json_string, true); 
 	foreach($data as $k=>$v){
 		//echo (json_encode($v).'<br>');
 	}
