@@ -24,14 +24,14 @@ $tmp['childred'][]=$arr[3];
 print_r($tmp);
 print_r('<br><br><br><br><br><br>');
 
-  foreach ($arr as $k => $v) {
+foreach ($arr as $k => $v) {
 	print_r($k);
 	echo('<br>');	
 	print_r($v);
 	echo('<br>');
 	print_r($v['id']."    ".$v['pid'].'    '.$v['name']);
 	echo('<br>');
-  }
+}
   
 $output_array =make_tree($arr, 0, 'id|pid|children');
 foreach ($output_array as $k => $v) {
