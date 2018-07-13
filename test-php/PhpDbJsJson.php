@@ -1,18 +1,5 @@
 ﻿
 <?php
-//----------------普通数组向js传值----------------开始
-/*$action = array(
-'name'=>'苹果', 
-'nic'=>'果果', 
-'contact'=>array(
-	'email'=>'apple@163.com', 
-	'website'=>'www.163.com'
-	)
-);
-echo 'str = '.$action;*/
-//----------------普通数组向js传值----------------结束
-
-//*----------------取DB数组向js传值----------------开始
 $servername = "39.106.1.194";
 $username = "root";
 $password = "wdlinux.cn";
@@ -38,6 +25,4 @@ echo "Error: " . $e->getMessage();
 $reArr = json_encode($reArr);
 echo 'str1 = '.$reArr;
 //----------------取DB数组向js传值----------------结束*/
-
-	
 ?>
