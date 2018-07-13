@@ -1,10 +1,66 @@
 [
-{"id":"1","name":"iphone7","des":"拳套描述","price":"5000","leftNum":"999","icon":"images/iphone7.png"},
-{"id":"2","name":"iphoneX","des":"拳套描述","price":"7000","leftNum":"999","icon":"images/IPhoneX.png"},
-{"id":"3","name":"拳套","des":"拳套描述","price":"200","leftNum":"999","icon":"images/glove.png"},
-{"id":"4","name":"门票","des":"拳套描述","price":"100","leftNum":"999","icon":"images/ticket.png"},
-{"id":"5","name":"星巴克杯","des":"拳套描述","price":"50","leftNum":"999","icon":"images/cup.png"},
-{"id":"6","name":"进口红酒","des":"拳套描述","price":"300","leftNum":"999","icon":"images/wine.png"},
-{"id":"7","name":"VR眼镜","des":"拳套描述","price":"2000","leftNum":"999","icon":"images/vr.png"},
-{"id":"8","name":"基因检测","des":"拳套描述","price":"1000","leftNum":"999","icon":"images/gene.png"}
-]
+        {
+            "id": "1",
+            "name": "iphone7",
+            "des": "iPhone 7是Apple（苹果公司）第10代手机，北京时间2016年9月8日凌晨1点在美国旧金山比尔·格雷厄姆市政礼堂2016年苹果秋季新品发布会上发布。",
+            "price": "5000",
+            "leftNum": "999",
+            "icon": "images/iphone7.png"
+        },
+        {
+            "id": "2",
+            "name": "iphoneX",
+            "des": "iPhone X是美国Apple（苹果公司）于北京时间2017年9月13日凌晨1点，在Apple Park新总部的史蒂夫·乔布斯剧院会上发布的新机型。其中“X”是罗马数字“10”的意思，代表着苹果向iPhone问世十周年致敬。",
+            "price": "7000",
+            "leftNum": "999",
+            "icon": "images/IPhoneX.png"
+        },
+        {
+            "id": "3",
+            "name": "拳套",
+            "des": "拳击手套是根据国际业余拳联的规定，拳击运动员在参加拳击比赛时一定要戴的一种经过填充的手套。目的是保护拳手的手腕和手指关节。\r\n拳击运动员出拳力量大，若不保护，容易造成自己手指脱臼。戴上拳套后，可增加缓冲，使出拳的威力下降，在保护拳手本人的同时也保护对手。拳击运动中使用的手套主要分薄手套和厚手套两种，职业拳击没有护具，手套薄，业余拳击有护具，手套稍厚。",
+            "price": "200",
+            "leftNum": "999",
+            "icon": "images/glove.png"
+        },
+        {
+            "id": "4",
+            "name": "门票",
+            "des": "",
+            "price": "100",
+            "leftNum": "999",
+            "icon": "images/ticket.png"
+        },
+        {
+            "id": "5",
+            "name": "星巴克杯",
+            "des": "",
+            "price": "50",
+            "leftNum": "999",
+            "icon": "images/cup.png"
+        },
+        {
+            "id": "6",
+            "name": "进口红酒",
+            "des": "",
+            "price": "300",
+            "leftNum": "999",
+            "icon": "images/wine.png"
+        },
+        {
+            "id": "7",
+            "name": "VR眼镜",
+            "des": "",
+            "price": "2000",
+            "leftNum": "999",
+            "icon": "images/vr.png"
+        },
+        {
+            "id": "8",
+            "name": "基因检测",
+            "des": "",
+            "price": "1000",
+            "leftNum": "999",
+            "icon": "images/gene.png"
+        }
+    ]
