@@ -1,0 +1,10 @@
+[
+{"id":"1","name":"iphone7","des":"拳套描述","price":"5000","leftNum":"999","icon":"images/iphone7.png"},
+{"id":"2","name":"iphoneX","des":"拳套描述","price":"7000","leftNum":"999","icon":"images/IPhoneX.png"},
+{"id":"3","name":"拳套","des":"拳套描述","price":"200","leftNum":"999","icon":"images/glove.png"},
+{"id":"4","name":"门票","des":"拳套描述","price":"100","leftNum":"999","icon":"images/ticket.png"},
+{"id":"5","name":"星巴克杯","des":"拳套描述","price":"50","leftNum":"999","icon":"images/cup.png"},
+{"id":"6","name":"进口红酒","des":"拳套描述","price":"300","leftNum":"999","icon":"images/wine.png"},
+{"id":"7","name":"VR眼镜","des":"拳套描述","price":"2000","leftNum":"999","icon":"images/vr.png"},
+{"id":"8","name":"基因检测","des":"拳套描述","price":"1000","leftNum":"999","icon":"images/gene.png"}
+]
