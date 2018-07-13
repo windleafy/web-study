@@ -19,7 +19,7 @@ echo '<br>';
 // pass PHP variable declared above to JavaScript variable
 var ar = <?php echo json_encode($ar) ?>;
 //alert(ar);
-//console.log(ar);
+console.log(ar);
 document.write(ar+'<br>');//此处会将unicode编码输出为中文
 </script>
 
@@ -33,10 +33,32 @@ echo '<br>';
 <script type="text/javascript">
 //JS接收对象（PHP的关联数组）
 var age = <?php echo json_encode($age) ?>;
-alert(age);
-alert(age.Peter);
+//alert(age);
+//alert(age.Peter);
 console.log(age);
 </script>
+	
+<!--对象传值-->
+<?php
+//PHP对象（关联数组）传值给JS
+$player = array(
+	array("name"=>"peter","age"=>"37","high"=>"175"),
+	array("name"=>"mike","age"=>"35","high"=>"180")
+	);
+echo json_encode($player);
+echo '<br>';
+?>
+<script type="text/javascript">
+//JS接收对象（PHP的关联数组）
+var player = <?php echo json_encode($player) ?>;
+//alert(age);
+//alert(age.Peter);
+console.log(player);
+</script>
+	
+	
+	
+	
 
 <!--二维数组传值-->
 <?php
@@ -52,8 +74,8 @@ echo '<br>';
 ?>
 <script type="text/javascript">
 var cars = <?php echo json_encode($cars) ?>;
-alert('cars:'+cars);
-alert('cars[0]:'+cars[0]);
+//alert('cars:'+cars);
+//alert('cars[0]:'+cars[0]);
 console.log(cars);
 </script>
 <!--PHP传值给JS--End-->
@@ -62,7 +84,7 @@ console.log(cars);
 <!------Json_decode Test------>
 <?php
 $json = '["apple","orange","banana","strawberry"]';
-$ar = json_decode($json);
+$ar = json_decode($json);	//字符串转成php数组
 // access first element of $ar array
 echo '<br><br>----Json_decode Test----<br>';
 echo $ar[0].'<br>'; // apple
@@ -75,7 +97,7 @@ $json = '{
     "author": "David Flanagan",
     "edition": 6
 }';
-$book = json_decode($json);
+$book = json_decode($json);	//字符串转成php数组
 // access title of $book object
 echo $book->title; // JavaScript: The Definitive Guide 
 echo '<br>';
@@ -98,7 +120,7 @@ $json = '[
     }
 ]';
 
-$books = json_decode($json);
+$books = json_decode($json);	//字符串转成php数组
 // access property of object in array
 echo $books[1]->title; // JavaScript: The Definitive Guide
 
