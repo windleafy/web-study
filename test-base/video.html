@@ -1,0 +1,55 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+    <title>视频播放测试</title>
+	<style>
+		i{
+			float:right;
+			margin-top: -10px;
+			margin-right: -6px	
+		}
+		video{
+			position:absolute;
+			left:0px;
+			top:0px;
+			z-index:-1;
+			width: 100%
+		}
+	</style>
+
+	<script type="text/javascript">
+	$(document).ready(function(){
+	  
+	  $("#video-large").hide();
+	  
+	  $("#non-video-large").click(function(){
+	  $("#video-large").show();
+	  $("#non-video-large").hide();
+	  });
+
+	  $("#close").click(function(){
+	  $("#video-large").hide();
+	  $("#non-video-large").show();
+	  });
+	});
+	</script>
+
+</head>
+<body>
+	<div id="video-large">
+		<i id="close" class="fa fa-close" style="font-size:24px;color:gray"></i>
+	    <video  controls="controls" muted="" autoplay="autoplay">
+	        <source src="full.mp4" type="video/mp4">
+	    </video>
+	    <br>
+	 </div>
+
+    <div id="non-video-large">
+    	<p>
+    		hello world
+    	</p>
+    </div>
+</body>
+</html>
